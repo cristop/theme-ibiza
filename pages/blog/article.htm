@@ -1,0 +1,53 @@
+title = "Blog Interna"
+url = "/blog-test/:category?/post/:slug?"
+layout = "default"
+meta_title = ""
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog"
+
+[blogPosts recentPosts]
+pageNumber = 1
+postsPerPage = 5
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postPage = "blog/article"
+==
+function onEnd () {
+    $post = $this->components['blogPost'];
+    $post = $post->post;
+
+    if( $post ) {
+        $post = $post->title;
+        $this->page->meta_title = 'Website - '.$post;
+    }
+}
+==
+{% set post = blogPost.post %}
+
+{% set categoryName = post.categories|first.name %}
+{{  categoryName ? '/' ~ categoryName : '' }}<br><br>
+
+{% if post.featured_images|first.path %}
+    <img src="{{ post.featured_images|first.path }}" alt="">
+{% else %}
+    <img src="https://via.placeholder.com/700x650/cccccc/ffffff.png" alt="">
+{% endif %}<br><br>
+
+{{ post.title }}<br>
+{{ post.published_at | date('F d, Y') }}<br><br>
+                
+{{ post.content|md }}<br><br><br>
+
+{# <div class="f28 fg3">NOTAS RECIENTES</div> #}
+{% for post in recentPosts.posts.take(5) %}
+    <a href="{{ post.url }}">{{ str_limit(post.title, 80) }}</a> <br>
+    {% if post.excerpt %}
+        {{ str_limit(post.excerpt|striptags, 120) }}
+    {% else %}
+        {{ str_limit(post.content|striptags, 120) }}
+    {% endif %}
+    <br><br>
+{% endfor %}

@@ -1,0 +1,90 @@
+/* Ibiza Bg */
+
+.ibiza-bg {
+  height: 581px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/*Mobile*/
+@media screen and (max-width:900px){
+	.ibiza-bg{
+		height: 400px;
+		padding-top: 0px;
+		background-repeat: no-repeat;
+		background-size: 280vw;
+		background-position: center top;
+	}
+}
+
+/* The North */
+section#the-north {
+  margin-top: 80px;
+}
+
+
+/* The South */
+section#the-south {}
+
+
+/* The East */
+section#the-east {}
+
+
+/* The West */
+section#the-west {}
+
+/*Mobile*/
+@media screen and (max-width:900px){
+	section#the-north {
+	    margin-top: 0;
+	    padding-top: 80px;
+	}	
+	
+	section#the-south {}
+		
+	section#the-east {}
+	
+	section#the-west {}
+}
+
+
+
+section#explore-island {}
+
+section#explore-island .title-container {}
+
+section#explore-island .item {}
+
+section#explore-island .item .bg {}
+
+section#explore-island .item .bg .flex {}
+
+section#explore-island .item .bg .flex div:first-child {
+  padding-top: 0;
+}
+
+section#explore-island .item .bg .flex div:last-child {}
+
+section#explore-island .item .bg .flex div:first-child p {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 32px;
+  color: var(--c-primary);
+  margin-bottom: 2rem;
+}
+
+section#explore-island .item .bg .flex div:last-child p {
+  font-family: "Proxima Nova Regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgb(60, 81, 113);
+  /* margin-bottom: 1rem; */
+  padding-right: 1rem;
+}

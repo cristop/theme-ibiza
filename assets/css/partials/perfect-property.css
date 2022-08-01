@@ -1,0 +1,40 @@
+/* Ibiza Bg */
+.ibiza-bg {
+  background-image: url(../../img/images/sell-00.png);
+  height: 581px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/*Mobile*/
+@media screen and (max-width:900px) {
+  .ibiza-bg {
+    height: 400px;
+    padding-top: 0px;
+    background-repeat: no-repeat;
+    background-size: 280vw;
+    background-position: center top;
+  }
+}
+
+/* Valuation Property */
+section#valuation-property {}
+
+
+/* Smart Choice */
+section#smart-choice {}
+
+/*Mobile*/
+@media screen and (max-width:900px) {
+  section#valuation-property {}
+
+  section#smart-choice {}
+}
+
+
+.internal-star-journey .text {
+  font-size: 22px;
+  line-height: 27px;
+}

@@ -1,0 +1,162 @@
+/* Banner text */
+section#banner-text {
+  padding-top: 190px;
+  padding-bottom: 190px;
+  position: relative;
+  background-image: url(../../img/images/golden-00.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+section#banner-text .container {}
+
+section#banner-text h2.sup_titulo {
+  font-size: 0.7rem;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+section#banner-text p.text {
+  margin: 0;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 137px 80px;
+  max-width: calc(942px);
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f4f4f4;
+  flex-direction: column;
+  border: 1px solid #00000040;
+  font-size: 34px;
+  line-height: 42px;
+  color: #3c5171;
+  font-family: "Proxima Nova Thin", sans-serif;
+  text-align: center;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+section#banner-text p.text span {}
+
+section#banner-text .action {
+  text-align: center;
+}
+
+section#banner-text .action .btn {}
+
+section#banner-text .flex.principal-col {
+  position: relative;
+  z-index: 1;
+}
+
+section#banner-text .flex.principal-col>div {}
+
+section#banner-text .flex.principal-col>div:nth-child(1) {}
+
+section#banner-text .flex.principal-col>div:nth-child(2) {}
+
+@media screen and (max-width: 900px) {
+  section#banner-text .bg-image {}
+
+  section#banner-text .bg-image img {}
+
+  section#banner-text {
+    /* min-height: 400px; */
+    padding-top: 400px;
+    padding-bottom: 0;
+    background-repeat: no-repeat;
+    background-size: 280vw;
+    background-position: center top;
+  }
+
+  section#banner-text .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  section#banner-text .sup_titulo {}
+
+  section#banner-text .text {}
+
+  section#banner-text .action {}
+
+  section#banner-text .action .btn {}
+
+  section#banner-text .flex.principal-col {}
+
+  section#banner-text .flex.principal-col>div {}
+
+  section#banner-text .flex.principal-col>div:nth-child(1) {}
+
+  section#banner-text .flex.principal-col>div:nth-child(2) {}
+
+  section#banner-text p.text{
+      display: block;
+      font-size: 24px;
+      line-height: 30px;
+      padding: 127px 40px;
+  }
+
+  section#banner-text p.text span {}
+  }
+
+}
+
+
+section#golden-visa {
+  margin-top: 80px;
+}
+
+section#golden-visa .flex.principal-col {
+  padding: 55px 51px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+section#benefits-visa {
+  margin-top: 80px;
+}
+  
+section#how-apply {}
+  
+section#benefits-visa .flex.principal-col {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/*Mobile*/
+@media screen and (max-width:900px){
+	section#golden-visa {
+      margin-top: 40px;
+      padding-top: 70px;
+    }
+    
+    section#golden-visa .flex.principal-col {
+      padding: 35px 11px;
+    }
+    
+    section#benefits-visa {
+    padding-top: 80px;
+    margin-top: 60px;
+    }
+      
+    section#how-apply {}
+      
+    section#benefits-visa .flex.principal-col {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+}
+
+section#search-home{
+    padding-bottom: 0;
+}
+section#golden-visa{
+    margin-top: 80px;
+}
