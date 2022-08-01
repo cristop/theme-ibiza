@@ -266,8 +266,76 @@ section#property-container .item {
     width: 100%;
     padding-left: 22px;
   }
-  .flex.property-icons img{}
+  section#property-container .flex.flex-vcenter .flex.property-icons {
+    transform: inherit;
+    display: grid;
+    grid-template-columns: ;
+    grid-auto-rows: ;
+    grid-template-areas: "first-icon first-icon first-icon first-icon "
+                         "second-icon terciary-icon fourth-icon fifth-icon";
+  }
+  section#property-container .flex.flex-vcenter .flex.property-icons>:first-child{
+    grid-area: first-icon;
+  }
+  section#property-container .flex.flex-vcenter .flex.property-icons>:nth-child(2){
+    grid-area: second-icon;
+  }
+  section#property-container .flex.flex-vcenter .flex.property-icons>:nth-child(3){
+    grid-area: terciary-icon;
+  }
+  section#property-container .flex.flex-vcenter .flex.property-icons>:nth-child(4){
+    grid-area: fourth-icon;
+  }
+  section#property-container .flex.flex-vcenter .flex.property-icons>:last-child{
+    grid-area: fifth-icon;
+  }
+  section#property-container .flex.flex-vcenter .flex.property-icons p{
+
+  }
+  section#property-container .flex.flex-vcenter .flex.property-icons p span{
+    display: none;
+  }
+  
+  section#slider-principal .owl-carousel .owl-stage-outer {
+    height: 300px;
+  }
+  section#highlights .item .bg .flex {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 2fr;
+  }
+  section#highlights .item .bg .flex > *:last-child {
+    padding: 0 !important;
+  }
+  section#highlights .container {
+    background: linear-gradient(
+      180deg,
+      #fff 0%,
+      #fff 379px,
+      #f4f4f4 25%
+    ) !important;
+  }
+  section#star-journey .container {
+    padding: 53px 15px;
+    max-width: calc(100% - 6rem) !important;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  section#star-journey .flex {
+    width: 100%;
+  }
+  section#location {
+  }
+  section#location .flex {
+    grid-template-rows: 2fr;
+    grid-template-columns: 1fr !important;
+  }
+  section#location .property-map {
+    padding: 0;
+    min-height: 400px;
+  }
 }
+
 .internal-hero-text .flex div h2 {
   font-size: 12px;
   line-height: 15px;
