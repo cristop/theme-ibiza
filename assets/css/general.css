@@ -242,3 +242,16 @@ button.owl-prev span,
 button.owl-next span{
   display: none;
 }
+
+.alert.alert-success.alert-dismissible {
+    border: 1px solid green;
+    padding: 20px 26px;
+}
+
+.alert.alert-success.alert-dismissible .close {
+    display: none;
+}
+
+.alert p {
+    margin: 0 !important;
+}
