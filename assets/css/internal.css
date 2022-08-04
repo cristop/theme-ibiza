@@ -334,11 +334,7 @@
   .internal-hero-text .item .bg .flex div {}
 
   .internal-hero-text .item .bg .flex div p {}
-
-  .internal-hero-text .item .bg .flex div:first-child {}
-
-  .internal-hero-text .item .bg .flex div:first-child p {}
-
+  
   .internal-hero-text .item .bg .flex div:last-child {}
 
   .internal-hero-text .item .bg .flex div:last-child p {}
