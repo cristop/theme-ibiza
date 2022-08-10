@@ -653,9 +653,14 @@ section#results .items-results .info_property .flex h4 {
 section#results .items-results .info_property p {
   font-size: 12px;
   line-height: 14px;
-  min-height: 70px;
+  min-height: 42px;
   text-align: left;
   margin: 0;
+  margin-bottom: 28px;
+     display: -webkit-box; 
+   overflow: hidden;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
 }
 
 section#results .items-results .texto_flex {
