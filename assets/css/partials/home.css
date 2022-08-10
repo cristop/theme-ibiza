@@ -827,8 +827,6 @@ section#property-partner {
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  /* max-width: 100vh; */
-  background-image: url(../../img/images/bg-02.png);
 }
 
 section#property-partner .container {
