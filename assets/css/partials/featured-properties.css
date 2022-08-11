@@ -227,13 +227,13 @@ section#featured-properties .items-results .btn {
 section#featured-properties .items-results .item .info-icons.flex {
     font-size: 12px;
     /* max-width: fit-content; */
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    padding: 0px 36px 24px;
+    /* -webkit-box-pack: justify; */
+    /* justify-content: space-between; */
+    padding: 0px 5px 24px;
 }
 
 section#featured-properties .items-results .item .info-icons .icon-attributes {
-    max-width: fit-content;
+    /* max-width: fit-content; */
     padding: 0;
     text-align: center;
     margin-left: auto;

@@ -29,7 +29,13 @@ description = "Featured Properties"
 <!-- Featured Properties -->
     <section id="featured-properties" class="section wow fadeIn  ">
         <div class="container">
-            <h2 class="title">Featured Properties</h2>
+            <h2 class="title">
+            {% if title %}
+                {{ title }}
+            {% else %}
+                Featured Properties
+            {% endif %}
+            </h2>
             <div class="items-results flex t-col-3 owl-carousel owl-theme">
                 <div class="item">
                     <div class="bg">

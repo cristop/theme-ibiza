@@ -663,10 +663,11 @@ section#about-the-property .flex .text {
   padding-right: 2rem;
 }
 
-section#about-the-property .flex p.small {
+section#about-the-property .flex .small, section#about-the-property .flex .small p {
   font-size: 14px;
   line-height: 17px;
   margin-bottom: 1rem;
+  color: var(--c-primary);
 }
 
 section#star-journey {
@@ -711,7 +712,7 @@ section#star-journey .flex {
 }
 
 section#location {
-  padding-top: 0px;
+  padding-top: 60px;
 }
 
 section#location p {

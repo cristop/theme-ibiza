@@ -159,40 +159,27 @@ function onEnd()
     <section id="highlights" class="wow fadeIn">
         <div class="container">
             <div class="title text-left">
-                <h3>Highlights</h3>
+                <h3>Highlights</h3>                
             </div>
             <div class="item">
                 <div class="bg">
                     <div class="flex">
                         <div>
+                            {% set highlights=property.property_highlights|split(',') %}
+
                             <ul>
-                                <li>Endless Views</li>
-                                <li>Secluded Swimming Pool</li>
-                                <li>Close to Ibiza Town</li>
-                                <li>Ibizan Interior</li>
-                                <li>Tropical Gardens</li>
-                                <li>Roof Terrace</li>
-                                <li>Seven Bedrooms</li>
-                                <li>Two Annexes </li>
+                                {% for item in highlights %}
+                                <li>{{ item }}</li>
+                                {% endfor %}
                             </ul>
                         </div>
                         <div>
                             <div class="text">
-                                <h2>Accommodation is split between the principal residence and two annexes. Visually,
-                                    the main house has been inspired by the island's unique architectural heritage, its
-                                    main feature being a whitewashed central rotunda, a homage to the landmark defence
-                                    towers that define Ibiza's coast</h2>
+                                <h2>{{ property.property_highlights_headline }}</h2>
                             </div>
-                            <p>Thick, curved walls give way to a light and airy interior, bathed in Ibizan sunshine
-                                thanks to soaring arched windows. The open-plan living area has been cleverly designed
-                                in zones, each boasting impressive attention to detail, an enviable finish and that
-                                uniquely Ibizan feel.</p>
-                            <p>Essence's spacious lounge is the perfect place to relax and socialise with
-                                floor-to-ceiling glass doors offering gorgeous garden views. The neighbouring dining
-                                area, with ample room to accommodate a dozen or so guests, is also flooded in natural
-                                light and makes an ideal setting for languid evenings of entertaining and conversation.
-                                Bordering the dining room is a pristine, family-sized kitchen with units of natural wood
-                                and glossy white tiling.</p>
+                            <div class="property_highlights_body">
+                                {{ property.property_highlights_body|raw }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -206,33 +193,13 @@ function onEnd()
             <div class="flex">
                 <div class="wow fadeInLeft">
                     <div class="text">
-                        <p>Ibizan style continues throughout the guest accommodation. Spacious double bedrooms are
-                            finished
-                            in cool, neutral tones - each with en-suite bathroom and featuring stylish blends of
-                            polished
-                            cement and understated natural stone. In addition, the two suites in the garden annexe also
-                            boast a kitchenette area.</p>
-                        <p>There's a wonderfully secluded feel to the delightful gardens of tropical palms,
-                            Mediterranean shrubs and mature pines. Beyond the tendered lawns a sublime a kidney-shaped
-                            swimming pool glitters invitingly in the sunshine. Relax on a lounger, or chill under the
-                            shade of a traditional terracotta-tiled roof. This beautiful pool area is flanked with low
-                            ochre-coloured stone walls and extensive wooden decking, and subtlety screened by evergreen
-                            scrubs for privacy.</p>
+                        {{ property.about_the_property_left_column|raw }}
                     </div>
                 </div>
                 <div class="wow fadeInRight">
-                    <p class="small">
-                        Head up wooden steps to the huge roof sundeck and you can gaze across to historic Dalt Vila,
-                        Ibiza’s old town and the sparkling blue of the Mediterranean. Here you’ll find lounge seating
-                        and a lovely wooden pergola offering a shady respite from the heat of the day. Continue up
-                        another flight of stairs to the summit of the rotunda and there’s space for a romantic daybed,
-                        from where you can revel in remarkable views, with Formentera visible on the distant southern
-                        horizon and wooded hills to the north.
-                    </p>
-                    <p class="small">Essence is an authentic, supremely spacious Ibizan property of substance and style,
-                        with luxuriant, peaceful gardens and seven bedrooms. Location-wise, it's an ideal option those
-                        choosing to base themselves close to the delights of Ibiza Town and the wonderful beaches of
-                        Playa d'en Bossa and Salinas.</p>
+                    <div class="small">
+                        {{ property.about_the_property_right_column|raw }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,6 +218,7 @@ function onEnd()
                         request a brochure
                     </p>
                     <div class="action">
+                        {# {{ property.brochure_url }} #}
                         <a href="{{ 'contact'|page }}" class="btn btn-primary">
                             contact
                         </a>
@@ -310,7 +278,7 @@ function onEnd()
         </div>
     </section>
 
-    {% partial 'static/featured-properties' %}
+    {% partial 'static/featured-properties' title="SIMILAR PROPERTIES" %}
 
     <section id="contact-us" class="section wow fadeIn  ">
         <div class="container">
