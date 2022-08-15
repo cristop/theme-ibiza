@@ -11,8 +11,43 @@ slug = "{{ :slug }}"
 ==
 function onEnd()
 {
-   $property = $this->components['property'];
-   $this["property"] = $property->detail()[0];
+    //buscamos la imagen default
+    $property = $this->components['property'];
+    $this["defaultImage"] = $property->getDefaultImage();
+
+    //acá, en base al slug vemos si mostrar el formato preview que viene del admin, o mostramos la pagina normal
+    if($this->param('slug') == 'preview'){
+        //vemos si el usuario esta logueado al admin primero
+        $user = BackendAuth::getUser();
+
+        if ($user) {
+            //buscamos las variables de session y metemos por property
+            
+            //echo '<br><br><br><br><br><br><br><br><br><br>';
+            //echo Session::get('Property')[0];
+            $data = json_decode(Session::get('Property')[0],true);
+            //$data = json_encode(Session::get('Property')[0]);
+
+            //echo json_encode($data);
+            //echo $data['Property']['name'];
+
+            $this["property"] = $data['Property'];
+            return false;
+        }else{
+            // si no está logueaod mandamos a la home
+            return Redirect::to($this->pageUrl('home'));
+        }
+    }else{
+        if($property->detail()[0]->publish==1){
+            // en caso normal traemos el detalle de la propiedad en la base, usando el componente
+            $this["property"] = $property->detail()[0];
+        }else{
+            // si no está logueaod mandamos a la home
+            return Redirect::to($this->pageUrl('home'));
+        }
+   }
+
+    //aca creamos los metatitle
    $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$this["property"]["property_type"]." | ".$this["property"]["location"]." | Ibiza Property Collection · Ibiza Property Collection";
 }
 ==
@@ -21,12 +56,18 @@ function onEnd()
 <link rel="stylesheet" href="{{ 'assets/css/partials/interna-propiedad.css'|theme }}" async>
 {% endput %}
 
+{% if this.param.slug == "preview"  %}
+<div class="preview-page">
+This is a preview Page. These changes are not saved. <a href="javascript:window.close();" class="close">Close this window.</a>
+</div>
+{% endif %}
+
 <main>
 
     <!-- Bg Principal -->
     <section id="bg-principal" class="section wow fadeIn internal-hero-image">
         <div class="container-fluid">
-            <div class="bg-image" style="background-image: url({{ 'assets/img/images/interna-bg.jpg'|theme }});"></div>
+            <div class="bg-image" style="background-image: url({{ defaultImage }});"></div>
         </div>
     </section>
 
@@ -114,19 +155,7 @@ function onEnd()
 
             <div class="owl-carousel owl-theme principal-slider">
                 <div class="item">
-                    <img src="{{ 'assets/img/images/bg-01.jpg'|theme }}" />
-                </div>
-                <div class="item">
-                    <img src="{{ 'assets/img/images/bg-02.jpg'|theme }}" />
-                </div>
-                <div class="item">
-                    <img src="{{ 'assets/img/images/bg-03.jpg'|theme }}" />
-                </div>
-                <div class="item">
-                    <img src="{{ 'assets/img/images/bg-04.jpg'|theme }}" />
-                </div>
-                <div class="item">
-                    <img src="{{ 'assets/img/images/bg-05.jpg'|theme }}" />
+                    <img src="{{ defaultImage }}" />
                 </div>
             </div>
         </div>
@@ -164,8 +193,13 @@ function onEnd()
             <div class="item">
                 <div class="bg">
                     <div class="flex">
+                        
                         <div>
-                            {% set highlights=property.property_highlights|split(',') %}
+                            {% if this.param.slug == "preview"  %}
+                                {% set highlights=property.property_highlights %}
+                            {% else %}
+                                {% set highlights=property.property_highlights|split(',') %}
+                            {% endif %}
 
                             <ul>
                                 {% for item in highlights %}
@@ -173,6 +207,7 @@ function onEnd()
                                 {% endfor %}
                             </ul>
                         </div>
+                        
                         <div>
                             <div class="text">
                                 <h2>{{ property.property_highlights_headline }}</h2>

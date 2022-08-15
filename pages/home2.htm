@@ -6,7 +6,7 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
-[property]
+[property propertyObject]
 ==
 {% put styles %}
 <link rel="stylesheet" href="{{ 'assets/css/partials/home.css'|theme }}" async>
@@ -232,11 +232,13 @@ robot_follow = "follow"
     </div>
   </section>
 
+
+  {# PASAR DESDE ACÁ #}
   <!-- Results -->
   {% put scripts %}
   <script>
     $('.product-slider').owlCarousel({
-      loop: true,
+      loop: false,
       margin: 0,
       nav: true,
       pagination: false,
@@ -259,7 +261,7 @@ robot_follow = "follow"
     <div class="container">
         
       <div class="items-results flex t-col-3">
-        {% for property in property.list %}
+        {% for property in propertyObject.list %}
         <div class="item-r">
           <div class="bg">
             {% if property.featured_property %}
@@ -269,17 +271,13 @@ robot_follow = "follow"
                 loading="lazy" width="100%" height="100%" alt="" />
             </div>
             {% endif %}
+
             <div class="owl-carousel owl-theme product-slider">
               <div class="item">
-                <div class="imagen_flex domDbe"></div>
-              </div>
-              <div class="item">
-                <div class="imagen_flex domDbe"></div>
-              </div>
-              <div class="item">
-                <div class="imagen_flex domDbe"></div>
+                <div class="imagen_flex domDbe" style="background-image: url('{{ propertyObject.getDefaultImage() }}')"></div>
               </div>
             </div>
+
             <a href="{{ 'interna-propiedad2'|page({ slug: property.property_url }) }}"> {# property.property_url #}
               <div class="info_property">
                 <h2 class="titulo_flex">
@@ -337,8 +335,9 @@ robot_follow = "follow"
       </div>
     </div>
   </section>
-
   <!-- Property Partner -->
+  {# PASAR HASTA ACÁ #}
+
 
   <section id="property-partner" class="section wow fadeIn  ">
     <div class="container">
