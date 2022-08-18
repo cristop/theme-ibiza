@@ -162,7 +162,7 @@ function formadorIndice(cuenta) {
   if (cuenta < 10) {
     var indice = '0.' + cuenta + 's';
   } else {
-    var indice = String(cuenta).slice(-2) + '.' + String(cuenta).slice(-1) + 's';
+    var indice = String(cuenta).substr(-2, 1) + "." + String(cuenta).substr(-1) + "s";
   }
   return indice;
 }
