@@ -1,4 +1,4 @@
-title = "Property"
+title = "Property 2 TEST"
 url = "/:slug?"
 layout = "default"
 # meta_title = "{{ property.name }} | villa | San José | Ibiza Property Collection · Ibiza Property Collection"
@@ -8,6 +8,14 @@ robot_follow = "follow"
 
 [property]
 slug = "{{ :slug }}"
+
+[gmap]
+width = "500%"
+height = "500px"
+mapTypeId = "TERRAIN"
+zoom = 14
+showMarker = 1
+animateMarker = 1
 ==
 function onEnd()
 {
@@ -281,10 +289,7 @@ This is a preview Page. These changes are not saved. <a href="javascript:window.
                         gorgeous cove beaches including Cala d'Hort and Cala Vedella are close by.</p>
                 </div>
                 <div class="property-map wow fadeInRight">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12419.813244769277!2d1.4220834347970814!3d38.90218150832515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129946bc6d9d1985%3A0xb6ca1af29357fa88!2s07800%20Ibiza%2C%20Islas%20Baleares%2C%20Espa%C3%B1a!5e0!3m2!1ses!2sus!4v1659029872268!5m2!1ses!2sus"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        {% component 'gmap' %}
                 </div>
             </div>
         </div>
