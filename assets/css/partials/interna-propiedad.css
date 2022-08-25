@@ -728,7 +728,7 @@ section#location p {
   margin-bottom: 1rem;
 }
 
-section#location p.small {
+section#location p.small,section#location div.small p {
   font-size: 14px;
   line-height: 17px;
   padding-right: 1rem;

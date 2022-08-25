@@ -113,7 +113,7 @@ function newsSending(){
                                 </div>
                                 <div class="flex">
                                     <div class="text-center">
-                                        <input type="submit" class="btn" value="Submit">
+                                        <input type="submit" class="btn" value="Submit" onclick="$(this).val('Wait..');$(this).css('pointer-events','none')">
                                         <input type="hidden" name="property_id" id="property_id" value="{{ get('property_id') }}">
                                         
                                         <div id="contactForm_forms_flash"></div>

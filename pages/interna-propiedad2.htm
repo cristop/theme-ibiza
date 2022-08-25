@@ -10,9 +10,8 @@ robot_follow = "follow"
 slug = "{{ :slug }}"
 
 [gmap]
-width = "500%"
+width = "100%"
 height = "500px"
-mapTypeId = "TERRAIN"
 zoom = 14
 showMarker = 1
 animateMarker = 1
@@ -60,14 +59,14 @@ function onEnd()
 }
 ==
 {% put styles %}
-<link rel="stylesheet" href="{{ 'assets/css/internal.css'|theme }}" async>
-<link rel="stylesheet" href="{{ 'assets/css/partials/interna-propiedad.css'|theme }}" async>
+    <link rel="stylesheet" href="{{ 'assets/css/internal.css'|theme }}" async>
+    <link rel="stylesheet" href="{{ 'assets/css/partials/interna-propiedad.css'|theme }}" async>
 {% endput %}
 
 {% if this.param.slug == "preview"  %}
-<div class="preview-page">
-This is a preview Page. These changes are not saved. <a href="javascript:window.close();" class="close">Close this window.</a>
-</div>
+    <div class="preview-page">
+    This is a preview Page. These changes are not saved. <a href="javascript:window.close();" class="close">Close this window.</a>
+    </div>
 {% endif %}
 
 <main>
@@ -75,16 +74,26 @@ This is a preview Page. These changes are not saved. <a href="javascript:window.
     <!-- Bg Principal -->
     <section id="bg-principal" class="section wow fadeIn internal-hero-image">
         <div class="container-fluid">
-            <div class="bg-image" style="background-image: url({{ defaultImage }});"></div>
+            
+            {% if property.hero_image_url %}
+                {% if 'http' in property.hero_image_url  %}
+                <div class="bg-image" style="background-image: url({{ property.hero_image_url|webp|resize(2000) }});"></div>
+                {% else %}
+                <div class="bg-image" style="background-image: url({{ property.hero_image_url|media|webp|resize(2000) }});"></div>
+                {% endif %}
+            {% else %}
+                <div class="bg-image" style="background-image: url({{ defaultImage }});"></div>
+            {% endif %}
         </div>
     </section>
 
     <section id="property-container" class="section wow fadeIn internal-hero-text">
-        <div class="container">
-            <div class="icono_flex">
-                <img src="data:image/png;base64,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"
-                    alt="New">
+        <div class="container">            
+            {% if property.banner %}
+            <div class="banner">
+                <p>{{ property.banner }}</p>
             </div>
+            {% endif %}
             <div class="item">
                 <div class="bg">
                     <div class="flex property-header">
@@ -158,13 +167,24 @@ This is a preview Page. These changes are not saved. <a href="javascript:window.
 
     <section id="slider-principal" class="section wow fadeIn  ">
         <div class="container">
-            {# <div class="bg-image">
-            </div> #}
-
             <div class="owl-carousel owl-theme principal-slider">
+                
+                {% for record in property.gallery %}
+                <div class="item">
+                    {% if 'http' in record.imagery  %}
+                    <img src="{{ record.imagery|webp|resize(1300) }}" />
+                    {% else %}
+                    <img src="{{ record.imagery|media|webp|resize(1300) }}" />
+                    {% endif %}
+                </div>
+				{% endfor %}
+
+                {% if not property.gallery %}
                 <div class="item">
                     <img src="{{ defaultImage }}" />
                 </div>
+                {% endif %}
+
             </div>
         </div>
     </section>
@@ -249,7 +269,7 @@ This is a preview Page. These changes are not saved. <a href="javascript:window.
     </section>
 
     <section id="star-journey" class="section wow fadeIn internal-star-journey"
-        style="background-image: url({{ 'assets/img/images/interna-01.png'|theme }});">
+        style="background-image: url({{ 'assets/img/images/interna-01.png'|theme|webp }});">
         <div class="container">
             <div class="flex principal-col">
                 <div class="wow fadeIn">
@@ -262,7 +282,7 @@ This is a preview Page. These changes are not saved. <a href="javascript:window.
                     </p>
                     <div class="action">
                         {# {{ property.brochure_url }} #}
-                        <a href="{{ 'contact'|page }}" class="btn btn-primary">
+                        <a href="{{ 'contact'|page }}?property_id={{ property.property_id }}" class="btn btn-primary">
                             contact
                         </a>
                     </div>
@@ -276,20 +296,15 @@ This is a preview Page. These changes are not saved. <a href="javascript:window.
             <div class="flex">
                 <div class="location-left wow fadeInLeft">
                     <h3>Location</h3>
-                    <p>Blink and you'll miss it, San José (Sant Josep in Ibicenco) is the principal settlement in
-                        southern Ibiza.</p>
-                    <p class="small">This prosperous village's little plaza is overlooked by the blinding white facade
-                        of an 18th-century church and selection of engaging bar-cafes (some featuring live music) and a
-                        smattering of boutiques. San José is the perfect location for those prioritising connectivity
-                        and convenience, as it’s just a fifteen-minute drive from the airport and twenty minutes from
-                        Ibiza Town.</p>
-                    <p class="small">The village has a distinctly relaxed, genteel ambience and an international vibe,
-                        its surrounding hills topped with stunning modernist villas. Soaring over San José to the
-                        southwest is pine-clad Sa Talaia, the island's highest peak while a succession of drop-dead
-                        gorgeous cove beaches including Cala d'Hort and Cala Vedella are close by.</p>
+                    <div>
+                        {{ property.location_header|raw }}
+                    </div>
+                    <div class="small">
+                        {{ property.location_body|raw }}
+                    </div>
                 </div>
                 <div class="property-map wow fadeInRight">
-                        {% component 'gmap' %}
+                        {% component 'gmap' address_map=property.map %}
                 </div>
             </div>
         </div>
@@ -298,11 +313,20 @@ This is a preview Page. These changes are not saved. <a href="javascript:window.
     <section id="inquire-about" class="section wow fadeIn  ">
         <div class="container">
             <div class="wow fadeInLeft">
-                <div class="image" style="background-image: url({{ 'assets/img/images/interna-03.jpg'|theme }});">
-                </div>
+                
+                {% if property.hero_image_url %}
+                    {% if 'http' in property.hero_image_url %}
+                    <div class="image" style="background-image: url({{ property.hero_image_url|webp|resize(900) }});"></div>
+                    {% else %}
+                    <div class="image" style="background-image: url({{ property.hero_image_url|media|webp|resize(900) }});"></div>
+                    {% endif %}
+                {% else %}
+                    <div class="image" style="background-image: url({{ defaultImage }});"></div>
+                {% endif %}
             </div>
             <div class="wow fadeInRight">
                 <div class="icon">
+                 
                     <img src="data:image/png;base64,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"
                         loading="lazy" alt="" />
                 </div>
@@ -310,7 +334,7 @@ This is a preview Page. These changes are not saved. <a href="javascript:window.
                     Inquire about this property
                 </div>
                 <div class="action">
-                    <a href="#" class="btn btn-primary">
+                    <a href="{{ 'contact'|page }}?property_id={{ property.property_id }}" class="btn btn-primary">
                         CONTACT
                     </a>
                 </div>
