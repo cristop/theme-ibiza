@@ -65,170 +65,190 @@ robot_follow = "follow"
   </script>
   {% endput %}
   <!-- Search Home -->
+{% put scripts %}
+<script type="text/javascript">
+function onSearch(result){
+  var json=JSON.parse(result);
+  $('.item-r').hide();
 
+  json.forEach(function(valor, indice) {
+      //alert(valor.property_id);
+      $('.item-r[data-property-id="'+valor.property_id+'"]').fadeIn();
+  })
+}
+</script>
+{% endput %}
   <section id="search-home" class="section">
     <div class="container">
-      <div class="title-container">
-        <h2 class="title">
-          START THE SEARCH FOR<br>
-          <span>YOUR PERFECT IBIZA HOME</span>
-        </h2>
-      </div>
-      <div class="items-container">
-        <div class="items-search-home flex t-col-3">
-          <div class="item">
-            <div class="filter-search flex">
-              <select name="SEARCH-BY-AREA" id="item-option">
-                <option selected value="search by area" disabled>search by area</option>
-                <option value="">select all</option>
-                <option value="">ibiza</option>
-                <option value="">san antonio</option>
-                <option value="">san jose</option>
-                <option value="">san juan</option>
-                <option value="">santa eulalia</option>
-              </select>
-              <select name="PROPERTY-TYPE" id="item-option">
-                <option selected value="property type" disabled>property type</option>
-                <option value="">apartament</option>
-                <option value="">finca</option>
-                <option value="">land</option>
-                <option value="">townhouse</option>
-                <option value="">villa</option>
-              </select>
+      <form data-request="propertyObject::onSearch" data-request-success="onSearch(data.result)">
+        <div class="title-container">
+          <h2 class="title">
+            START THE SEARCH FOR<br>
+            <span>YOUR PERFECT IBIZA HOME</span>
+          </h2>
+        </div>
+        <div class="items-container">
+          <div class="items-search-home flex t-col-3">
+            <div class="item">
+              <div class="filter-search flex">
+                <select name="location" id="location">
+                  <option selected value="">search by area</option>
+                  <option value="">select all</option>
+                  <option value="ibiza">ibiza</option>
+                  <option value="san antonio">san antonio</option>
+                  <option value="san jose">san jose</option>
+                  <option value="san juan">san juan</option>
+                  <option value="santa eulalia">santa eulalia</option>
+                </select>
+                <select name="property_type" id="property_type">
+                  <option selected value="">property type</option>
+                  <option value="apartment">apartment</option>
+                  <option value="finca">finca</option>
+                  <option value="land">land</option>
+                  <option value="townhouse">townhouse</option>
+                  <option value="villa">villa</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="flex">
-              <select name="MIN-PRICE" id="item-price">
-                <option selected value="MIN PRICE" disabled>MIN PRICE</option>
-                <option value="250000">€250,000</option>
-                <option value="500000">€500,000</option>
-                <option value="1000000">€1,000,000</option>
-                <option value="3000000">€3,000,000</option>
-                <option value="5000000">€5,000,000</option>
-                <option value="7000000">€7,000,000</option>
-                <option value="10000000">€10,000,000</option>
-                <option value="10000001">€10,000,000</option>
-              </select>
-              <select name="MAX PRICE" id="item-price">
-                <option selected value="MAX PRICE" disabled>MAX PRICE</option>
-                <option value="250000">€250,000</option>
-                <option value="500000">€500,000</option>
-                <option value="1000000">€1,000,000</option>
-                <option value="3000000">€3,000,000</option>
-                <option value="5000000">€5,000,000</option>
-                <option value="7000000">€7,000,000</option>
-                <option value="10000000">€10,000,000</option>
-                <option value="99999999999999999">€15,000,000</option>
-              </select>
+            <div class="item">
+              <div class="flex">
+                <select name="min_price" id="min_price">
+                  <option selected value="">MIN PRICE</option>
+                  <option value="250000">€250,000</option>
+                  <option value="500000">€500,000</option>
+                  <option value="1000000">€1,000,000</option>
+                  <option value="3000000">€3,000,000</option>
+                  <option value="5000000">€5,000,000</option>
+                  <option value="7000000">€7,000,000</option>
+                  <option value="10000000">€10,000,000</option>
+                  <option value="10000001">€10,000,000</option>
+                </select>
+                <select name="max_price" id="max_price">
+                  <option selected value="">MAX PRICE</option>
+                  <option value="250000">€250,000</option>
+                  <option value="500000">€500,000</option>
+                  <option value="1000000">€1,000,000</option>
+                  <option value="3000000">€3,000,000</option>
+                  <option value="5000000">€5,000,000</option>
+                  <option value="7000000">€7,000,000</option>
+                  <option value="10000000">€10,000,000</option>
+                  <option value="99999999999999999">€15,000,000</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="item button hide-mobile">
-            <div class="bg">
-              <button class="btn btn-primary">
-                SEARCH
-              </button>
+            <div class="item button hide-mobile">
+              <div class="bg">
+                <button class="btn btn-primary" type="submit">
+                  SEARCH
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="advanced-serch">
-        <div class="flex">
-          <div class="text">
-            <p>ADVANCED SEARCH</p>
-          </div>
-          <div class="icon-closed">
-            <img src="{{ 'assets/img/svg-loaders/desplegable.svg'|theme }}" alt="">
-          </div>
-        </div>
-        <div class="advanced_search_bar__Container-sc-18jm8s2-0 gTThrg">
-          <div class="advanced_search_bar__Inner-sc-18jm8s2-1 kCRVk"></div>
-          <div class="advanced_search_bar__Advanced-sc-18jm8s2-2 eqpZXI open">
-            <div class="advanced_search_bar__AdvancedSearchGrid-sc-18jm8s2-3 gizNfl">
-              <div class="advanced_search_bar__Left-sc-18jm8s2-4 dIpNvQ">
-                <div width="100%" class="select__Container-sc-fszh90-0 eJMRGV select-container">
-                  <h3>BEDROOMS</h3><select name="bedrooms" class="select__S-sc-fszh90-1 bBNRQt">
-                    <option value="MIN — MAX" disabled="" selected="">MIN — MAX</option>
-                    <option value="1">Studio</option>
-                    <option value="1-3">1-3</option>
-                    <option value="3-4">3-4</option>
-                    <option value="4-6">4-6</option>
-                    <option value="6-1000">6+</option>
-                  </select>
-                </div>
-                <div width="100%" class="select__Container-sc-fszh90-0 eJMRGV select-container">
-                  <h3>BATHROOMS</h3><select name="bathrooms" class="select__S-sc-fszh90-1 bBNRQt">
-                    <option value="MIN — MAX" disabled="" selected="">MIN — MAX</option>
-                    <option value="1-3">1-3</option>
-                    <option value="3-4">3-4</option>
-                    <option value="4-6">4-6</option>
-                    <option value="6-1000">6+</option>
-                  </select>
-                </div>
-              </div>
-              <div class="advanced_search_bar__Center-sc-18jm8s2-5 lgQLYy">
-                <div width="100%" class="select__Container-sc-fszh90-0 eJMRGV select-container">
-                  <h3>LIVING AREA</h3><select name="living_area" class="select__S-sc-fszh90-1 bBNRQt">
-                    <option value="MIN — MAX M²" disabled="" selected="">MIN — MAX M²</option>
-                    <option value="50-100">50-100 m²</option>
-                    <option value="100-200">100-200 m²</option>
-                    <option value="300-400">300-400 m²</option>
-                    <option value="500-600">500-600 m²</option>
-                    <option value="600-800">600-800 m²</option>
-                    <option value="801-100000">800+ m²</option>
-                  </select>
-                </div>
-                <div width="100%" class="select__Container-sc-fszh90-0 eJMRGV select-container">
-                  <h3>PLOT SIZE</h3><select name="plot_size" class="select__S-sc-fszh90-1 bBNRQt">
-                    <option value="MIN — MAX M²" disabled="" selected="">MIN — MAX M²</option>
-                    <option value="1000-5000">1,000 - 5,000 m²</option>
-                    <option value="5000-10000">5,000 - 10,000 m²</option>
-                    <option value="10000-20000">10,000 - 20,000 m²</option>
-                    <option value="20000-30000">20,000 - 30,000 m²</option>
-                    <option value="30000-50000">30,000 - 50,000 m²</option>
-                    <option value="50000-100000">50,000 - 100,000 m²</option>
-                    <option value="100000-99999999">100,000+ m²</option>
-                  </select>
-                </div>
-              </div>
-              <div class="advanced_search_bar__Right-sc-18jm8s2-6 boDUXw"><label
-                  class="advanced_search_bar__Options-sc-18jm8s2-7 hIYUQb"><label
-                    class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="sea_view" name="Sea View"
-                      type="checkbox" value="Sea View"> <span>Sea View</span></label><label
-                    class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="garden" name="Garden"
-                      type="checkbox" value="Garden"> <span>Garden</span></label><label
-                    class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="swimmingpool" name="Swimming Pool"
-                      type="checkbox" value="Swimming Pool"> <span>Swimming Pool</span></label><label
-                    class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="sea_access" name="Sea Acess"
-                      type="checkbox" value="Sea Access"> <span>Sea Access</span></label><label
-                    class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="terrace" name="Terrace"
-                      type="checkbox" value="Terrace"> <span>Terrace</span></label><label
-                    class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="balcony" name="Balcony"
-                      type="checkbox" value="Balcony"> <span>Balcony</span></label></label></div>
+        <div class="advanced-serch">
+          <div class="flex">
+            <div class="text">
+              <p>ADVANCED SEARCH</p>
             </div>
-            <div class="advanced_search_bar__FilterDiv-sc-18jm8s2-9 jtVACV">
-              <div class="filter_bar__Container-sc-19ouwvv-0 cfDa-dI">
-                <div class="filter_bar__FilterDiv-sc-19ouwvv-8 jIWIig">
-                  <div width="200px" class="select__Container-sc-fszh90-0 icnSJv select-container">
-                    <h3>SORT BY</h3><select name="filter" class="select__S-sc-fszh90-1 bBNRQt">
-                      <option value="ascending">Price: Ascending</option>
-                      <option value="descending">Price: Descending</option>
-                      <option value="date">Most Recent Listing</option>
+            <div class="icon-closed">
+              <img src="{{ 'assets/img/svg-loaders/desplegable.svg'|theme }}" alt="">
+            </div>
+          </div>
+          <div class="advanced_search_bar__Container-sc-18jm8s2-0 gTThrg">
+            <div class="advanced_search_bar__Inner-sc-18jm8s2-1 kCRVk"></div>
+            <div class="advanced_search_bar__Advanced-sc-18jm8s2-2 eqpZXI open">
+              <div class="advanced_search_bar__AdvancedSearchGrid-sc-18jm8s2-3 gizNfl">
+                <div class="advanced_search_bar__Left-sc-18jm8s2-4 dIpNvQ">
+                  <div width="100%" class="select__Container-sc-fszh90-0 eJMRGV select-container">
+                    <h3>BEDROOMS</h3>
+                    <select name="bedrooms" id="bedrooms" class="select__S-sc-fszh90-1 bBNRQt">
+                      <option value="">MIN — MAX</option>
+                      <option value="1">Studio</option>
+                      <option value="1-3">1-3</option>
+                      <option value="3-4">3-4</option>
+                      <option value="4-6">4-6</option>
+                      <option value="6-1000">6+</option>
                     </select>
+                  </div>
+                  <div width="100%" class="select__Container-sc-fszh90-0 eJMRGV select-container">
+                    <h3>BATHROOMS</h3>
+                    <select name="bathrooms" id="bathrooms" class="select__S-sc-fszh90-1 bBNRQt">
+                      <option value="">MIN — MAX</option>
+                      <option value="1-3">1-3</option>
+                      <option value="3-4">3-4</option>
+                      <option value="4-6">4-6</option>
+                      <option value="6-1000">6+</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="advanced_search_bar__Center-sc-18jm8s2-5 lgQLYy">
+                  <div width="100%" class="select__Container-sc-fszh90-0 eJMRGV select-container">
+                    <h3>LIVING AREA</h3>
+                    <select name="living_area" id="living_area" class="select__S-sc-fszh90-1 bBNRQt">
+                      <option value="">MIN — MAX M²</option>
+                      <option value="50-100">50-100 m²</option>
+                      <option value="100-200">100-200 m²</option>
+                      <option value="300-400">300-400 m²</option>
+                      <option value="500-600">500-600 m²</option>
+                      <option value="600-800">600-800 m²</option>
+                      <option value="801-100000">800+ m²</option>
+                    </select>
+                  </div>
+                  <div width="100%" class="select__Container-sc-fszh90-0 eJMRGV select-container">
+                    <h3>PLOT SIZE</h3>
+                    <select name="plot_size" id="plot_size" class="select__S-sc-fszh90-1 bBNRQt">
+                      <option value="">MIN — MAX M²</option>
+                      <option value="1000-5000">1,000 - 5,000 m²</option>
+                      <option value="5000-10000">5,000 - 10,000 m²</option>
+                      <option value="10000-20000">10,000 - 20,000 m²</option>
+                      <option value="20000-30000">20,000 - 30,000 m²</option>
+                      <option value="30000-50000">30,000 - 50,000 m²</option>
+                      <option value="50000-100000">50,000 - 100,000 m²</option>
+                      <option value="100000-99999999">100,000+ m²</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="advanced_search_bar__Right-sc-18jm8s2-6 boDUXw"><label
+                    class="advanced_search_bar__Options-sc-18jm8s2-7 hIYUQb"><label
+                      class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="sea_view" name="Sea View"
+                        type="checkbox" value="Sea View"> <span>Sea View</span></label><label
+                      class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="garden" name="Garden"
+                        type="checkbox" value="Garden"> <span>Garden</span></label><label
+                      class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="swimmingpool" name="Swimming Pool"
+                        type="checkbox" value="Swimming Pool"> <span>Swimming Pool</span></label><label
+                      class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="sea_access" name="Sea Acess"
+                        type="checkbox" value="Sea Access"> <span>Sea Access</span></label><label
+                      class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="terrace" name="Terrace"
+                        type="checkbox" value="Terrace"> <span>Terrace</span></label><label
+                      class="advanced_search_bar__Option-sc-18jm8s2-8 ZwXPv"><input id="balcony" name="Balcony"
+                        type="checkbox" value="Balcony"> <span>Balcony</span></label></label></div>
+              </div>
+              <div class="advanced_search_bar__FilterDiv-sc-18jm8s2-9 jtVACV">
+                <div class="filter_bar__Container-sc-19ouwvv-0 cfDa-dI">
+                  <div class="filter_bar__FilterDiv-sc-19ouwvv-8 jIWIig">
+                    <div width="200px" class="select__Container-sc-fszh90-0 icnSJv select-container">
+                      <h3>SORT BY</h3>
+                      <select name="sort" class="select__S-sc-fszh90-1 bBNRQt">
+                        <option value="">- Default -</option>
+                        <option value="ascending">Price: Ascending</option>
+                        <option value="descending">Price: Descending</option>
+                        <option value="date">Most Recent Listing</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="item button show-mobile">
-          <div class="bg">
-            <button class="btn btn-primary">
-              SEARCH
-            </button>
+          <div class="item button show-mobile">
+            <div class="bg">
+              <button class="btn btn-primary" type="submit">
+                SEARCH
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </section>
 
@@ -259,7 +279,7 @@ robot_follow = "follow"
     <div class="container">
       <div class="items-results flex t-col-3 wow fadeIn  ">
         {% for property in propertyObject.list %}
-        <div class="item-r">
+        <div class="item-r" data-property-id="{{ property.property_id }}">
           <div class="bg">
             {% if property.banner %}
             <div class="banner">
