@@ -313,3 +313,50 @@ button.owl-next span {
     top: -15%;
     text-align: center;
 }
+
+form .multi-select-container {
+    width: 100%;
+    display: block !important;
+    text-align: left;
+    padding: 0;
+}
+
+form .multi-select-button {
+    height: 36px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+    padding: 10px;
+    color: var(--c-primary);
+    appearance: none;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgOSA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xIDFMNC41IDVMOCAxIiBzdHJva2U9IiMzQzUxNzEiLz48L3N2Zz4K);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    font-size: 12px;
+    line-height: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: none;
+    border-radius: 0;
+    display: block;
+    max-width: 100%;
+    resize: none;
+}
+form .multi-select-menuitem{
+    font-size: 12px;
+    line-height: 13px;
+    color: var(--c-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+form .multi-select-menuitem input{
+  margin-top: 0
+}
+form .multi-select-menu{
+  z-index: 3;
+}
+form .multi-select-button:after{
+  display: none;
+}
