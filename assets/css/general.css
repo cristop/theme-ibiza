@@ -288,32 +288,6 @@ button.owl-next span {
     color: white;
 }
 
-.banner{
-  width: 123px;
-  height: 122px;
-  position: absolute;
-  z-index: 2;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.banner p {
-    background-color: var(--c-primary);
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 0.6rem;
-    letter-spacing: 1.2px;
-    margin: 0;
-    padding: 10px 0;
-    display: block;
-    transform: rotate(-45deg) translate(-50%, -50%);
-    position: absolute;
-    width: 150%;
-    left: 25%;
-    top: -15%;
-    text-align: center;
-}
-
 form .multi-select-container {
     width: 100%;
     display: block !important;
@@ -360,3 +334,37 @@ form .multi-select-menu{
 form .multi-select-button:after{
   display: none;
 }
+
+
+
+
+
+
+
+.banner{
+  width: 123px;
+  height: 122px;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.banner p {
+    background-color: var(--c-primary);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    letter-spacing: 1.2px;
+    margin: 0;
+    padding: 10px 0;
+    display: block;
+    transform: rotate(-45deg) translate(-50%, -50%);
+    position: absolute;
+    width: 150%;
+    left: 25%;
+    top: -15%;
+    text-align: center;
+}
+
+
