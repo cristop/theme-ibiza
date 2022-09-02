@@ -6,24 +6,22 @@ description = "Default layout"
 {##}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
     <link rel="canonical" href="{{ url_current() }}">
 
     <meta data-react-helmet="true" name="twitter:image" content="{{ 'assets/img/images/meta.jpg'|theme }}">
-    <meta data-react-helmet="true" name="twitter:description"
-        content="{{ this.page.meta_description }}">
+    <meta data-react-helmet="true" name="twitter:description" content="{{ this.page.meta_description }}">
     <meta data-react-helmet="true" name="twitter:title" content="Ibiza Property Collection">
     <meta data-react-helmet="true" name="twitter:card" content="summary_large_image">
     <meta data-react-helmet="true" property="og:image" content="{{ 'assets/img/images/meta.jpg'|theme }}">
-    <meta data-react-helmet="true" property="og:description"
-        content="{{ this.page.meta_description }}">
+    <meta data-react-helmet="true" property="og:description" content="{{ this.page.meta_description }}">
     <meta data-react-helmet="true" property="og:title" content="Ibiza Property Collection">
     <meta data-react-helmet="true" property="og:url" content="{{ url_current() }}">
     <meta data-react-helmet="true" name="image" content="{{ 'assets/img/images/meta.jpg'|theme }}">
-    <meta data-react-helmet="true" name="description"
-        content="{{ this.page.meta_description }}">
+    <meta data-react-helmet="true" name="description" content="{{ this.page.meta_description }}">
     <meta data-react-helmet="true" name="theme-color" content="#ffffff">
     <meta data-react-helmet="true" name="msapplication-TileColor" content="#3c5171">
 
@@ -32,23 +30,31 @@ description = "Default layout"
     <title>{{ this.page.meta_title }}</title>
 
     <link rel="icon" type="image/png" href="{{ 'assets/img/favicon.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76" />
-    <link rel="apple-touch-icon" sizes="48x48" href="{{ 'assets/img/icons/icon-48x48.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ 'assets/img/icons/icon-72x72.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
-    <link rel="apple-touch-icon" sizes="96x96" href="{{ 'assets/img/icons/icon-96x96.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ 'assets/img/icons/icon-144x144.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
-    <link rel="apple-touch-icon" sizes="192x192" href="{{ 'assets/img/icons/icon-192x192.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
-    <link rel="apple-touch-icon" sizes="256x256" href="{{ 'assets/img/icons/icon-256x256.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
-    <link rel="apple-touch-icon" sizes="384x384" href="{{ 'assets/img/icons/icon-384x384.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
-    <link rel="apple-touch-icon" sizes="512x512" href="{{ 'assets/img/icons/icon-512x512.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
+    <link rel="apple-touch-icon" sizes="48x48"
+        href="{{ 'assets/img/icons/icon-48x48.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
+    <link rel="apple-touch-icon" sizes="72x72"
+        href="{{ 'assets/img/icons/icon-72x72.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
+    <link rel="apple-touch-icon" sizes="96x96"
+        href="{{ 'assets/img/icons/icon-96x96.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
+    <link rel="apple-touch-icon" sizes="144x144"
+        href="{{ 'assets/img/icons/icon-144x144.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
+    <link rel="apple-touch-icon" sizes="192x192"
+        href="{{ 'assets/img/icons/icon-192x192.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
+    <link rel="apple-touch-icon" sizes="256x256"
+        href="{{ 'assets/img/icons/icon-256x256.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
+    <link rel="apple-touch-icon" sizes="384x384"
+        href="{{ 'assets/img/icons/icon-384x384.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
+    <link rel="apple-touch-icon" sizes="512x512"
+        href="{{ 'assets/img/icons/icon-512x512.png'|theme }}?v=5797d0d4807a15af90eabeaf129b9e76">
 
-    
+
 
 </head>
 
 <body class="{{ this.page.baseFileName }}">
     <div class="preload" style="width: 100vw;height: 100vh;position: fixed;background-color: #fff;z-index: 9999;top:0;">
-      <img src="{{ 'assets/img/svg-loaders/oval.svg'|theme }}" alt="" width="50"
-        style="position: absolute;top: calc(50% + -30px);left: 50%;transform: translate(-50%, -50%);">
+        <img src="{{ 'assets/img/svg-loaders/oval.svg'|theme }}" alt="" width="50"
+            style="position: absolute;top: calc(50% + -30px);left: 50%;transform: translate(-50%, -50%);">
     </div>
 
     {% partial 'header' %}
@@ -75,7 +81,8 @@ description = "Default layout"
     <link rel="stylesheet" href="{{ 'assets/fonts/stylesheet.css'|theme }}" media="all" async>
 
     <!-- libreria WOW animaciones CSS -->
-    <link href="{{ 'assets/library/wow/animate-reduce.css'|theme }}" type="text/css" rel="stylesheet" media="screen,projection" async />
+    <link href="{{ 'assets/library/wow/animate-reduce.css'|theme }}" type="text/css" rel="stylesheet"
+        media="screen,projection" async />
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ 'assets/css/booster.min.css'|theme }}" media="all" async>
@@ -93,10 +100,10 @@ description = "Default layout"
     <script src="{{ 'assets/library/wow/wow.min.js'|theme }}"></script>
     <script>
         wow = new WOW(
-          {
-            animateClass: 'animated',
-            offset:       200
-          }
+            {
+                animateClass: 'animated',
+                offset: 200
+            }
         );
         wow.init();
     </script>
@@ -108,11 +115,15 @@ description = "Default layout"
     <link rel="stylesheet" href="{{ 'assets/library/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css'|theme }}" />
     <link rel="stylesheet" href="{{ 'assets/library/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css'|theme }}" />
     <script src="{{ 'assets/library/OwlCarousel2-2.3.4/dist/owl.carousel.min.js'|theme }}"></script>
-    
+
 
     {% framework %}
 
     {% scripts %}
 
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="bc5e0f4a-
+    74bd-42ba-880d-d958da8a859b" data-blockingmode="auto" type="text/javascript"></script>
+
 </body>
+
 </html>
