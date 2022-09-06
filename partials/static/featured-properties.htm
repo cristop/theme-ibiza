@@ -40,7 +40,7 @@ description = "Featured Properties"
             {% endif %}
             </h2>
             <div class="items-results owl-carousel owl-theme">
-            {% for property in propertyRelated.related() %}
+            {% for property in propertyRelated.related(property_id) %}
                 {% partial 'static/property' property=property show_gallery=false %}
             {% endfor %}
         </div>
