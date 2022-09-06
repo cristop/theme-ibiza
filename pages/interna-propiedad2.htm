@@ -90,9 +90,17 @@ function onEnd()
     <section id="property-container" class="section wow fadeIn internal-hero-text">
         <div class="container">            
             {% if property.banner %}
-            <div class="banner">
-                <p>{{ property.banner }}</p>
-            </div>
+              {% set colors = { 
+                'sold_by_us': '#9D9D9D',
+                'sold': '#9D9D9D',
+                'under_offer': '#9D9D9D',
+                'new': '#3C5171',
+                'exclusive': '#BDB08E'
+              } 
+              %}
+              <div class="banner">
+                <p style="background-color: {{ colors[property.banner|lower|replace({' ': '_'})] }}">{{ property.banner }}</p>
+              </div>
             {% endif %}
             <div class="item">
                 <div class="bg">

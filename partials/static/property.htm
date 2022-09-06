@@ -9,9 +9,17 @@ No olvidar llamar al css en el padre de este
         <div class="item property" data-property-id="{{ property.property_id }}">
           <div class="bg">
             {% if property.banner %}
-            <div class="banner">
-              <p>{{ property.banner }}</p>
-            </div>
+              {% set colors = { 
+                'sold_by_us': '#9D9D9D',
+                'sold': '#9D9D9D',
+                'under_offer': '#9D9D9D',
+                'new': '#3C5171',
+                'exclusive': '#BDB08E'
+              } 
+              %}
+              <div class="banner">
+                <p style="background-color: {{ colors[property.banner|lower|replace({' ': '_'})] }}">{{ property.banner }}</p>
+              </div>
             {% endif %}
 
             {% if show_gallery %} {# si pedimos que muestre galeria ponemos toda la estructura del owl carrousel #}
