@@ -208,21 +208,11 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
 
     <section id="slider-principal" class="section wow fadeIn  ">
         <div class="container">
-            {% for record in property.gallery %}
-            <div class="item">
-                {% if 'http' in record.imagery %}
-                <img src="{{ record.imagery|webp|resize(2000) }}" />
-                {% else %}
-                <img src="{{ record.imagery|media|webp|resize(2000) }}" />
-                {% endif %}
+            <div class="bg">
+                <div class="image">
+                    <img src="{{ 'assets/img/images/interna-watch.jpg'|theme|webp }}" alt="">
+                </div>
             </div>
-            {% endfor %}
-
-            {% if not property.gallery %}
-            <div class="item">
-                <img src="{{ defaultImage }}" />
-            </div>
-            {% endif %}
         </div>
     </section>
 
@@ -272,10 +262,10 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                 </div>
             </div>
 
-            <div class="wow fadeIn">
-               <div class="image-video">
-                <img src="{{ 'assets/img/images/interna-img-video.jpg'|theme|webp }}" alt="">
-               </div>
+            <div class="take-tour">
+                <div class="image-video">
+                    <img src="{{ 'assets/img/images/interna-img-video.jpg'|theme|webp }}" alt="">
+                </div>
             </div>
         </div>
     </section>
