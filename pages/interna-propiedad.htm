@@ -77,18 +77,23 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
     <section id="bg-principal" class="section wow fadeIn internal-hero-image">
         <div class="container-fluid">
             <div class="owl-carousel owl-theme principal-slider">
-
-                {% if property.hero_image_url %}
-                {% if 'http' in property.hero_image_url %}
-                <div class="bg-image" style="background-image: url({{ property.hero_image_url|webp|resize(2000) }});">
+                
+                {% for record in property.gallery %}
+                <div class="item">
+                    {% if 'http' in record.imagery  %}
+                    <img src="{{ record.imagery|webp|resize(2000) }}" />
+                    {% else %}
+                    <img src="{{ record.imagery|media|webp|resize(2000) }}" />
+                    {% endif %}
                 </div>
-                {% else %}
-                <div class="bg-image"
-                    style="background-image: url({{ property.hero_image_url|media|webp|resize(2000) }});"></div>
+				{% endfor %}
+
+                {% if not property.gallery %}
+                <div class="item">
+                    <img src="{{ defaultImage }}" />
+                </div>
                 {% endif %}
-                {% else %}
-                <div class="bg-image" style="background-image: url({{ defaultImage }});"></div>
-                {% endif %}
+
             </div>
         </div>
     </section>
@@ -206,19 +211,15 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
         </div>
     </section>
 
-    <section id="slider-principal" class="section wow fadeIn  ">
-        <div class="container">
-            <div class="bg">
-                <div class="image">
-                    <img src="{{ 'assets/img/images/interna-watch.jpg'|theme|webp }}" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
     <section id="highlights" class="wow fadeIn">
         <div class="container">
+            <div class="take-tour">
+                <div class="image-video">
+                    <p>WATCH THE VIDEO</p>
+                    <img src="{{ 'assets/img/images/villa_kala_hq3_1.jpg'|theme|webp }}" alt="">
+                </div>
+            </div>
+
             <div class="items-flex flex">
                 <div class="item">
                     <h2 class="title">
@@ -227,44 +228,48 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                 </div>
                 <div class="item">
                     <div class="flex">
+                        {% if this.param.slug == "preview"  %}
+                            {% set highlights=property.property_highlights %}
+                        {% else %}
+                            {% set highlights=property.property_highlights|split(',') %}
+                        {% endif %}
+
                         <div class="property_characteristics">
                             <ul>
-                                <li>Beach access</li>
-                                <li>sea view</li>
-                                <li>swimming pool</li>
-                                <li>garden</li>
-                                <li>elevator</li>
+                                {% for i in 0..highlights|length %}
+                                    {% if i is even %}
+                                    <li>{{ highlights[i] }}</li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </div>
                         <div class="property_characteristics">
                             <ul>
-                                <li>gym & yoga studio</li>
-                                <li>outdoor fireplace</li>
-                                <li>outdoor kitchen</li>
-                                <li>terrace</li>
-                                <li>4 car garage</li>
+                                {% for i in 0..highlights|length %}
+                                    {% if i is odd %}
+                                    <li>{{ highlights[i] }}</li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </div>
+
+
                     </div>
                 </div>
             </div>
 
             <div class="wow fadeIn">
                 <div class="text">
-                    <p>Villa Kala oozes luxury, located close to Cala Olivera with great sea views in a safe, gated
-                        community which has an excellent level of security and very close to the beach and the golf
-                        course.</p>
-                    <p> On the ﬁrst ﬂoor there is a very spacious open plan lounge and dining room with a
-                        contemporary-design ﬁreplace, satellite TV, Apple TV, luxurious comfortable seating and superb
-                        floor to ceiling windows. There is a super Bulthaup fully equipped kitchen with everything you
-                        could possibly need for an enjoyable relaxed holiday. State of the art air conditioning is
-                        available throughout the property as is access to WiFi and limestone heated floors.</p>
+                    <p>{{ property.property_highlights_headline }}</p>
+                    <p> {{ property.property_highlights_body|raw }}</p>
                 </div>
             </div>
 
             <div class="take-tour">
+                <br>
                 <div class="image-video">
-                    <img src="{{ 'assets/img/images/interna-img-video.jpg'|theme|webp }}" alt="">
+                    <p>Take the tour</p>
+                    <img src="{{ 'assets/img/images/villa_kala_hq1_4.jpg'|theme|webp }}" alt="">
                 </div>
             </div>
         </div>
