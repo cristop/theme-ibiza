@@ -22,34 +22,40 @@ No olvidar llamar al css en el padre de este
               </div>
             {% endif %}
 
-            {% if show_gallery %} {# si pedimos que muestre galeria ponemos toda la estructura del owl carrousel #}
-                <div class="owl-carousel owl-theme product-slider">
-                {% for record in property.gallery %}
-                    <div class="item">
-                        <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '10' }) }}')"></div>
-                    </div>
-                {% endfor %}
+            {% if property.secret_marketing %}
+                {# si es secret marketing, ocultamos las fotos y mostramos solo una imagen de secret marketing #}
+                <div class="imagen_flex domDbe" style="background-image: url('{{ SMImage }}')"></div>
+            {% else %}
+                {# si no es secret marketing, mostramos las fotos que corresponden #}
+                {% if show_gallery %} {# si pedimos que muestre galeria ponemos toda la estructura del owl carrousel #}
+                    <div class="owl-carousel owl-theme product-slider">
+                    {% for record in property.gallery %}
+                        <div class="item">
+                            <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(500, null, { quality:'100', mode: 'crop', sharpen: '10' }) }}')"></div>
+                        </div>
+                    {% endfor %}
 
-                {% if not property.gallery %}
-                    <div class="item">
-                        <div class="imagen_flex domDbe" style="background-image: url('{{ defaultImage }}')"></div>
-                    </div>
-                {% endif %}
-                
-                </div>
-            {% else %} {# sino ponemos las imagenes sin estructura de owlcarrousel #}
-                {% for record in property.gallery %}
-                    {% if loop.index == 1 %}
-                    <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '10' }) }}')"></div>
+                    {% if not property.gallery %}
+                        <div class="item">
+                            <div class="imagen_flex domDbe" style="background-image: url('{{ defaultImage }}')"></div>
+                        </div>
                     {% endif %}
-                {% endfor %}
+                    
+                    </div>
+                {% else %} {# sino ponemos las imagenes sin estructura de owlcarrousel #}
+                    {% for record in property.gallery %}
+                        {% if loop.index == 1 %}
+                        <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '10' }) }}')"></div>
+                        {% endif %}
+                    {% endfor %}
 
-                {% if not property.gallery %}
-                    <div class="imagen_flex domDbe" style="background-image: url('{{ defaultImage }}')"></div>
+                    {% if not property.gallery %}
+                        <div class="imagen_flex domDbe" style="background-image: url('{{ defaultImage }}')"></div>
+                    {% endif %}
                 {% endif %}
             {% endif %}
 
-            <a href="{{ 'interna-propiedad2'|page({ slug: property.property_url }) }}"> {# property.property_url #}
+            <a href="{{ 'interna-propiedad'|page({ slug: property.property_url }) }}"> {# property.property_url #}
               <div class="info_property">
                 <h2 class="titulo_flex">
                   {{ property.location }}
@@ -97,7 +103,7 @@ No olvidar llamar al css en el padre de este
                 <span>{{ property.plot_size|number_format(0, '.', ',') }} m <sup>2</sup> </span>
               </div>
             </div>
-            <a href="{{ 'interna-propiedad2'|page({ slug: property.property_url }) }}" class="btn btn-primary">
+            <a href="{{ 'interna-propiedad'|page({ slug: property.property_url }) }}" class="btn btn-primary">
               View Property
             </a>
           </div>
