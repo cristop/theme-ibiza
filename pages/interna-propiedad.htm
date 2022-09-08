@@ -214,13 +214,14 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
     <section id="highlights">
         <div class="container">
 
-
+            {% if video_url %}
             <div class="take-tour wow fadeIn">
                 <div class="image-video">
                     <p>WATCH THE VIDEO</p>
                     <img src="{{ 'assets/img/images/villa_kala_hq3_1.jpg'|theme|webp }}" alt="">
                 </div>
             </div>
+            {% endif %}
 
             <div class="items-flex flex">
                 <div class="item">
@@ -267,7 +268,7 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                 </div>
             </div>
 
-
+            {% if matterport_url %}
             <div class="take-tour wow fadeIn">
                 <br>
                 <div class="image-video">
@@ -275,7 +276,8 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                     <img src="{{ 'assets/img/images/villa_kala_hq1_4.jpg'|theme|webp }}" alt="">
                 </div>
             </div>
-            
+            {% endif %}
+
         </div>
     </section>
 
