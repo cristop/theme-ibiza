@@ -220,14 +220,15 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
     <section id="highlights">
         <div class="container">
 
-            {% if video_url %}
+            {# if video_url #}
             <div class="take-tour wow fadeIn">
-                <div class="image-video">
+                {# <div class="image-video">
                     <p>WATCH THE VIDEO</p>
                     <img src="{{ 'assets/img/images/villa_kala_hq3_1.jpg'|theme|webp }}" alt="">
-                </div>
+                </div> #}
+                <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/739375523?h=440977673d&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
             </div>
-            {% endif %}
+            {# endif #}
 
             <div class="items-flex flex">
                 <div class="item">
@@ -274,7 +275,7 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                 </div>
             </div>
 
-            {% if matterport_url %}
+            {## if matterport_url ##}
             <div class="take-tour wow fadeIn">
                 <br>
                 <div class="image-video">
@@ -282,7 +283,7 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                     <img src="{{ 'assets/img/images/villa_kala_hq1_4.jpg'|theme|webp }}" alt="">
                 </div>
             </div>
-            {% endif %}
+            {## endif ##}
 
         </div>
     </section>
