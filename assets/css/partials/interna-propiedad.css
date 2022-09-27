@@ -955,3 +955,18 @@ section#slider-principal .bg .image {
 }
 section#slider-principal .bg .image img {
 }
+
+
+div#iframe-matterport {
+    height: 0;
+    padding-bottom: 67%;
+    position: relative;
+}
+
+div#iframe-matterport iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
