@@ -8,13 +8,19 @@ description = "Featured Properties"
   <div class="container">
     <form data-request="propertyObject::onSearch" data-request-success="onSearch(data.result)" id="form-seach">
       <div class="title-container">
-        <h2 class="title">
+        <h2 class="title" {% if only_order %} style="margin-bottom: -60px"{% endif %}>
+          {% if title %}
+          <span>{{ title }}</span>
+          {% else %}
           START THE SEARCH FOR<br>
           <span>YOUR PERFECT IBIZA HOME</span>
+          {% endif %}
         </h2>
       </div>
+      
       <div class="items-container">
         <div class="items-search-home flex t-col-3">
+          {% if not only_order %}
           <div class="item">
             <div class="filter-search flex">
               <select name="location" id="location" class="location" multiple>
@@ -59,7 +65,8 @@ description = "Featured Properties"
               </select>
             </div>
           </div>
-          <div class="item button hide-mobile">
+          {% endif %}
+          <div class="item button hide-mobile"{% if only_order %} style="display: none"{% endif %}>
             <div class="bg">
               <button class="btn btn-primary" type="submit" id="formSubmit">
                 SEARCH
@@ -68,7 +75,8 @@ description = "Featured Properties"
           </div>
         </div>
       </div>
-      <div class="advanced-serch">
+      
+      <div class="advanced-serch" {% if only_order %} style="border-top: 0"{% endif %}>
         {% if not open %}
         <div class="flex">
           <div class="text">
@@ -79,9 +87,10 @@ description = "Featured Properties"
           </div>
         </div>
         {% endif %}
-        <div class="advanced_search_bar__Container-sc-18jm8s2-0 gTThrg">
+        <div class="advanced_search_bar__Container-sc-18jm8s2-0 gTThrg" {% if only_order %} style="padding-top: 0"{% endif %}>
           <div class="advanced_search_bar__Inner-sc-18jm8s2-1 kCRVk"></div>
           <div class="advanced_search_bar__Advanced-sc-18jm8s2-2 eqpZXI open">
+            {% if not only_order %}
             <div class="advanced_search_bar__AdvancedSearchGrid-sc-18jm8s2-3 gizNfl">
               <div class="advanced_search_bar__Left-sc-18jm8s2-4 dIpNvQ">
                 <div width="100%" class="select__Container-sc-fszh90-0 eJMRGV select-container">
@@ -162,12 +171,13 @@ description = "Featured Properties"
                 </label>
               </div>
             </div>
+            {% endif %}
             <div class="advanced_search_bar__FilterDiv-sc-18jm8s2-9 jtVACV">
               <div class="filter_bar__Container-sc-19ouwvv-0 cfDa-dI">
                 <div class="filter_bar__FilterDiv-sc-19ouwvv-8 jIWIig">
                   <div width="200px" class="select__Container-sc-fszh90-0 icnSJv select-container">
                     <h3>SORT BY</h3>
-                    <select name="sort" class="select__S-sc-fszh90-1 bBNRQt">
+                    <select name="sort" class="select__S-sc-fszh90-1 bBNRQt"{% if only_order %} onchange="$('#formSubmit').trigger('click');"{% endif %}>
                       <option value="">- Default -</option>
                       <option value="ascending">Price: Ascending</option>
                       <option value="descending">Price: Descending</option>
