@@ -302,14 +302,13 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                         {% for i in 0..highlights|length %}
                             {% if i is even %}
                             <li>{{ highlights[i] }}</li>
-                            <li>{{ highlights[i] }}</li>
                             {% endif %}
                         {% endfor %}
                         </ul>
 
                     </div>
                     <div class="texto_flex wow fadeInRight">
-                        <p>{{ property.property_highlights_headline }}</p>
+                        <p class="text-up">{{ property.property_highlights_headline }}</p>
                         <p>{{ property.property_highlights_body|raw }}</p>
                     </div>
                 </div>

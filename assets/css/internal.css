@@ -665,6 +665,7 @@ section#highlights {
   color: #3c5171;
   padding-bottom: 29px;
   padding-top: 42px;
+  line-height: 26.8px;
   font-size: 22px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   margin-left: 46px !important;
@@ -681,11 +682,25 @@ section#highlights {
 #highlights .info-property .texto_flex {
   width: 66%;
   padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 #highlights .info-property .list-info ul {
   list-style: none;
 }
 #highlights .info-property .list-info ul li {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  line-height: 17.05px;
+  margin-bottom: 0.5rem;
+}
+#highlights .info-property .texto_flex p {
+  font-size: 14px;
+  line-height: 18.17px;
+}
+#highlights .info-property .texto_flex p.text-up {
+  font-size: 20px;
+  line-height: 25.96px;
 }
 
 /* matterport */
