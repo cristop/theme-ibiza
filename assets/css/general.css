@@ -208,12 +208,12 @@ main {
 
 button.owl-prev {
   position: absolute;
-  left: -2rem;
+  left: 15px;
 }
 
 button.owl-next {
   position: absolute;
-  right: -2rem;
+  right: 15px;
 }
 
 button.owl-prev,

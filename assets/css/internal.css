@@ -731,6 +731,8 @@ section#img-property .img-gallery {
   margin: 0 auto;
 }
 
+
+
 @media screen and (max-width: 900px) {
   .internal-block-image-left .bg-image {
     position: initial;
@@ -804,6 +806,6 @@ section#img-property .img-gallery {
 
 @media screen and (max-width: 485px) {
   .internal-hero-image img {
-  height: 300px;
+    height: 300px;
   }
 }
