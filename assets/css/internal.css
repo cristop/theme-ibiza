@@ -663,6 +663,7 @@ section#highlights {
 #highlights h3 {
   text-transform: uppercase;
   color: #3c5171;
+  font-weight: normal;
   padding-bottom: 29px;
   padding-top: 42px;
   line-height: 26.8px;
@@ -730,8 +731,6 @@ section#img-property .img-gallery {
   max-width: 890px;
   margin: 0 auto;
 }
-
-
 
 @media screen and (max-width: 900px) {
   .internal-block-image-left .bg-image {

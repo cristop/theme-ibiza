@@ -981,3 +981,11 @@ button.owl-next {
   position: absolute;
   right: -2rem;
 }
+
+button.owl-prev:before {
+  background-image: url("../../img/icons/arrow-left.svg");
+}
+
+button.owl-next:before {
+  background-image: url("../../img/icons/arrow-right.svg");
+}
