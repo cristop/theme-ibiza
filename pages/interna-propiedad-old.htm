@@ -1,5 +1,5 @@
 title = "Property"
-url = "/new/:slug?"
+url = "/old/:slug?"
 layout = "default"
 # meta_title = "{{ property.name }} | villa | San José | Ibiza Property Collection · Ibiza Property Collection"
 is_hidden = 0
@@ -18,40 +18,40 @@ animateMarker = 1
 ==
 function onEnd()
 {
-    //buscamos la imagen default
-    $property = $this->components['property'];
-    $this["defaultImage"] = $property->getDefaultImage();
+//buscamos la imagen default
+$property = $this->components['property'];
+$this["defaultImage"] = $property->getDefaultImage();
 
-    //acá, en base al slug vemos si mostrar el formato preview que viene del admin, o mostramos la pagina normal
-    if($this->param('slug') == 'preview'){
-        //vemos si el usuario esta logueado al admin primero
-        $user = BackendAuth::getUser();
+//acá, en base al slug vemos si mostrar el formato preview que viene del admin, o mostramos la pagina normal
+if($this->param('slug') == 'preview'){
+//vemos si el usuario esta logueado al admin primero
+$user = BackendAuth::getUser();
 
-        if ($user) {
-            //buscamos las variables de session y metemos por property
+if ($user) {
+//buscamos las variables de session y metemos por property
 
-            //echo '<br><br><br><br><br><br><br><br><br><br>';
-            //echo Session::get('Property')[0];
-            $data = json_decode(Session::get('Property')[0],true);
-            //$data = json_encode(Session::get('Property')[0]);
+//echo '<br><br><br><br><br><br><br><br><br><br>';
+//echo Session::get('Property')[0];
+$data = json_decode(Session::get('Property')[0],true);
+//$data = json_encode(Session::get('Property')[0]);
 
-            //echo json_encode($data);
-            //echo $data['Property']['name'];
+//echo json_encode($data);
+//echo $data['Property']['name'];
 
-            $this["property"] = $data['Property'];
-            return false;
-        }else{
-            // si no está logueaod mandamos a la home
-            return Redirect::to($this->pageUrl('home'));
-        }
-    }else{
-    if($property->detail()[0]->publish==1){
-        // en caso normal traemos el detalle de la propiedad en la base, usando el componente
-        $this["property"] = $property->detail()[0];
-    }else{
-        // si no está logueaod mandamos a la home
-        return Redirect::to($this->pageUrl('home'));
-    }
+$this["property"] = $data['Property'];
+return false;
+}else{
+// si no está logueaod mandamos a la home
+return Redirect::to($this->pageUrl('home'));
+}
+}else{
+if($property->detail()[0]->publish==1){
+// en caso normal traemos el detalle de la propiedad en la base, usando el componente
+$this["property"] = $property->detail()[0];
+}else{
+// si no está logueaod mandamos a la home
+return Redirect::to($this->pageUrl('home'));
+}
 }
 
 //aca creamos los metatitle
@@ -59,7 +59,6 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
 ".$this["property"]["location"]." | Ibiza Property Collection · Ibiza Property Collection";
 }
 ==
-
 {% put styles %}
 <link rel="stylesheet" href="{{ 'assets/css/internal.css'|theme }}" async>
 <link rel="stylesheet" href="{{ 'assets/css/partials/interna-propiedad.css'|theme }}" async>
@@ -72,9 +71,8 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
 </div>
 {% endif %}
 
-
 <main>
-    {#
+
     <!-- Bg Principal -->
     <section id="bg-principal" class="section wow fadeIn internal-hero-image">
         <div class="container-fluid">
@@ -127,22 +125,6 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
         })
     </script>
     {% endput %}
-    #}
-    <section id="bg-principal" class="section wow fadeIn internal-hero-image">
-        <div class="container-fluid">
-            <div class="container-fluid">
-                {% if property.secret_marketing %}
-                <img src="{{ SMImage }}" />
-                {% else %}                
-                    {% if not property.hero_image_url %}
-                        <img src="{{ defaultImage }}" />
-                    {% else %}
-                        <img src="{{ property.hero_image_url|media|webp|resize(2000) }}" />
-                    {% endif %}
-                {% endif %}
-            </div>
-        </div>
-    </section>
 
     <section id="property-container" class="section wow fadeIn internal-hero-text">
         <div class="container">
@@ -233,87 +215,10 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
         </div>
     </section>
 
-    <!-- img property -->
-    <section id="img-property" class="section wow fadeIn internal-hero-image">
-        <div class="container">
-            <div class="img-gallery">
-                {% if property.secret_marketing %}
-                <img src="{{ SMImage }}" />
-                {% else %}
-                <div class="owl-carousel owl-theme gallery-img">
-                    {% for record in property.gallery %}
-                    <div class="item">
-                        {% if 'http' in record.imagery %}
-                        <img src="{{ record.imagery|webp|resize(2000) }}" />
-                        {% else %}
-                        <img src="{{ record.imagery|media|webp|resize(2000) }}" />
-                        {% endif %}
-                    </div>
-                    {% endfor %}
-
-                    {% if not property.gallery %}
-                    <div class="item">
-                        <img src="{{ defaultImage }}" />
-                    </div>
-                    {% endif %}
-                </div>
-                {% endif %}
-            </div>
-        </div>
-    </section>
-    {% put scripts %}
-    <script>
-        $('.gallery-img').owlCarousel({
-            loop: true,
-            margin: 0,
-            nav: true,
-            pagination: false,
-            dots: false,
-            autoplay: true,
-            autoplayTimeout: 4000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 1
-                },
-                1000: {
-                    items: 1
-                }
-            }
-        })
-    </script>
-    {% endput %}
+    {% if not property.secret_marketing %}
 
     <section id="highlights">
         <div class="container">
-            <div class="bg">
-                <h3 class="title">Highlights</h3>
-                <div class="info-property">
-                    <div class="list-info wow fadeInLeft">
-                        {% if this.param.slug == "preview"  %}
-                            {% set highlights=property.property_highlights %}
-                        {% else %}
-                            {% set highlights=property.property_highlights|split(';') %}
-                        {% endif %}
-
-                        <ul>
-                        {% for i in 0..highlights|length %}
-                            {% if i is even %}
-                            <li>{{ highlights[i] }}</li>
-                            {% endif %}
-                        {% endfor %}
-                        </ul>
-
-                    </div>
-                    <div class="texto_flex wow fadeInRight">
-                        <p class="text-up">{{ property.property_highlights_headline }}</p>
-                        <p>{{ property.property_highlights_body|raw }}</p>
-                    </div>
-                </div>
-            </div>
-
 
             {# if video_url #}
             <div class="take-tour wow fadeIn">
@@ -328,12 +233,68 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                 <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
             {# endif #}
+
+            <div class="items-flex flex">
+                <div class="item">
+                    <h2 class="title">
+                        PROPERTY HIGHLIGHTS
+                    </h2>
+                </div>
+                <div class="item">
+                    <div class="flex">
+                        {% if this.param.slug == "preview" %}
+                        {% set highlights=property.property_highlights %}
+                        {% else %}
+                        {% set highlights=property.property_highlights|split(',') %}
+                        {% endif %}
+
+                        <div class="property_characteristics">
+                            <ul>
+                                {% for i in 0..highlights|length %}
+                                {% if i is even %}
+                                <li>{{ highlights[i] }}</li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="property_characteristics">
+                            <ul>
+                                {% for i in 0..highlights|length %}
+                                {% if i is odd %}
+                                <li>{{ highlights[i] }}</li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="wow fadeIn">
+                <div class="text">
+                    <p>{{ property.property_highlights_headline }}</p>
+                    <p> {{ property.property_highlights_body|raw }}</p>
+                </div>
+            </div>
+
+            {## if matterport_url ##}
+            <div class="take-tour wow fadeIn">
+                <br>
+                {# <div class="image-video">
+                    <p>Take the tour</p>
+                    <img src="{{ 'assets/img/images/villa_kala_hq1_4.jpg'|theme|webp }}" alt="">
+                </div> #}
+                <div id="iframe-matterport">
+                    <iframe src="https://my.matterport.com/show/?m=s7mpaXTm8Zu" frameborder="0" width="100%"
+                        height="590"></iframe>
+                </div>
+            </div>
+            {## endif ##}
+
         </div>
-
-
-
     </section>
-
 
     <section id="about-the-property" class="wow fadeIn">
         <div class="container">
@@ -353,31 +314,6 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
         </div>
     </section>
 
-
-    <section id="matterport">
-        <div class="container">
-            <div class="bg">
-                {## if matterport_url ##}
-            <div class="take-tour wow fadeIn">
-                <br>
-                {# <div class="image-video">
-                    <p>Take the tour</p>
-                    <img src="{{ 'assets/img/images/villa_kala_hq1_4.jpg'|theme|webp }}" alt="">
-                </div> #}
-                <div id="iframe-matterport">
-                    <iframe src="https://my.matterport.com/show/?m=s7mpaXTm8Zu" frameborder="0" width="100%"
-                        height="590"></iframe>
-                </div>
-            </div>
-            {## endif ##}
-            </div>
-        </div>
-    </section>
-
-
-
-
-
     <section id="star-journey" class="section wow fadeIn internal-star-journey"
         style="background-image: url({{ 'assets/img/images/interna-01.png'|theme|webp }});">
         <div class="container">
@@ -388,12 +324,12 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                             alt="">
                     </div>
                     <p class="text">
-                        DOWNLOAD THE BROCHURE
+                        request a brochure
                     </p>
                     <div class="action">
                         {# {{ property.brochure_url }} #}
                         <a href="{{ 'contact'|page }}?property_id={{ property.property_id }}" class="btn btn-primary">
-                            DOWNLOAD
+                            contact
                         </a>
                     </div>
                 </div>
@@ -477,7 +413,11 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
             </div>
         </div>
     </section>
-
-
+    {% else %}
+    {# Agremos unos br para hacer espacio cuando es secret marketing #}
+    <div class="container" style="border-top: 0.5px solid #00000040; max-width: 1300px;">
+        <br><br><br><br>
+    </div>
+    {% endif %}
 
 </main>
