@@ -18,40 +18,40 @@ animateMarker = 1
 ==
 function onEnd()
 {
-    //buscamos la imagen default
-    $property = $this->components['property'];
-    $this["defaultImage"] = $property->getDefaultImage();
+//buscamos la imagen default
+$property = $this->components['property'];
+$this["defaultImage"] = $property->getDefaultImage();
 
-    //acá, en base al slug vemos si mostrar el formato preview que viene del admin, o mostramos la pagina normal
-    if($this->param('slug') == 'preview'){
-        //vemos si el usuario esta logueado al admin primero
-        $user = BackendAuth::getUser();
+//acá, en base al slug vemos si mostrar el formato preview que viene del admin, o mostramos la pagina normal
+if($this->param('slug') == 'preview'){
+//vemos si el usuario esta logueado al admin primero
+$user = BackendAuth::getUser();
 
-        if ($user) {
-            //buscamos las variables de session y metemos por property
+if ($user) {
+//buscamos las variables de session y metemos por property
 
-            //echo '<br><br><br><br><br><br><br><br><br><br>';
-            //echo Session::get('Property')[0];
-            $data = json_decode(Session::get('Property')[0],true);
-            //$data = json_encode(Session::get('Property')[0]);
+//echo '<br><br><br><br><br><br><br><br><br><br>';
+//echo Session::get('Property')[0];
+$data = json_decode(Session::get('Property')[0],true);
+//$data = json_encode(Session::get('Property')[0]);
 
-            //echo json_encode($data);
-            //echo $data['Property']['name'];
+//echo json_encode($data);
+//echo $data['Property']['name'];
 
-            $this["property"] = $data['Property'];
-            return false;
-        }else{
-            // si no está logueaod mandamos a la home
-            return Redirect::to($this->pageUrl('home'));
-        }
-    }else{
-    if($property->detail()[0]->publish==1){
-        // en caso normal traemos el detalle de la propiedad en la base, usando el componente
-        $this["property"] = $property->detail()[0];
-    }else{
-        // si no está logueaod mandamos a la home
-        return Redirect::to($this->pageUrl('home'));
-    }
+$this["property"] = $data['Property'];
+return false;
+}else{
+// si no está logueaod mandamos a la home
+return Redirect::to($this->pageUrl('home'));
+}
+}else{
+if($property->detail()[0]->publish==1){
+// en caso normal traemos el detalle de la propiedad en la base, usando el componente
+$this["property"] = $property->detail()[0];
+}else{
+// si no está logueaod mandamos a la home
+return Redirect::to($this->pageUrl('home'));
+}
 }
 
 //aca creamos los metatitle
@@ -133,12 +133,12 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
             <div class="container-fluid">
                 {% if property.secret_marketing %}
                 <img src="{{ SMImage }}" />
-                {% else %}                
-                    {% if not property.hero_image_url %}
-                        <img src="{{ defaultImage }}" />
-                    {% else %}
-                        <img src="{{ property.hero_image_url|media|webp|resize(2000) }}" />
-                    {% endif %}
+                {% else %}
+                {% if not property.hero_image_url %}
+                <img src="{{ defaultImage }}" />
+                {% else %}
+                <img src="{{ property.hero_image_url|media|webp|resize(2000) }}" />
+                {% endif %}
                 {% endif %}
             </div>
         </div>
@@ -292,18 +292,18 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                 <h3 class="title">Highlights</h3>
                 <div class="info-property">
                     <div class="list-info wow fadeInLeft">
-                        {% if this.param.slug == "preview"  %}
-                            {% set highlights=property.property_highlights %}
+                        {% if this.param.slug == "preview" %}
+                        {% set highlights=property.property_highlights %}
                         {% else %}
-                            {% set highlights=property.property_highlights|split(';') %}
+                        {% set highlights=property.property_highlights|split(';') %}
                         {% endif %}
 
                         <ul>
-                        {% for i in 0..highlights|length %}
+                            {% for i in 0..highlights|length %}
                             {% if i is even %}
                             <li>{{ highlights[i] }}</li>
                             {% endif %}
-                        {% endfor %}
+                            {% endfor %}
                         </ul>
 
                     </div>
@@ -358,18 +358,18 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
         <div class="container">
             <div class="bg">
                 {## if matterport_url ##}
-            <div class="take-tour wow fadeIn">
-                <br>
-                {# <div class="image-video">
-                    <p>Take the tour</p>
-                    <img src="{{ 'assets/img/images/villa_kala_hq1_4.jpg'|theme|webp }}" alt="">
-                </div> #}
-                <div id="iframe-matterport">
-                    <iframe src="https://my.matterport.com/show/?m=s7mpaXTm8Zu" frameborder="0" width="100%"
-                        height="590"></iframe>
+                <div class="take-tour wow fadeIn">
+                    <br>
+                    {# <div class="image-video">
+                        <p>Take the tour</p>
+                        <img src="{{ 'assets/img/images/villa_kala_hq1_4.jpg'|theme|webp }}" alt="">
+                    </div> #}
+                    <div id="iframe-matterport">
+                        <iframe src="https://my.matterport.com/show/?m=s7mpaXTm8Zu" frameborder="0" width="100%"
+                            height="590"></iframe>
+                    </div>
                 </div>
-            </div>
-            {## endif ##}
+                {## endif ##}
             </div>
         </div>
     </section>
@@ -406,11 +406,11 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
             <div class="flex">
                 <div class="location-left wow fadeInLeft">
                     <h3>Location</h3>
-                    <div>
-                        {{ property.location_header|raw }}
+                    <div class="text-big">
+                        {{ property.location_header|raw }} 
                     </div>
                     <div class="small">
-                        {{ property.location_body|raw }}
+                        {{ property.location_body|raw }} 
                     </div>
                 </div>
                 <div class="property-map wow fadeInRight">

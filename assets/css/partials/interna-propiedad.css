@@ -373,7 +373,6 @@ section#property-container .item {
 
   section#star-journey .container {
     padding: 53px 15px;
-    /* max-width: calc(100% - 6rem) !important; */
     width: initial;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -793,8 +792,21 @@ section#location h3 {
 section#location .container {
 }
 
+section#location .location-left .text-big{
+    font-size: 20px;
+    line-height: 26px;
+    color: var(--c-primary);
+}
+section#location .location-left .small{
+    margin-top: 1rem;
+    font-size: 16px;
+    color: var(--c-primary);
+    line-height: 19.49px;
+}
+
 section#location .flex {
   display: grid;
+  align-items: center;
   grid-template-columns: calc(43%) 1fr;
 }
 
