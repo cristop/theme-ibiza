@@ -425,12 +425,11 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
             <div class="wow fadeInLeft">
 
                 {% if property.hero_image_url %}
-                {% if 'http' in property.hero_image_url %}
-                <div class="image" style="background-image: url({{ property.hero_image_url|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
-                {% else %}
-                <div class="image" style="background-image: url({{ property.hero_image_url|media|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});">
-                </div>
-                {% endif %}
+                    {% if 'http' in property.hero_image_url %}
+                        <div class="image" style="background-image: url({{ property.hero_image_url|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
+                    {% else %}
+                        <div class="image" style="background-image: url({{ property.hero_image_url|media|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
+                    {% endif %}
                 {% else %}
                 <div class="image" style="background-image: url({{ defaultImage }});"></div>
                 {% endif %}

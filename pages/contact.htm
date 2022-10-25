@@ -55,7 +55,7 @@ function newsSending(){
     <!-- Bg Principal -->
     <section id="bg-principal" class="section wow fadeIn  ">
         <div class="container-fluid">
-            <div class="bg-image" style="background-image: url('{{ 'assets/img/images/golden-00.png'|theme|webp }}')"; ></div>
+            <div class="bg-image" style="background-image: url('{{ 'assets/img/images/golden-00.png'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')"; ></div>
         </div>
     </section>
 
