@@ -31,7 +31,7 @@ No olvidar llamar al css en el padre de este
                     <div class="owl-carousel owl-theme product-slider">
                     {% for record in property.gallery %}
                         <div class="item">
-                            <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(500, null, { quality:'100', mode: 'crop', sharpen: '10' }) }}')"></div>
+                            <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')"></div>
                         </div>
                     {% endfor %}
 
@@ -45,7 +45,7 @@ No olvidar llamar al css en el padre de este
                 {% else %} {# sino ponemos las imagenes sin estructura de owlcarrousel #}
                     {% for record in property.gallery %}
                         {% if loop.index == 1 %}
-                        <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '10' }) }}')"></div>
+                        <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')"></div>
                         {% endif %}
                     {% endfor %}
 

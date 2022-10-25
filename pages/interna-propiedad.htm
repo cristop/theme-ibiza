@@ -134,17 +134,17 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                 {% if property.secret_marketing %}
                 <img src="{{ SMImage }}" />
                 {% else %}
-                {% if not property.hero_image_url %}
-                <img src="{{ defaultImage }}" />
-                {% else %}
-                <img src="{{ property.hero_image_url|media|webp|resize(2000) }}" />
-                {% endif %}
+                    {% if not property.hero_image_url %}
+                        <img src="{{ defaultImage }}" />
+                    {% else %}
+                        <img src="{{ property.hero_image_url|media|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
     </section>
 
-    <section id="property-container" class="section wow fadeIn internal-hero-text">
+    <section id="property-container" class="section internal-hero-text">
         <div class="container">
             {% if property.banner %}
             {% set colors = {
@@ -234,7 +234,7 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
     </section>
 
     <!-- img property -->
-    <section id="img-property" class="section wow fadeIn internal-hero-image">
+    <section id="img-property" class="section internal-hero-image">
         <div class="container">
             <div class="img-gallery">
                 {% if property.secret_marketing %}
@@ -244,9 +244,9 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                     {% for record in property.gallery %}
                     <div class="item">
                         {% if 'http' in record.imagery %}
-                        <img src="{{ record.imagery|webp|resize(2000) }}" />
+                        <img src="{{ record.imagery|webp|resize(1300, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
                         {% else %}
-                        <img src="{{ record.imagery|media|webp|resize(2000) }}" />
+                        <img src="{{ record.imagery|media|webp|resize(1300, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
                         {% endif %}
                     </div>
                     {% endfor %}
@@ -426,9 +426,9 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
 
                 {% if property.hero_image_url %}
                 {% if 'http' in property.hero_image_url %}
-                <div class="image" style="background-image: url({{ property.hero_image_url|webp|resize(900) }});"></div>
+                <div class="image" style="background-image: url({{ property.hero_image_url|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
                 {% else %}
-                <div class="image" style="background-image: url({{ property.hero_image_url|media|webp|resize(900) }});">
+                <div class="image" style="background-image: url({{ property.hero_image_url|media|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});">
                 </div>
                 {% endif %}
                 {% else %}
