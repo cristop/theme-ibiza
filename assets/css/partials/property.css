@@ -8,6 +8,7 @@
     border: 1px solid #00000026;
     transition: all 0.25s ease-in-out 0s;
     margin-bottom: 24px;
+    width: 100%;
 }
 
 .property .bg:hover {
@@ -179,6 +180,10 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 14px;
+    padding: 0;
+}
+
+.property .info-icons .icon-attributes span {
     padding: 0;
 }
 

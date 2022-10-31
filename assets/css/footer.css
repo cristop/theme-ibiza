@@ -25,14 +25,13 @@ footer * {
 }
 
 .guFyUQ img {
-  margin-top: 1rem;
+  margin-top: 16px;
   height: 32px;
 }
 
 .kUHZus h3 {
   font-family: "Proxima Nova Thin", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 12px;
   line-height: 24px;
   text-transform: uppercase;
@@ -40,6 +39,7 @@ footer * {
   margin-top: 0;
   margin-bottom: 8px;
   letter-spacing: 0.8px;
+  font-weight: 400;
 }
 
 .kUHZus input {
@@ -53,8 +53,16 @@ footer * {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-right: 0;
-  padding-left: 0;
+  padding-left: 3px;
   color: #888;
+  line-height: normal;
+  height: 28px;
+  font-weight: 400;
+  font-family: 'Arial';
+}
+
+.kUHZus input::placeholder{
+  opacity: 0.5
 }
 
 .inNAQV label {
@@ -65,14 +73,14 @@ footer * {
   line-height: 17px;
   display: flex;
   max-width: 300px;
-  margin-top: 1rem;
+  margin-top: 16px;
   color: #3c5171;
 }
 
 .inNAQV label input[type="checkbox"] {
   width: 25px;
   margin-right: 10px;
-  transform: translateY(-8px);
+  transform: translateY(-5px);
 }
 
 .inNAQV {
@@ -91,6 +99,7 @@ footer * {
   background-color: #f4f4f4;
   z-index: 1;
   position: relative;
+  line-height: 16px;
 }
 
 .kUHZus {
@@ -156,7 +165,7 @@ footer * {
 
 .dfNQam {
   display: block;
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 
 .btxtaG ul {
@@ -206,7 +215,7 @@ footer * {
 }
 
 .kWYYPL img.first {
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 }
 
 .kWYYPL img {
