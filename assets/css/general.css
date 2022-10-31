@@ -55,6 +55,7 @@ a {
 a:hover {
   /*color: var(--c-hover);
   opacity: 0.7 !important;*/
+  opacity: 0.8;
 }
 
 .container {
@@ -109,7 +110,7 @@ p {
 }
 
 select {
-  height: 36px;
+  height: 38px;
   width: 100%;
   background-color: #fff;
   border: 1px solid #bfbfbf;
@@ -123,6 +124,7 @@ select {
   line-height: 13px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  font-family: 'Arial', sans-serif;
 }
 
 .btn {
@@ -290,7 +292,7 @@ form .multi-select-container {
 }
 
 form .multi-select-button {
-  height: 36px;
+  height: 38px;
   width: 100%;
   background-color: #fff;
   color: #aaa;
