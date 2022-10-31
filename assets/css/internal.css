@@ -252,9 +252,11 @@
 .internal-hero-text .container {
   background-color: #f4f4f4;
   padding-bottom: 50px;
-  padding-top: 50px;
+  /* padding-top: 50px; */
+  padding-left: 0;
+  padding-right: 0;
   max-width: 1358px;
-  margin-top: -130px;
+  margin-top: -134px;
   margin-left: auto;
   margin-right: auto;
   width: initial;
@@ -262,6 +264,12 @@
 
 .internal-hero-text .title-container {
   padding-bottom: 20px;
+  padding-top: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .internal-hero-text .title-container h2.title {
@@ -319,20 +327,25 @@
   }
 
   .internal-hero-text .container {
-    padding-top: 30px;
-    padding-left: 35px;
-    padding-right: 35px;
+    /* padding-top: 30px; */
+    /* padding-left: 35px; */
+    /* padding-right: 35px; */
     margin-left: 10px;
+    padding-bottom: 20px;
     margin-right: 10px;
+    margin-top: -70px;
   }
 
   .internal-hero-text .title-container {
-    padding-bottom: 0;
+    padding: 20px 35px;
   }
 
   .internal-hero-text .flex {
     border-top: 0;
     padding-top: 0;
+    /* padding-top: 30px; */
+    padding-left: 35px;
+    padding-right: 35px;
   }
 
   .internal-hero-text .flex > * {
@@ -776,6 +789,11 @@ section#img-property .img-gallery {
   }
 
   .internal-block-image-left .flex.principal-col > div:nth-child(2) {
+  }
+  section#explore-island .item .bg .flex div:first-child p {
+    font-size: 17px!important;
+    line-height: 22px!important;
+    margin-bottom: 0!important;
   }
 }
 

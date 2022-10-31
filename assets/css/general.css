@@ -218,7 +218,7 @@ button.owl-next {
 
 button.owl-prev,
 button.owl-next {
-  opacity: 0.6 !important;
+  opacity: 0.9 !important;
   transform: translateY(-50%);
 }
 
@@ -293,9 +293,9 @@ form .multi-select-button {
   height: 36px;
   width: 100%;
   background-color: #fff;
+  color: #aaa;
   border: 1px solid #bfbfbf;
   padding: 10px;
-  color: var(--c-primary);
   appearance: none;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgOSA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xIDFMNC41IDVMOCAxIiBzdHJva2U9IiMzQzUxNzEiLz48L3N2Zz4K);
   background-repeat: no-repeat;
