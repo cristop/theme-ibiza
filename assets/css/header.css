@@ -323,6 +323,7 @@ header .logo-center {
   align-items: center;
   justify-content: end;
   height: 32px;
+  gap: 3.5px;
 }
 
 nav.menu-left {
