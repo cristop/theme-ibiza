@@ -171,7 +171,7 @@
 }
 
 .internal-hero-image .container-fluid .bg-image {
-  height: 483px;
+  height: 100%;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -179,11 +179,15 @@
 }
 
 .internal-hero-image {
-  width: 100%;
   max-width: 100vw;
   overflow: hidden;
   z-index: 0;
-  position: relative;
+  position: absolute;
+  /* height: calc(100vh - 190px); */
+  height: 483px;
+  top: 129px;
+  left: 0;
+  width: 100%;
 }
 
 .internal-hero-image img {
@@ -196,6 +200,7 @@
   width: 100%;
   padding: 0;
   margin: 0;
+  height: 100%;
 }
 
 @media screen and (max-width: 900px) {
@@ -224,6 +229,14 @@
   padding-bottom: 93px;
   position: relative;
   z-index: 1;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+section#explore-island > .container > .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .internal-hero-text .flex {
@@ -277,11 +290,20 @@
   padding-left: 0;
   padding-right: 0;
   max-width: 1358px;
-  margin-top: -151px;
+  margin-top: 60.5vh;
+  /* transform: translateY(44vh); */
   margin-left: auto;
   margin-right: auto;
   width: initial;
 }
+
+@media screen and (min-width: 1500px) {
+  .internal-hero-text .container {
+    margin-top: 50vh;
+  }
+}
+
+
 
 .internal-hero-text .title-container {
   padding-bottom: 58px;
@@ -339,9 +361,10 @@
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
-  line-height: 32px;
+  line-height: 1.2;
   color: var(--c-primary);
   margin-bottom: 1rem;
+  padding-right: 0;
 }
 
 @media screen and (max-width: 900px) {

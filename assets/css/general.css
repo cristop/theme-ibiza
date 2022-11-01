@@ -22,6 +22,8 @@
   /* Firefox */
   -webkit-box-sizing: border-box;
   /* Safari */
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -139,6 +141,7 @@ select {
   text-align: center;
   text-decoration: none;
   border-radius: 0;
+  line-height: normal;
 }
 
 h1,
