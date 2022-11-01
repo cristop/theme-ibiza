@@ -212,6 +212,8 @@
   }
 
   .internal-hero-image {
+  position: relative;
+  top: 0;
   }
 
   .internal-hero-image .container {
@@ -369,6 +371,8 @@ section#explore-island > .container > .item {
 
 @media screen and (max-width: 900px) {
   .internal-hero-text {
+  padding-left: 0;
+  padding-right: 0;
   }
 
   .internal-hero-text .container {
