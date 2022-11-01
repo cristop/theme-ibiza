@@ -83,6 +83,8 @@ header nav.menu-main {
     text-align: center;
     height: auto;
     padding-bottom: 15px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   header.sticky.scroll-down {
