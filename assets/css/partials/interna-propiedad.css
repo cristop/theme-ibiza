@@ -428,6 +428,9 @@ section#property-container .item {
   .flex.property-header {
     border-bottom: 0;
     padding-bottom: 10px;
+    padding-top: 80px;
+    padding-left: 48px;
+    padding-right: 35px;
   }
 }
 
@@ -499,6 +502,7 @@ section#slider-principal img {
 .flex.property-icons {
   text-align: center;
   transform: translateX(40px);
+  padding: 0;
 }
 
 .flex.property-icons img {
@@ -516,6 +520,7 @@ section#slider-principal img {
 
 .flex.property-icons p {
   font-size: 10px !important;
+  padding-right: 0;
   line-height: 1.2 !important;
 }
 
@@ -525,6 +530,7 @@ section#slider-principal img {
   height: auto;
   align-items: baseline;
   justify-content: center;
+  gap: 9px;
 }
 
 section#highlights {
@@ -630,14 +636,17 @@ section#highlights .item ul li {
 }
 
 section#about-the-property {
-  padding-bottom: 90px;
+  /* padding-bottom: 90px; */
 }
 
 section#about-the-property .container {
   max-width: 1300px;
   padding-top: 112px;
   padding-bottom: 90px;
-  border: 0.487721px solid #00000025;
+  /* border: 0.487721px solid #00000025; */
+  border-top: 0.487721px solid #00000025;
+  border-left: 0.487721px solid #00000025;
+  border-right: 0.487721px solid #00000025;
 }
 
 /*Mobile*/
@@ -792,21 +801,20 @@ section#location h3 {
 section#location .container {
 }
 
-section#location .location-left .text-big{
-    font-size: 20px;
-    line-height: 26px;
-    color: var(--c-primary);
+section#location .location-left .text-big {
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--c-primary);
 }
-section#location .location-left .small{
-    margin-top: 1rem;
-    font-size: 16px;
-    color: var(--c-primary);
-    line-height: 19.49px;
+section#location .location-left .small {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: var(--c-primary);
+  line-height: 19.49px;
 }
 
 section#location .flex {
   display: grid;
-  align-items: center;
   grid-template-columns: calc(43%) 1fr;
 }
 
@@ -1000,4 +1008,21 @@ button.owl-prev:before {
 
 button.owl-next:before {
   background-image: url("../../img/icons/arrow-right.svg");
+}
+
+section#matterport .container {
+  border-left: 0.487721px solid #00000025;
+  border-right: 0.487721px solid #00000025;
+  border-bottom: 0.487721px solid #00000025;
+  max-width: 1300px;
+}
+
+section#matterport .take-tour #iframe-matterport::before{
+  content: url("../../img/svg-loaders/play.svg");
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -132%);
 }
