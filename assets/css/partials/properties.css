@@ -67,7 +67,7 @@ section#search-home {
   padding-right: 1rem;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -100px;
+  margin-top: -155px;
   /* z-index: 100; */
   position: relative;
 }
@@ -147,6 +147,10 @@ section#search-home .items-search-home {
   padding-bottom: 10px;
 }
 
+section#search-home .items-search-home > :first-child {
+  padding-left: 0;
+}
+
 section#search-home .items-search-home .item {
   width: 100%;
 }
@@ -185,7 +189,7 @@ section#search-home .item.button .btn {
 }
 
 section#search-home .advanced-serch {
-  border-top: 1px solid #c4c4c488;
+  /* border-top: 1px solid #c4c4c488; */
   /* border-bottom: 1px solid #c4c4c488; */
   font-size: 11px;
   line-height: 13px;
@@ -209,7 +213,6 @@ section#search-home .advanced-serch .flex .icon-closed img {
 
 select#item-price {
 }
-
 
 @media screen and (max-width: 900px) {
   section#search-home {
@@ -248,7 +251,7 @@ select#item-price {
   }
 
   section#search-home .items-search-home .item:first-child {
-      padding-top: 0;
+    padding-top: 0;
   }
 
   section#search-home .items-search-home .item .filter-search.flex {
@@ -291,14 +294,14 @@ select#item-price {
 
 /* ADVANCED SEARCH */
 .advanced_search_bar__Container-sc-18jm8s2-0.gTThrg {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 section#search-home .gizNfl {
   display: flex;
   column-gap: 25px;
   justify-content: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
 }
 section#search-home .dIpNvQ {
   display: flex;
@@ -373,6 +376,7 @@ section#search-home .ZwXPv {
 }
 section#search-home .jIWIig {
   border-top: 1px solid rgba(196, 196, 196, 0.533);
+  border-bottom: 1px solid rgba(196, 196, 196, 0.533);
   margin-top: 28px;
   padding-top: 28px;
   padding-bottom: 28px;
@@ -381,7 +385,7 @@ section#search-home .icnSJv {
   display: flex;
   flex-direction: column;
   width: 200px;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 section#search-home .icnSJv h3 {
   font-family: "Proxima Nova Regular", sans-serif;
@@ -398,60 +402,53 @@ section#search-home .ZwXPv span {
   display: block;
 }
 /*Mobile*/
-@media screen and (max-width:900px){
-	.advanced_search_bar__Container-sc-18jm8s2-0.gTThrg {
-      padding-top: 20px;
-    }
-    section#search-home .gizNfl {
-      flex-direction: column;
-      padding-left: 0;
-      padding-right: 0;
-    }
+@media screen and (max-width: 900px) {
+  .advanced_search_bar__Container-sc-18jm8s2-0.gTThrg {
+    padding-top: 20px;
+  }
+  section#search-home .gizNfl {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-section#search-home .gizNfl > * {
+  section#search-home .gizNfl > * {
     width: 100%;
     max-width: initial;
-}
-    section#search-home .dIpNvQ {
-      /* max-width: 100%; */
-      flex-direction: column;
-      margin-bottom: 15px;
-      grid-gap: 15px;
-    }
-    section#search-home .lgQLYy {
-      
-    }
-    section#search-home .boDUXw {
-      
-    }
-    section#search-home .eJMRGV {
-      
-    }
-    section#search-home .eJMRGV h3 {
-      
-    }
-    section#search-home .boDUXw {
-      
-    }
-    section#search-home .hIYUQb {
-      margin-top: 15px;
-    }
-    section#search-home .ZwXPv {
-      width: 100%;
-    }
-    section#search-home .jIWIig {
-      margin-top: 20px;
-    }
-    section#search-home .icnSJv {
-      padding-left: 0;
-      width: 100%;
-    }
-    section#search-home .icnSJv h3 {
-      
-    }
-    section#search-home .ZwXPv span {
-      
-    }
+  }
+  section#search-home .dIpNvQ {
+    /* max-width: 100%; */
+    flex-direction: column;
+    margin-bottom: 15px;
+    grid-gap: 15px;
+  }
+  section#search-home .lgQLYy {
+  }
+  section#search-home .boDUXw {
+  }
+  section#search-home .eJMRGV {
+  }
+  section#search-home .eJMRGV h3 {
+  }
+  section#search-home .boDUXw {
+  }
+  section#search-home .hIYUQb {
+    margin-top: 15px;
+  }
+  section#search-home .ZwXPv {
+    width: 100%;
+  }
+  section#search-home .jIWIig {
+    margin-top: 20px;
+  }
+  section#search-home .icnSJv {
+    padding-left: 0;
+    width: 100%;
+  }
+  section#search-home .icnSJv h3 {
+  }
+  section#search-home .ZwXPv span {
+  }
 }
 
 /* RESULTS */
@@ -803,5 +800,16 @@ section#results
     margin-left: 21px;
     margin-right: 21px;
     width: calc(100% + -42px);
+  }
+}
+
+section#search-home .items-container {
+  border-top: 1px solid #c4c4c488;
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 485px) {
+  section#search-home {
+    margin-top: -79px;
   }
 }
