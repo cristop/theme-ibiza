@@ -1,15 +1,15 @@
 /* Ibiza Bg */
 .ibiza-bg {
   background-image: url(../../img/images/sell-00.png);
-  height: 581px;
+  height: 670px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
 }
 
 /*Mobile*/
-@media screen and (max-width:900px) {
+@media screen and (max-width: 900px) {
   .ibiza-bg {
     height: 400px;
     padding-top: 0px;
@@ -20,19 +20,21 @@
 }
 
 /* Valuation Property */
-section#valuation-property {}
-
-
-/* Smart Choice */
-section#smart-choice {}
-
-/*Mobile*/
-@media screen and (max-width:900px) {
-  section#valuation-property {}
-
-  section#smart-choice {}
+section#valuation-property {
 }
 
+/* Smart Choice */
+section#smart-choice {
+}
+
+/*Mobile*/
+@media screen and (max-width: 900px) {
+  section#valuation-property {
+  }
+
+  section#smart-choice {
+  }
+}
 
 .internal-star-journey .text {
   font-size: 22px;
