@@ -48,7 +48,7 @@ section#search-home .wow.fadeIn.container-form {
     margin-right: -11px;
     padding-left: 11px;
     padding-right: 11px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     padding-bottom: 60px;
 }
 
@@ -65,7 +65,7 @@ section#search-home .container .flex p {
   font-family: "Proxima Nova Thin", sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 24px;
   color: rgb(60, 81, 113);
   margin-bottom: 1rem;
