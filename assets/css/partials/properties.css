@@ -67,9 +67,16 @@ section#search-home {
   padding-right: 1rem;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -155px;
+  /*margin-top: -155px;*/
+  margin-top: 60.5vh;
   /* z-index: 100; */
   position: relative;
+}
+
+@media screen and (min-width: 1500px) {
+  .internal-hero-text .container {
+    margin-top: 50vh;
+  }
 }
 
 section#search-home .container {
