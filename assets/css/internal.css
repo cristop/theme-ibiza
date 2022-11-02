@@ -191,7 +191,7 @@
 }
 
 .internal-hero-image img {
-  height: 581px;
+  height: 100%;
   object-fit: cover;
   width: 100%;
 }

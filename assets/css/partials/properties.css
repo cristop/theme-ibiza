@@ -74,8 +74,8 @@ section#search-home {
 }
 
 @media screen and (min-width: 1500px) {
-  .internal-hero-text .container {
-    margin-top: 50vh;
+  section#search-home {
+    margin-top: 480px;
   }
 }
 
