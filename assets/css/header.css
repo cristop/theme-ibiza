@@ -410,7 +410,7 @@ nav.menu-left input {
 
 .bfoKIp {
   padding-top: 100px;
-  height: calc(100% - 141px);
+  height: calc(100% - 152px);
   width: calc(100% - 60px);
   display: flex;
   flex-direction: column;
@@ -479,7 +479,7 @@ nav.menu-left input {
   text-transform: uppercase;
   color: #fff;
   margin: 0;
-  margin-bottom: 7px;
+  /* margin-bottom: 7px; */
   letter-spacing: 0.8px;
 }
 
