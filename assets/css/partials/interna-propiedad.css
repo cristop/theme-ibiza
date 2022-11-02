@@ -1017,3 +1017,31 @@ section#matterport .container {
   max-width: 1300px;
 }
 
+/* section#matterport .take-tour #iframe-matterport::before{
+  content: url("../../img/svg-loaders/play.svg");
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -132%);
+} */
+/* 
+section#matterport .take-tour {
+  content: url("../../img/svg-loaders/play.svg");
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -132%);
+} */
+
+
+section#img-property {
+    position: initial;
+    height: auto;
+    top: initial;
+    left: initial;
+    overflow: initial;
+}
