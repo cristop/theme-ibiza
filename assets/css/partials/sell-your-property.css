@@ -17,6 +17,18 @@
   line-height: 27px;
 }
 
-@media screen and (max-width: 900px){
-  section#search-home .container{}
+@media screen and (max-width: 900px) {
+  section#search-home .container {
+  }
+}
+
+.internal-hero-text .flex > *:first-child .first-p {
+  font-size: 26px;
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--c-primary);
+  padding-right: 0;
+  margin-bottom: 1rem;
 }
