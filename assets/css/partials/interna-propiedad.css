@@ -640,6 +640,10 @@ section#about-the-property {
   /* padding-bottom: 90px; */
 }
 
+section#about-the-property p {
+    margin: 0;
+}
+
 section#about-the-property .container {
   max-width: 1300px;
   padding-top: 112px;
@@ -684,7 +688,7 @@ section#about-the-property .flex > *:last-child {
 }
 
 section#about-the-property h3 {
-  max-width: 858px;
+  max-width: 878px;
   margin-left: auto;
   margin-right: auto;
   font-family: "Proxima Nova Regular", "Lucida Sans", "Lucida Sans Regular",
@@ -696,7 +700,7 @@ section#about-the-property h3 {
   line-height: 15px;
   text-align: left;
   color: #3c5171;
-  margin-bottom: 37px;
+  margin-bottom: 45px;
   border-bottom: 1px solid #00000040;
   padding-bottom: 45px;
 }
@@ -710,6 +714,10 @@ section#about-the-property .flex .text {
   line-height: 24px;
   color: #3c5171;
   padding-right: 2rem;
+}
+
+section#about-the-property .flex .text p {
+    margin: 0;
 }
 
 section#about-the-property .flex .small,

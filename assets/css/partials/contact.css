@@ -57,6 +57,12 @@ section#search-home .container .flex {
   padding: 0;
 }
 
+@media screen and (max-width: 900px) {
+  section#search-home .container .flex {
+    padding-bottom: 0 !important;
+  }
+}
+
 section#search-home > .container > .flex {
     padding-bottom: 32px;
 }
@@ -277,7 +283,7 @@ section#search-home .container .flex p a:hover{
 
 @media screen and (max-width: 900px) {
   .internal-hero-text .container > .flex > *:first-child {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    padding-bottom: 40px;
-}
+      /* border-bottom: 1px solid rgba(0, 0, 0, 0.25); */
+      padding-bottom: 40px;
+  }
 }

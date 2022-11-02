@@ -167,8 +167,8 @@ section#golden-visa{
 }
 
 .internal-hero-text .item .bg{
-    border-left: 1px solid #00000040;
-    border-right: 1px solid #00000040;
+    /* border-left: 1px solid #00000040; */
+    /* border-right: 1px solid #00000040; */
     padding-bottom: 77px;
 }
 
