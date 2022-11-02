@@ -191,7 +191,7 @@ section#search-home .form .flex:nth-child(5) {
     padding-bottom: 0;
   }
 
-  section#search-home .container {}
+  section#search-home .container {margin-top: 223px;}
 
   section#search-home .form {
     padding: 35px 25px;
@@ -224,11 +224,15 @@ section#search-home .form .flex:nth-child(5) {
     font-size: 17px;
     line-height: 1.5;
     margin-bottom: 0.5rem;
+    padding: 1rem 1rem 2rem;
   }
 
   section#search-home .container .flex p {
     font-size: 14px;
+    padding-right: 0;
+    margin: auto;
     line-height: 1.5;
+    padding: 10px 50px;
   }
 }
 

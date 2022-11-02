@@ -203,3 +203,9 @@ section#meet-team .item .image.terciary-member {
     padding-right: 15px;
   }
 }
+
+@media screen and (max-width: 900px){
+  section#explore-island .item .bg .flex div:first-child p{
+    margin-bottom: 0.5rem!important;
+  }
+}
