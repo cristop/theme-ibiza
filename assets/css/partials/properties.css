@@ -225,6 +225,7 @@ select#item-price {
   section#search-home {
     padding-left: 0;
     padding-right: 0;
+    margin-top: 0;
   }
 
   section#search-home .container {
@@ -819,4 +820,8 @@ section#search-home .items-container {
   section#search-home {
     margin-top: -79px;
   }
+}
+
+section#bg-principal, section#bg-principal img {
+  height: 581px;
 }
