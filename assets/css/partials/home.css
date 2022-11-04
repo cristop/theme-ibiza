@@ -154,7 +154,7 @@ section#search-home .items-search-home .item {
 }
 
 section#search-home .items-search-home .item:first-child {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 section#search-home .items-search-home .item .flex {
@@ -188,7 +188,7 @@ section#search-home .item.button .btn {
   line-height: 1;
   text-align: center;
   letter-spacing: 0.12em;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 section#search-home .advanced-serch {
