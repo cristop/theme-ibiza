@@ -292,6 +292,9 @@ select#item-price {
     font-size: 16px;
     padding-left: 2rem;
     padding-right: 2rem;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 20px;
   }
 
   section#search-home h2 span {
@@ -823,5 +826,5 @@ section#search-home .items-container {
 }
 
 section#bg-principal, section#bg-principal img {
-  height: 581px;
+  height: 480px;
 }

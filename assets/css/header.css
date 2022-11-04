@@ -351,9 +351,10 @@ nav.menu-left input {
 /*Mobile*/
 @media screen and (max-width: 900px) {
   .top .container {
-    display: block;
+    /* display: block; */
     text-align: center;
-    padding-top: 4px;
+    padding-left: 0;
+    padding-right: 0;
   }
   nav.menu-left {
     margin-bottom: 13px;
