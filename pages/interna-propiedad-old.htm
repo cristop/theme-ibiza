@@ -104,6 +104,7 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
     {% put scripts %}
     <script>
         $('.principal-slider').owlCarousel({
+            animateOut: 'fadeOut',
             loop: true,
             margin: 0,
             nav: true,

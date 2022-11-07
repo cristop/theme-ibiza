@@ -264,12 +264,13 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
     {% put scripts %}
     <script>
         $('.gallery-img').owlCarousel({
+            animateOut: 'fadeOut',
             loop: true,
             margin: 0,
             nav: true,
             pagination: false,
             dots: false,
-            autoplay: true,
+            autoplay: false,
             autoplayTimeout: 4000,
             responsive: {
                 0: {
