@@ -479,8 +479,8 @@ section#explore-island > .container > .item {
   background-color: #f4f4f4;
   max-width: 1266px;
   border: 1px solid #00000026;
-  border-top-width: 2px;
-  border-bottom-width: 2px;
+  /* border-top-width: 2px; */
+  /* border-bottom-width: 2px; */
   margin-bottom: 80px;
 }
 
