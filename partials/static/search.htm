@@ -18,7 +18,7 @@ description = "Featured Properties"
         </h2>
       </div>
       
-      <div class="items-container">
+      <div class="items-container" {% if only_order %}style="display: none" {% endif %}>
         <div class="items-search-home flex t-col-3">
           {% if not only_order %}
           <div class="item">
