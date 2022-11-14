@@ -57,22 +57,30 @@ security = "all"
       </a>
       <div class="menu_overlay__Inner-sc-fl8xwk-1 bfoKIp">
         <ul>
-          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD" style="opacity: 1; transform: none;"><a
-              href="/properties">Property Listings</a></li>
-          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD" style="opacity: 1; transform: none;"><a
-              href="/sell-your-property">Sell Your Property</a></li>
-          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD" style="opacity: 1; transform: none;"><a href="/explore">Explore
-              the island</a></li>
-          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD" style="opacity: 1; transform: none;"><a href="/about">About</a>
+          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD{% if this.page.id == 'properties' %} active{% endif %}" style="opacity: 1; transform: none;">
+            <a href="/properties">Property Listings</a>
           </li>
-          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD" style="opacity: 1; transform: none;"><a
-              href="/your-property-partner">Your Property Partner</a></li>
-          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD" style="opacity: 1; transform: none;"><a
-              href="/perfect-property">Find your Perfect Property</a></li>
-          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD" style="opacity: 1; transform: none;"><a
-              href="/golden-visa">Golden Visa</a></li>
-          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD" style="opacity: 1; transform: none;"><a
-              href="/contact">Contact</a></li>
+          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD{% if this.page.id == 'sell-your-property' %} active{% endif %}" style="opacity: 1; transform: none;">
+            <a href="/sell-your-property">Sell Your Property</a>
+          </li>
+          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD{% if this.page.id == 'explore' %} active{% endif %}" style="opacity: 1; transform: none;">
+            <a href="/explore">Explore the island</a>
+          </li>
+          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD{% if this.page.id == 'about' %} active{% endif %}" style="opacity: 1; transform: none;">
+            <a href="/about">About</a>
+          </li>
+          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD{% if this.page.id == 'your-property-partner' %} active{% endif %}" style="opacity: 1; transform: none;">
+            <a href="/your-property-partner">Your Property Partner</a>
+          </li>
+          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD{% if this.page.id == 'perfect-property' %} active{% endif %}" style="opacity: 1; transform: none;">
+            <a href="/perfect-property">Find your Perfect Property</a>
+          </li>
+          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD{% if this.page.id == 'golden-visa' %} active{% endif %}" style="opacity: 1; transform: none;">
+            <a href="/golden-visa">Golden Visa</a>
+          </li>
+          <li class="menu_item__Li-sc-u9ixpd-0 ftUOpD{% if this.page.id == 'contact' %} active{% endif %}" style="opacity: 1; transform: none;">
+            <a href="/contact">Contact</a>
+          </li>
         </ul>
         <div class="menu_overlay__MenuFooter-sc-fl8xwk-2 bmVvlL">
           <div class="menu_overlay__Left-sc-fl8xwk-3 czuJPf">
