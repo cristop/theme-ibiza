@@ -15,12 +15,12 @@ rules[phone] = "required"
 rules[email] = "required|email"
 rules[message] = "required"
 
-rules_messages[nombre.required] = "El Nombre es requerido."
-rules_messages[apellido.required] = "El Apellido es requerido."
-rules_messages[email.required] = "El Email es requerido."
-rules_messages[email.email] = "La dirección de mail no contiene un formato válido."
-rules_messages[telefono.required] = "El telefono es requerido."
-rules_messages[comentario.required] = "El comentario es requerido."
+# rules_messages[nombre.required] = "El Nombre es requerido."
+# rules_messages[apellido.required] = "El Apellido es requerido."
+# rules_messages[email.required] = "El Email es requerido."
+# rules_messages[email.email] = "La dirección de mail no contiene un formato válido."
+# rules_messages[telefono.required] = "El telefono es requerido."
+# rules_messages[comentario.required] = "El comentario es requerido."
 
 messages_success = "Message sent!"
 messages_errors = "There has been an error, please check your details and try again."
@@ -116,6 +116,7 @@ function newsSending(){
                                     <div class="text-center">
                                         <input type="submit" class="btn" value="Submit" onclick="$(this).val('Wait..');$(this).css('pointer-events','none')">
                                         <input type="hidden" name="property_id" id="property_id" value="{{ get('property_id') }}">
+                                        <input type="hidden" name="Source" id="Source" value="Website Collection">
                                         
                                         <div id="contactForm_forms_flash"></div>
                                     </div>
