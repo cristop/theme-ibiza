@@ -238,8 +238,7 @@ section#property-container .icono_flex {
   position: absolute;
 }
 
-section#property-container .item {
-}
+section#property-container .item {padding: 0 30px;}
 
 /*Mobile*/
 @media screen and (max-width: 900px) {
@@ -1053,4 +1052,17 @@ section#img-property {
     top: initial;
     left: initial;
     overflow: initial;
+}
+
+
+/* mobile general */
+
+@media screen and (max-width: 485px){
+  section#property-container .container{
+    margin-top: -270px;
+  }
+
+  section#property-container .item{
+    padding: 0;
+  }
 }

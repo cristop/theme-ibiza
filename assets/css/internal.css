@@ -292,7 +292,7 @@ section#explore-island > .container > .item {
   padding-left: 0;
   padding-right: 0;
   max-width: 1358px;
-  margin-top: 60.5vh;
+  margin-top: 44.5vh;
   /* transform: translateY(44vh); */
   margin-left: auto;
   margin-right: auto;
@@ -300,7 +300,7 @@ section#explore-island > .container > .item {
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (max-width: 1500px) {
   .internal-hero-text .container {
     margin-top: 460px;
   }
@@ -383,7 +383,7 @@ section#explore-island > .container > .item {
     margin-left: 10px;
     padding-bottom: 20px;
     margin-right: 10px;
-    margin-top: -70px;
+    margin-top: -150px;
   }
 
   .internal-hero-text .title-container {
