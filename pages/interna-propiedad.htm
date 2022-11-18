@@ -238,7 +238,7 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
         <div class="container">
             <div class="img-gallery">
                 {% if property.secret_marketing %}
-                <img src="{{ SMImage }}" />
+                    <img src="{{ SMImage }}" /> <br /><br /><br /><br />
                 {% else %}
                 <div class="owl-carousel owl-theme gallery-img">
                     {% for record in property.gallery %}
@@ -332,10 +332,8 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
             {# endif #}
             
         </div>
-        {% endif %}
-
-
     </section>
+    {% endif %}
 
     {% if not property.secret_marketing %}
     <section id="about-the-property" class="wow fadeIn">
@@ -355,7 +353,6 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
             </div>
         </div>
     </section>
-
 
     <section id="matterport">
         <div class="container">
@@ -382,7 +379,7 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
 
 
 
-
+    {% if not property.secret_marketing %}
     <section id="star-journey" class="section wow fadeIn internal-star-journey"
         style="background-image: url({{ 'assets/img/images/interna-01.png'|theme|webp }});">
         <div class="container">
@@ -481,7 +478,14 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
             </div>
         </div>
     </section>
-
+    {% else %}
+    
+    <section id="sep-secret">
+        <div class="container">
+            <div class="line" style="height: 100px; border-top: 0.5px solid #00000040;"></div>
+        </div>
+    </section>
+    {% endif %}
 
 
 </main>
