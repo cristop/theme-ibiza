@@ -351,12 +351,19 @@ nav.menu-left input {
 /*Mobile*/
 @media screen and (max-width: 900px) {
   .top .container {
-    /* display: block; */
+    display: block;
     text-align: center;
     padding-left: 0;
     padding-right: 0;
     justify-content: center;
+    height: auto;
   }
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   nav.menu-left {
     margin-bottom: 13px;
   }

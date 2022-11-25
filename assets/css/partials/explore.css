@@ -43,7 +43,7 @@ section#the-west {
     padding-top: 80px;
   }
   section#explore-island .item .bg .flex div:first-child p {
-  margin-bottom: 1rem!important;
+    margin-bottom: 1rem!important;
   }
 
   section#the-south {
@@ -53,6 +53,11 @@ section#the-west {
   }
 
   section#the-west {
+  }
+
+  section#the-west .bg-image {
+      margin-left: 15px;
+      margin-right: 15px;
   }
 }
 
