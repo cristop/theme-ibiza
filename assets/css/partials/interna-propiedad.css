@@ -1072,6 +1072,20 @@ section#img-property {
   section#property-container .item{
     padding: 0;
   }
+
+  #highlights .info-property .mobile >.columns-list{
+    display: flex;
+  }
+
+  #highlights h3{
+    border-bottom: none;
+  }
+
+  #highlights .info-property .mobile > .columns-list ul{
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 25px;
+    margin: 20px;
+  }
 }
 
 
