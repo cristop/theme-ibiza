@@ -511,6 +511,11 @@ section#results .items-results {
     margin-right: 21px;
     width: calc(100% + -42px);
   }
+  section#search-home .container {
+    margin-left: 21px;
+    margin-right: 21px;
+    width: calc(100% + -42px);
+  }
 }
 
 /* Property Partner */

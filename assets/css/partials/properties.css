@@ -63,8 +63,8 @@ section#slider-principal .container-fluid {
 /* SEARCH HOME */
 
 section#search-home {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  /* padding-left: 1rem;
+  padding-right: 1rem; */
   margin-left: auto;
   margin-right: auto;
   /*margin-top: -155px;*/
@@ -806,6 +806,14 @@ section#results
 /*Tablet*/
 @media screen and (min-width: 900px) and (max-width: 1399px) {
   section#results .container {
+    padding-left: 47px;
+    padding-right: 47px;
+    margin-left: 21px;
+    margin-right: 21px;
+    width: calc(100% + -42px);
+  }
+
+  section#search-home .container{
     padding-left: 47px;
     padding-right: 47px;
     margin-left: 21px;
