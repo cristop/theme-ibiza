@@ -1073,3 +1073,10 @@ section#img-property {
     padding: 0;
   }
 }
+
+
+@media screen and (max-width: 768px) {
+  section#about-the-property .flex .text{
+    padding-bottom: 32px;
+  }
+}

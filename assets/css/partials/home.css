@@ -238,6 +238,7 @@ section#search-home {
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
+    
   }
 
   section#search-home .advanced-serch .flex .text {
@@ -246,6 +247,10 @@ section#search-home {
 
   section#search-home .advanced-serch .flex {
     display: flex;
+  }
+
+  section#search-home .advanced-serch{
+    border-bottom: none;
   }
 
   section#search-home .sup_titulo {
@@ -301,7 +306,13 @@ section#search-home {
     font-size: 23px;
     margin-top: 5px;
   }
+  
+  section#search-home .item.button{
+    border-top: 1px solid #c4c4c488;
+    padding-top: 32px;
+  }
 }
+
 
 /* ADVANCED SEARCH */
 .advanced_search_bar__Container-sc-18jm8s2-0.gTThrg {
@@ -774,6 +785,9 @@ section#about-us .container .image-text-container .image-left {
     padding-left: 0;
     padding-right: 0;
   }
+  section#search-home h2.title{
+    padding: 0;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -791,6 +805,7 @@ section#about-us .container .image-text-container .image-left {
 
 .items-container {
   border-top: 1px solid #c4c4c488;
+  padding-bottom: 32px;
 }
 
 .advanced_search_bar__Container-sc-18jm8s2-0.gTThrg {
