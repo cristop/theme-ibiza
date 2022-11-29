@@ -230,6 +230,7 @@ section#property-container .container {
   border: 0.5px solid #00000040;
   border-bottom: 0;
   max-width: 1300px;
+  position: relative;
 }
 
 section#property-container .icono_flex {
@@ -291,8 +292,6 @@ section#property-container .item {padding: 0 30px;}
   section#property-container .flex.flex-vcenter .flex.property-icons {
     transform: inherit;
     display: grid;
-    grid-template-columns: ;
-    grid-auto-rows: ;
     grid-template-areas:
       "first-icon first-icon first-icon first-icon "
       "second-icon terciary-icon fourth-icon fifth-icon";
@@ -434,7 +433,7 @@ section#property-container .item {padding: 0 30px;}
   .flex.property-header {
     border-bottom: 0;
     padding-bottom: 10px;
-    padding-top: 80px;
+    padding-top: 40px;
     padding-left: 35px;
     padding-right: 35px;
   }
@@ -671,7 +670,7 @@ section#about-the-property .container {
     margin-right: 10px;
     padding-top: 50px;
     padding-bottom: 30px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
   }
 }
 
@@ -1017,6 +1016,16 @@ button.owl-next {
   right: -2rem;
 }
 
+@media screen and (max-width: 900px) {
+  button.owl-prev {
+    left: -1.7rem;
+  }
+  
+  button.owl-next {
+    right: -1.7rem;
+  }
+}
+
 button.owl-prev:before {
   background-image: url("../../img/icons/arrow-left.svg");
 }
@@ -1067,6 +1076,7 @@ section#img-property {
 @media screen and (max-width: 485px){
   section#property-container .container{
     margin-top: -270px;
+    position: relative;
   }
 
   section#property-container .item{
@@ -1092,5 +1102,14 @@ section#img-property {
 @media screen and (max-width: 768px) {
   section#about-the-property .flex .text{
     padding-bottom: 32px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .banner {
+    transform: scale(0.6);
+    left: -25px;
+    top: -25px;
   }
 }

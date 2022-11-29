@@ -17,15 +17,6 @@
   line-height: 27px;
 }
 
-@media screen and (max-width: 900px) {
-  section#search-home .container {
-  }
-  .internal-hero-text .flex > *:first-child .first-p {
-    font-size: 17px !important;
-    line-height: 22px !important;
-  }
-}
-
 .internal-hero-text .flex > *:first-child .first-p {
   font-size: 26px;
   font-family: "Proxima Nova Thin", sans-serif;
@@ -35,4 +26,17 @@
   color: var(--c-primary);
   padding-right: 0;
   margin-bottom: 1rem;
+}
+
+
+@media screen and (max-width: 900px) {
+  .internal-hero-text .flex > *:first-child .first-p {
+    font-size: 17px !important;
+    line-height: 22px !important;
+  }
+  
+  section#valuation-property .bg-image {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }

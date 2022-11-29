@@ -122,6 +122,7 @@
     background-repeat: no-repeat;
     background-size: 280vw;
     background-position: center top;
+    /* background-size: cover; */
   }
 
   .internal-star-journey .container {
@@ -220,6 +221,8 @@
     margin-left: 10px;
     margin-right: 10px;
     width: auto;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
   }
 }
 
@@ -417,7 +420,8 @@ section#explore-island > .container > .item {
   .internal-hero-text .item .bg {
   }
 
-  .internal-hero-text .item .bg .flex {
+  .internal-hero-text .flex {
+  padding-bottom: 35px;
   }
 
   .internal-hero-text .item .bg .flex div {
@@ -581,8 +585,10 @@ section#explore-island > .container > .item {
     width: 100%;
     left: initial;
     transform: initial;
-    padding: 30px 20px;
+    padding: 30px 25px;
+    padding-bottom: 20px;
     max-width: initial;
+    min-height: auto;
   }
 
   .internal-block-image-right .flex.principal-col > div {
@@ -779,7 +785,9 @@ section#highlights {
 /* matterport */
 
 section#matterport {
-  padding-bottom: 100px;
+  padding-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 section#matterport .bg {
   max-width: 890px;
@@ -806,6 +814,9 @@ section#img-property .img-gallery {
 }
 
 @media screen and (max-width: 900px) {
+  section#matterport .bg{
+    padding-bottom: 22px;
+  }
   .internal-block-image-right .action .btn,
   .internal-block-image-left .action .btn{
     padding-left: 10px;
@@ -881,7 +892,11 @@ section#img-property .img-gallery {
   }
   #highlights .info-property .list-info ul {
     padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
+
+#highlights .info-property .list-info ul li {border-left: 1px solid #B9BFCA;margin: 0;padding-top: 5px;padding-bottom: 5px;padding-left: 10px;}
   section#img-property .img-gallery {
   }
 }

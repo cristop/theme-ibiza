@@ -293,7 +293,7 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
             <div class="bg">
                 <h3 class="title">Highlights</h3>
                 <div class="info-property">
-                    <div class="hide-mobile list-info wow fadeInLeft">
+                    <div class="list-info wow fadeInLeft">
                         {% if this.param.slug == "preview" %}
                         {% set highlights=property.property_highlights|split(';')  %}
                         {% else %}
@@ -302,39 +302,12 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
 
                         <ul>
                             {% for i in 0..highlights|length %}
-                            {% if i is even %}
+                                {% if i is even %}
                             <li>{{ highlights[i] }}</li>
-                            {% endif %}
+                                {% endif %}
                             {% endfor %}
                         </ul>
 
-                    </div>
-
-                    <div class="show-mobile list-info mobile wow fadeInLeft">
-                        <div class="columns-list">
-                            {% if this.param.slug == "preview" %}
-                            {% set highlights=property.property_highlights|split(';')  %}
-                            {% else %}
-                            {% set highlights=property.property_highlights|split(';') %}
-                            {% endif %}
-    
-                            <ul>
-                                {% for i in 0..highlights|length %}
-                                {% if i is even %}
-                                <li>{{ highlights[i] }}</li>
-                                {% endif %}
-                                {% endfor %}
-                            </ul>
-
-                            
-                            <ul>
-                                {% for i in 0..highlights|length %}
-                                {% if i is even %}
-                                <li>{{ highlights[i] }}</li>
-                                {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
                     </div>
 
                     <div class="texto_flex wow fadeInRight">
