@@ -161,6 +161,9 @@ footer * {
   text-decoration: none;
   color: #3c5171;
   transition: all 0.25s ease-in-out 0s;
+  -moz-transition: all 0.25s ease-in-out 0s;
+  -ms-transition: all 0.25s ease-in-out 0s;
+  -o-transition: all 0.25s ease-in-out 0s;  
 }
 
 .dfNQam {
@@ -199,6 +202,9 @@ footer * {
   text-decoration: none;
   color: #3c5171;
   transition: all 0.25s ease-in-out 0s;
+  -moz-transition: all 0.25s ease-in-out 0s;
+  -ms-transition: all 0.25s ease-in-out 0s;
+  -o-transition: all 0.25s ease-in-out 0s; 
 }
 
 .kWYYPL {
@@ -248,6 +254,9 @@ footer * {
   text-decoration: none;
   color: #3c5171;
   transition: all 0.25s ease-in-out 0s;
+  -moz-transition: all 0.25s ease-in-out 0s;
+  -ms-transition: all 0.25s ease-in-out 0s;
+  -o-transition: all 0.25s ease-in-out 0s; 
 }
 
 .btxtaG ul li a:hover {

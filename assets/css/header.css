@@ -14,11 +14,12 @@ header {
   /*position: -webkit-sticky;
   position: sticky;
   */
+  transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  
   border-bottom: 0;
 }
 
@@ -123,13 +124,15 @@ header nav > ul > li > ul {
   overflow: hidden;
   left: 50%;
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   height: 0;
   opacity: 0;
+  transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  
 }
 header nav > ul > li:hover ul {
   height: initial;
@@ -173,13 +176,15 @@ header nav a.big-number {
 }
 
 header .logo img {
+  transition: all 0.27s ease;
   -webkit-transition: all 0.27s ease;
   -moz-transition: all 0.27s ease;
   -ms-transition: all 0.27s ease;
   -o-transition: all 0.27s ease;
-  transition: all 0.27s ease;
+  
   max-width: 100%;
   transform: translateX(-15px) translateY(1px);
+  -webkit-transform: translateX(-15px) translateY(1px);
 }
 /*Mobile*/
 @media screen and (max-width: 550px) {
@@ -187,13 +192,14 @@ header .logo img {
     max-width: 100%;
     height: auto;
     transform: initial;
+    -webkit-transform: initial;
   }
 }
 /*Mobile*/
 @media screen and (max-width: 900px) {
   body:not(.comienzo) header.headerInternal .logo img {
-    -webkit-filter: opacity(0.6) brightness(0);
     filter: opacity(0.6) brightness(0);
+    -webkit-filter: opacity(0.6) brightness(0);    
   }
 }
 
@@ -272,12 +278,14 @@ header .logo-center {
     width: 35px;
     top: calc(50% + -8px);
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
 
+    transition: all 0s ease;
     -webkit-transition: all 0s ease;
     -moz-transition: all 0s ease;
     -ms-transition: all 0s ease;
     -o-transition: all 0s ease;
-    transition: all 0s ease;
+    
   }
   .responsiveMenu > div {
     height: 4px;
@@ -375,12 +383,14 @@ nav.menu-left input {
   right: 0px;
   position: fixed;
   z-index: 11;
+  transition: all 0.8s ease 0s;
   -webkit-transition: all 0.8s ease 0s;
   -moz-transition: all 0.8s ease 0s;
   -ms-transition: all 0.8s ease 0s;
   -o-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+  
   transform: translateX(100%);
+  -webkit-transform: translateX(100%);
 }
 
 .llDvji.open {
@@ -453,8 +463,13 @@ nav.menu-left input {
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.25s ease-in-out 0s;
+  -webkit-transition: all 0.25s ease-in-out 0s;
+  -moz-transition: all 0.25s ease-in-out 0s;
+  -ms-transition: all 0.25s ease-in-out 0s;
+  -o-transition: all 0.25s ease-in-out 0s;
   /*transition-delay: 0.2s;*/
   transform: translateY(35px);
+  -webkit-transform: translateY(35px);
   opacity: 0;
   display: block;
   width: fit-content;

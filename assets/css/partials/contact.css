@@ -154,6 +154,10 @@ section#search-home .form .flex .btn {
   width: auto;
   cursor: pointer;
   transition: all 0.25s ease-in-out 0s;
+  -webkit-transition: all 0.25s ease-in-out 0s;
+  -moz-transition: all 0.25s ease-in-out 0s;
+  -ms-transition: all 0.25s ease-in-out 0s;
+  -o-transition: all 0.25s ease-in-out 0s;
   font-weight: 600 !important;
   margin: 0;
 }
