@@ -83,6 +83,7 @@ section#inquire-about .image img {
     margin-left: 20px;
     margin-right: 20px;
     width: initial;
+    margin-top: 50px;
   }
   section#inquire-about .icon {
   }
@@ -387,6 +388,7 @@ section#property-container .item {padding: 0 30px;}
     width: 100%;
   }
   section#location {
+  padding-top: 30px !important;
   }
   section#location .flex {
     grid-template-rows: 2fr;
@@ -540,7 +542,16 @@ section#slider-principal img {
 }
 
 section#highlights {
+  padding-left: 30px;
+  padding-right: 30px;
 }
+@media screen and (max-width: 900px) {
+  section#highlights {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 section#highlights .container {
   border-top: 1px solid #0000000d;
   border: 0.5px solid #00000040;
@@ -643,6 +654,8 @@ section#highlights .item ul li {
 
 section#about-the-property {
   /* padding-bottom: 90px; */
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 section#about-the-property p {
@@ -663,11 +676,13 @@ section#about-the-property .container {
 @media screen and (max-width: 900px) {
   section#about-the-property {
     padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   section#about-the-property .container {
     width: initial;
-    margin-left: 10px;
-    margin-right: 10px;
+    /* margin-left: 10px; */
+    /* margin-right: 10px; */
     padding-top: 50px;
     padding-bottom: 30px;
     /* margin-bottom: 50px; */
@@ -736,6 +751,12 @@ section#about-the-property .flex .small p {
 section#star-journey {
   padding-bottom: 120px;
   padding-top: 120px;
+}
+
+@media screen and (max-width: 900px){
+  section#star-journey {
+  background-size: cover;
+  }
 }
 
 section#star-journey .container {
@@ -871,8 +892,8 @@ button.owl-next {
   section#highlights .container {
     padding-left: 15px;
     padding-right: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
+    /* margin-left: 10px; */
+    /* margin-right: 10px; */
     width: initial;
     /* border-right: 1px solid #0000000d; */
   }
@@ -1068,6 +1089,14 @@ section#img-property {
     top: initial;
     left: initial;
     overflow: initial;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+@media screen and (max-width: 900px) {
+  section#img-property {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 

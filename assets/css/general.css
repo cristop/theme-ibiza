@@ -22,8 +22,8 @@
   /* Firefox */
   -webkit-box-sizing: border-box;
   /* Safari */
-  text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased;
+  /* text-rendering: optimizelegibility; */
+  /* -webkit-font-smoothing: antialiased; */
 }
 
 html {
