@@ -906,3 +906,12 @@ section#img-property .img-gallery {
     height: 300px;
   }
 }
+
+@media screen and (max-width: 900px){
+  section#img-property .container{
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
