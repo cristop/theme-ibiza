@@ -297,10 +297,12 @@ section#search-home .container .flex p a:hover{
 /* dropdown */
 
 #dropdownContact.dropdownsearch{
-  height:100%;
   align-items:center;
   justify-content:left;
+}
 
+#dropdownContact.dropdownsearch .options {
+    height: 43px;
 }
 #dropdownContact .options{
   margin-bottom: 50px;
@@ -406,9 +408,16 @@ section#search-home .container .flex p a:hover{
   font-family: "Proxima Nova Thin", sans-serif;
 }
 
+#dropdownContact .dropdown-select.wide span.current img {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateY(-2px);
+    margin-right: 3px;
+}
+
 #dropdownContact .dropdown-select.wide .list {
     left: 0 !important;
-    right: 0 !important;
+    /* right: 0 !important; */
 }
 
 #dropdownContact .dropdown-select .list {
@@ -432,7 +441,9 @@ section#search-home .container .flex p a:hover{
     z-index: 999;
     max-height: 250px;
     overflow: auto;
+    overflow-x: hidden;
     border: 1px solid #ddd;
+    width: 200%;
 }
 
 #dropdownContact .dropdown-select .list:hover .option:not(:hover) {
@@ -471,6 +482,20 @@ section#search-home .container .flex p a:hover{
     text-align: left;
     transition: all 0.2s;
     list-style: none;
+}
+
+#dropdownContact .dropdown-select .option span {
+    opacity: 0.5;
+    font-family: inherit;
+    padding-left: 1px;
+    font-size: 0.9em;
+}
+
+#dropdownContact .dropdown-select .option img {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateY(-3px);
+    margin-right: 3px;
 }
 
 #dropdownContact .dropdown-select .option:hover,

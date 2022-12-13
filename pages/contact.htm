@@ -36,6 +36,8 @@ anonymize_ip = "disabled"
 recaptcha_theme = "light"
 recaptcha_type = "image"
 recaptcha_size = "normal"
+
+[countries]
 ==
 {% put scripts %}
 <script type="text/javascript">
@@ -50,6 +52,7 @@ recaptcha_size = "normal"
 <link rel="stylesheet" href="{{ 'assets/css/internal.css'|theme }}" async>
 <link rel="stylesheet" href="{{ 'assets/css/partials/contact.css'|theme }}" async>
 {% endput %}
+
 
 <main>
 
@@ -93,17 +96,14 @@ recaptcha_size = "normal"
 
                                 <div id="dropdownContact" class="dropdownsearch flex">
                                     <div class="options">
-                                        <select name="" id="dynamic_select">
-
+                                        <select name="code" id="dynamic_select" class="country_code">
                                             <option value="" selected>Country*</option>
 
-                                            <option value="">Argentina </option>
-                                            <option value="">Brazil</option>
-                                            <option value="">USA</option>
-                                            <option value="">France</option>
-                                            <option value="">Germany</option>
-
-
+                                            {% for country in countries.list() %}
+                                                <option value="+{{ country.phone_code }}" data-code="{{ country.country_code|lower }}">
+                                                    {{ country.country_name }}
+                                                </option>
+                                            {% endfor %}
                                         </select>
                                     </div>
 
@@ -153,19 +153,19 @@ recaptcha_size = "normal"
     <!-- dropdown -->
     {% put scripts %}
     <script>
-
-
         function create_custom_dropdowns() {
-            $('select').each(function (i, select) {
+            $('select.country_code').each(function (i, select) {
                 if (!$(this).next().hasClass('dropdown-select')) {
                     $(this).after('<div class="dropdown-select wide ' + ($(this).attr('class') || '') + '" tabindex="0"><span class="current"></span><div class="list"><ul></ul></div></div>');
+
                     var dropdown = $(this).next();
                     var options = $(select).find('option');
                     var selected = $(this).find('option:selected');
+
                     dropdown.find('.current').html(selected.data('display-text') || selected.text());
                     options.each(function (j, o) {
                         var display = $(o).data('display-text') || '';
-                        dropdown.find('ul').append('<li class="option ' + ($(o).is(':selected') ? 'selected' : '') + '" data-value="' + $(o).val() + '" data-display-text="' + display + '">' + $(o).text() + '</li>');
+                        dropdown.find('ul').append('<li class="option ' + ($(o).is(':selected') ? 'selected' : '') + '" data-value="' + $(o).val() + '" data-display-text="' + display + '" data-code="' + $(o).data('code') + '">' + ($(o).data('code') ? '<img src="/plugins/awebsome/property/assets/img/flags/' + $(o).data('code') + '.png" loading="lazy" />' : '') + $(o).text() + '<span>' + $(o).val() + '</span>' + '</li>');
                     });
                 }
             });
@@ -213,8 +213,8 @@ recaptcha_size = "normal"
         $(document).on('click', '.dropdown-select .option', function (event) {
             $(this).closest('.list').find('.selected').removeClass('selected');
             $(this).addClass('selected');
-            var text = $(this).data('display-text') || $(this).text();
-            $(this).closest('.dropdown-select').find('.current').text(text);
+            var text = ($(this).data('code') ? '<img src="/plugins/awebsome/property/assets/img/flags/' + $(this).data('code') + '.png" /> ' : '') + $(this).data('value') || $(this).text();
+            $(this).closest('.dropdown-select').find('.current').html(text);
             $(this).closest('.dropdown-select').prev('select').val($(this).data('value')).trigger('change');
         });
 
@@ -264,13 +264,13 @@ recaptcha_size = "normal"
 
         $(function () {
             // bind change event to select
-            $('#dynamic_select').on('change', function () {
+            /*$('#dynamic_select').on('change', function () {
                 var url = $(this).val(); // get selected value
                 if (url) { // require a URL
                     window.location = url; // redirect
                 }
                 return false;
-            });
+            });*/
         });
 
     </script>
