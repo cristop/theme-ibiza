@@ -95,7 +95,7 @@ section#search-home .form .flex>div {
 }
 
 section#search-home .form .flex .email input{
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 
 section#search-home .form .flex label {
@@ -245,6 +245,14 @@ section#search-home .form .flex:nth-child(5) {
     width: 100%;
   }
 
+section#search-home .form .options {
+    margin-bottom: 15px;
+}
+
+section#search-home .form .contactNumber {
+    margin-bottom: 0px;
+}
+
   section#search-home .form .flex label {}
 
   section#search-home .form .flex input {}
@@ -328,7 +336,7 @@ section#search-home .container .flex p a:hover{
     max-width: 100%;
     position: absolute;
     top: -25px;
-    left: -10px;
+    left: -8px;
     display: block !important;
 }
 

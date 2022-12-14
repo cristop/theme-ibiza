@@ -12,6 +12,7 @@ robot_follow = "follow"
 group = "Contact Ibiza"
 
 rules[name] = "required"
+rules[code] = "required"
 rules[phone] = "required"
 rules[email] = "required|email"
 rules[message] = "required"
@@ -97,7 +98,7 @@ recaptcha_size = "normal"
                                 <div id="dropdownContact" class="dropdownsearch flex">
                                     <label class="title-contact">Contact Number*</label>
                                     <div class="options">
-                                        <select name="code" id="dynamic_select" class="country_code">
+                                        <select name="code" id="dynamic_select" class="country_code" required>
                                             <option value="" selected>Country*</option>
 
                                             {% for country in countries.list() %}
