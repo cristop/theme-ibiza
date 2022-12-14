@@ -297,12 +297,23 @@ section#search-home .container .flex p a:hover{
 /* dropdown */
 
 #dropdownContact.dropdownsearch{
-  align-items:center;
+  align-items: flex-start;
   justify-content:left;
+  position: relative;
+}
+
+#dropdownContact.dropdownsearch > label {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    display: block !important;
 }
 
 #dropdownContact.dropdownsearch .options {
-    height: 43px;
+    height: 34px;
+    width: 120px;
 }
 #dropdownContact .options{
   margin-bottom: 50px;
@@ -330,8 +341,8 @@ section#search-home .container .flex p a:hover{
     float: left;
     font-size: 14px;
     font-weight: normal;
-    height: 42px;
-    line-height: 40px;
+    height: 33px;
+    line-height: 30px;
     outline: none;
     padding-left: 18px;
     padding-right: 30px;
@@ -344,7 +355,6 @@ section#search-home .container .flex p a:hover{
     user-select: none;
     white-space: nowrap;
     width: auto;
-
 }
 
 #dropdownContact .dropdown-select:focus {
@@ -443,7 +453,12 @@ section#search-home .container .flex p a:hover{
     overflow: auto;
     overflow-x: hidden;
     border: 1px solid #ddd;
-    width: 200%;
+    width: 100%;
+}
+@media screen and (min-width: 900px) {
+  #dropdownContact .dropdown-select .list {
+    min-width: 315px;
+  }
 }
 
 #dropdownContact .dropdown-select .list:hover .option:not(:hover) {
@@ -523,4 +538,16 @@ section#search-home .container .flex p a:hover{
 }
 
 #dropdownContact .contactNumber{}
+
+#dropdownContact .contactNumber > input {
+    background-color: #fff !important;
+}
+
+#dropdownContact .contactNumber > input:-webkit-autofill { 
+    -webkit-background-clip: text;
+}
+
+#dropdownContact .contactNumber > input:focus {
+    background-color: transparent !important;
+}
 
