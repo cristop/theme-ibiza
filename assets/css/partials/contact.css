@@ -94,6 +94,10 @@ section#search-home .form .flex>div {
   padding: 0;
 }
 
+section#search-home .form .flex .email input{
+  margin-bottom: 25px;
+}
+
 section#search-home .form .flex label {
   font-family: "Proxima Nova Thin", sans-serif;
   font-style: normal;
@@ -105,6 +109,11 @@ section#search-home .form .flex label {
   color: var(--c-primary);
   padding-left: 8px;
   padding-bottom: 26px;
+}
+
+section#search-home .form .flex label.title-contact{
+  font-family: inherit;
+  padding-bottom: 0;
 }
 
 section#search-home .container h2.subtitle {
@@ -132,7 +141,7 @@ section#search-home .form .flex input {
   padding-top: 8px;
   padding-bottom: 8px;
   width: 100%;
-  font-family: "Proxima Nova Thin", sans-serif;
+  /* font-family: "Proxima Nova Thin", sans-serif; */
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -140,6 +149,12 @@ section#search-home .form .flex input {
   /* margin-bottom: 42px; */
   background-color: transparent;
   margin-bottom: 42px;
+}
+
+
+section#search-home .form .flex input::placeholder{
+  color: var(--c-primary);
+  font-family: inherit;
 }
 
 section#search-home .form .flex .btn {
@@ -172,7 +187,7 @@ section#search-home .form .flex textarea {
   padding-top: 8px;
   padding-bottom: 8px;
   width: 100%;
-  font-family: "Proxima Nova Thin", sans-serif;
+  /* font-family: "Proxima Nova Thin", sans-serif; */
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -180,6 +195,11 @@ section#search-home .form .flex textarea {
   resize: none;
   min-height: 77px;
   margin-bottom: 42px;
+}
+
+section#search-home .form .flex textarea::placeholder{
+  color: var(--c-primary)!important;
+  font-family: inherit;
 }
 
 section#search-home .form .flex .condiciones {
@@ -300,13 +320,14 @@ section#search-home .container .flex p a:hover{
   align-items: flex-start;
   justify-content:left;
   position: relative;
+  margin-top: 35px;
 }
 
 #dropdownContact.dropdownsearch > label {
     width: 100%;
     max-width: 100%;
     position: absolute;
-    top: -20px;
+    top: -25px;
     left: -10px;
     display: block !important;
 }
