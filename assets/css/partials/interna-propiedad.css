@@ -5,6 +5,7 @@ section#inquire-about {
   /* padding-top: 50px; */
   padding-bottom: 50px;
   position: relative;
+  display: flex;
 }
 section#inquire-about .container {
 }
@@ -113,6 +114,7 @@ section#contact-us {
   padding-top: 50px;
   padding-bottom: 50px;
   position: relative;
+  display: flex;
 }
 section#contact-us .container {
 }
@@ -1141,4 +1143,26 @@ section#img-property {
     left: -25px;
     top: -25px;
   }
+}
+
+@media screen and (max-width: 1120px ){
+
+  section#inquire-about .container > div:last-child{
+    padding-left: 47px;
+    padding-right: 47px;
+  }
+}
+
+@media screen and (max-width: 1370px){
+  section#contact-us .container{
+    margin-left: 25px;
+    margin-right: 25px;
+    width: 100%;
+  }
+  section#inquire-about .container{
+    margin-left: 25px;
+    margin-right: 25px;
+    width: 100%;
+  }
+  
 }

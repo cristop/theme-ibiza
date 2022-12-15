@@ -47,12 +47,12 @@ section#smart-choice {
 }
 
 .internal-hero-text .flex > *:first-child p {
-  font-size: 26px;
-  font-family: "Proxima Nova Thin", sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.2;
-  color: var(--c-primary);
-  padding-right: 0;
-  margin-bottom: 1rem;
+  font-size: 22px;
+    font-style: normal;
+    font-family: "Proxima Nova Thin", sans-serif;
+    line-height: 1.2;
+    font-weight: 300;
+    color: var(--c-primary);
+    padding-right: 0;
+    margin-bottom: 1rem;
 }

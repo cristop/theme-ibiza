@@ -623,11 +623,11 @@ section#star-journey {
   max-width: 1264px;
   width: 100%;
   margin-bottom: 80px;
-  background-color: rgb(244, 244, 244);
+  /* background-color: rgb(244, 244, 244); */
 }
 
 section#star-journey .container {
-  padding: 0;
+  /* padding: 0; */
 }
 
 .image-text-container {
@@ -657,6 +657,7 @@ section#star-journey .container .image-text-container .image-left {
   align-items: center;
   padding-right: 0px;
   padding-left: 47px;
+  background-color: rgb(244, 244, 244);
 }
 
 .image-text-container .text-right.first {
@@ -716,12 +717,14 @@ section#about-us {
   max-width: 1264px;
   width: 100%;
   margin-bottom: 80px;
-  background-color: rgb(244, 244, 244);
+  /* background-color: rgb(244, 244, 244); */
 }
 
 section#about-us .image-text-container .text-right {
   padding-left: 0;
   padding-right: 47px;
+  background-color: rgb(244, 244, 244);
+}
 }
 
 section#about-us .container {
@@ -828,4 +831,26 @@ section#about-us .container .image-text-container .image-left {
 }
 
 .advanced_search_bar__FilterDiv-sc-18jm8s2-9.jtVACV {
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1120px){
+  section#about-us .image-text-container .text-right{
+    padding-left: 47px;
+  }
+  .image-text-container .text-right.first{
+    padding-right: 47px;
+  }
+}
+
+@media screen and (max-width: 1320px){
+  section#about-us .container{
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  section#star-journey .container{
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
