@@ -1,0 +1,47 @@
+description = "Featured Properties"
+
+[property propertyRelated]
+==
+{% put styles %}
+    <link rel="stylesheet" href="{{ 'assets/css/partials/featured-properties.css'|theme }}" async>
+    <link rel="stylesheet" href="{{ 'assets/css/partials/property.css'|theme }}" async>
+{% endput %}
+{% put scripts %}
+    <script>
+        $('.items-results').owlCarousel({
+            loop: false,
+            margin: 30,
+            nav: true,
+            pagination: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                500: {
+                    items: 2
+                },
+                1200: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+{% endput %}
+ 
+<!-- Featured Properties -->
+    <section id="featured-properties" class="section wow fadeIn  ">
+        <div class="container">
+            <h2 class="title">
+            {% if title %}
+                {{ title }}
+            {% else %}
+                Featured Properties
+            {% endif %}
+            </h2>
+            <div class="items-results owl-carousel owl-theme">
+            {% for property in propertyRelated.related(property_id) %}
+                {% partial 'static/property' property=property show_gallery=false %}
+            {% endfor %}
+        </div>
+    </section>

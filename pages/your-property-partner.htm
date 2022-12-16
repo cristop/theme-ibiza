@@ -1,0 +1,110 @@
+title = "Your Property Partner"
+url = "/your-property-partner"
+layout = "default"
+meta_title = "Your Property Partner | Ibiza Property Collection · Ibiza Property Collection"
+meta_description = "We are a fully independent and bespoke estate agency service, helping clients from across the globe to find and secure luxury residential properties in Ibiza."
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+{% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/internal.css'|theme }}" async>
+<link rel="stylesheet" href="{{ 'assets/css/partials/your-property-partner.css'|theme }}" async>
+{% endput %}
+
+<main>
+
+    <!-- Bg Principal -->
+    <section id="bg-principal" class="section wow fadeIn internal-hero-image">
+        <div class="container-fluid">
+            <div class="bg-image" style="background-image: url({{ 'assets/img/images/bg-06.png'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
+        </div>
+    </section>
+
+    <!-- Explore the Island -->
+
+    <section id="explore-island" class="section wow fadeIn internal-hero-text">
+        <div class="container">
+            <div class="title-container wow fadeIn ">
+                <h2 class="title">
+                    <span>Your Property Partner</span>
+                </h2> 
+            </div>
+            <div class="flex">
+                <div class="title-container second wow fadeIn ">
+                    <h2>Buying and selling real estate is a matter of trust.</h2>
+                    <p>Ibiza Property Collection has built its reputation as the most referred estate agent in the
+                        Balearics
+                        over many years. Our team are accomplished real estate professionals and we know all there is to
+                        know about buying and selling real estate throughout the Balearics.</p>
+                    <p>By choosing to list your property and find your new homes through us, you will be benefitting
+                        from
+                        over 50 years of combined experience, during which time we have successfully guided our
+                        discerning
+                        homebuyers through the peculiarities of an unknown market. </p>
+                    <p>Here are one or two other reasons why people choose to work with us.</p>
+                    <p>We are a fully independent and bespoke estate agency service, helping clients from across the
+                        globe
+                        to find and secure luxury residential properties in Ibiza.</p>
+                </div>
+                <div class="item">
+                    <div class="bg">
+                        <div class="text wow fadeIn">
+                            <p>We are fluent in the local and regional property markets, opening doors for you which are
+                                often closed to other property agents and their clients.</p>
+                            <p>The Balearics are our home and where we have built our portfolio of real estate
+                                businesses,
+                                giving us a comprehensive knowledge of the area and unique insight into the local
+                                characteristics.</p>
+                            <p>Our reputation gives us, and you, access to an extended network of property professionals
+                                -
+                                relations with surveyors, lawyers, developers and contractors we have nurtured over many
+                                years</p>
+                            <p>We always have a portfolio of the finest on-market and off-market properties the island
+                                has
+                                to offer.</p>
+                            <p>In a competitive market, time is of the essence. With your instruction, we will remove
+                                the
+                                groundwork and negotiations, not only finding your dream home but managing everything to
+                                a
+                                successful completion.</p>
+                            <p>Unlike the majority of other real estate companies, we are solely focused on the buying
+                                and
+                                selling of luxury residential real estate and are not involved with rental properties.
+                            </p>
+                            <p>Ibiza Property Collection is built on a foundation of unrivalled knowledge and
+                                exceptional
+                                service, ensuring that you are in a position to make fully informed decisions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% partial 'static/featured-properties' %}
+
+    <!-- Star Journey -->
+
+    <section id="star-journey" class="section wow fadeIn internal-star-journey" style="background-image: url({{ 'assets/img/images/bg-07.png'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});">
+        <div class="container">
+            <div class="flex principal-col">
+                <div class="wow fadeIn"> 
+                    <h2 class="sup_titulo">
+                        start your journey
+                    </h2>
+                    <p class="text">
+                        Find your perfect property <br>
+                        with us
+                    </p>
+                    <div class="action">
+                        <a href="{{ 'about'|page }}" class="btn btn-primary">
+                            Read more
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

@@ -1,0 +1,153 @@
+title = "About"
+url = "/about"
+layout = "default"
+meta_title = "About | Ibiza Property Collection · Ibiza Property Collection"
+meta_description = "At Ibiza Property Collection, we help people buy and sell luxury real estate in one of the most sought-after locations and competitive markets in Europe."
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+{% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/internal.css'|theme }}" async>
+<link rel="stylesheet" href="{{ 'assets/css/partials/about.css'|theme }}" async>
+{% endput %}
+
+<main>
+
+    <!-- Bg Principal -->
+
+    <section id="bg-principal" class="section wow fadeIn internal-hero-image">
+        <div class="container-fluid">
+            <div class="bg-image" style="background-image: url({{ 'assets/img/images/bg-02.jpg'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
+        </div>
+    </section>
+
+    <!-- Explore the Island -->
+    <section id="explore-island" class="section wow fadeIn internal-hero-text">
+        <div class="container">
+            <div class="title-container wow fadeIn ">
+                <h2 class="title">
+                    <span>About</span>
+                </h2>
+            </div>
+            <div class="item">
+                <div class="bg">
+                    <div class="flex">
+                        <div>
+                            <p class="big">At Ibiza Property Collection, we help people buy and sell luxury real estate in one of
+                                the most sought-after locations and competitive markets in Europe.</p>
+                        </div>
+                        <div>
+                            <p>Our experience of the Balearic property market, intimate knowledge of the islands and
+                                unique understanding of the lifestyle enables us to provide expert tailored advice and
+                                outstanding service, making us the first port-of-call for those looking to buy
+                                prestigious and luxury property in Ibiza.</p>
+                            <p>With over 50 years of combined experience and as one of the most highly recommended real
+                                estate companies in the islands, our team has become the trusted, respected and
+                                connected face of the Balearic luxury real estate market. We deal with the finest
+                                on-market and off-market properties Ibiza has to offer, personally overseeing each
+                                transaction and ensuring that our clients view the best properties and receive premier
+                                service to gain complete competitive advantage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ibiza bg -->
+
+    <div class="ibiza-bg" style="background-image: url({{ 'assets/img/images/about-00.png'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
+
+    <!-- Meet Team -->
+
+    <section id="meet-team" class="section wow fadeIn  ">
+        <div class="container">
+            <h2 class="title">Meet the team</h2>
+            <div class="item flex image-right">
+                <div class="wow fadeInLeft">
+                    <h2 class="titulo_flex">
+                        Julian Cunningham-Bond
+                    </h2>
+                    <p class="text">
+                        Julian’s reputation as the most trusted and respected real estate agent throughout the Balearic
+                        islands has been earned over many years. His career in real estate started over 20 years ago, in
+                        London, as an associate partner of the largest privately-owned estate agency in the world. He
+                        managed the Balearics and Caribbean desks, before moving to the Balearics over a decade ago and
+                        setting up his own real estate business. Julian is now considered the most influential real
+                        estate broker in the Balearics with an understanding of luxury real estate, valuation,
+                        negotiation, property law and the intricate layers of diplomacy and mediation that is
+                        unsurpassed.
+                    </p>
+                </div>
+                <div class="wow fadeInRight">
+                    <div class="image first-member" style="background-image: url({{ 'assets/img/images/about-01.jpg'|theme|webp|resize(1000, null, { quality:'100', mode: 'crop', sharpen: '35' }) }});"></div>
+                </div>
+            </div>
+            <div class="item flex image-left">
+                <div class="wow fadeInLeft">
+                    <div class="image second-member" style="background-image: url({{ 'assets/img/images/about-02.jpg'|theme|webp|resize(1000, null, { quality:'100', mode: 'crop', sharpen: '35' }) }});"></div>
+                </div>
+                <div class="wow fadeInRight">
+                    <h2 class="titulo_flex">
+                        Michelle Cunningham-Bond
+                    </h2>
+                    <p class="text">
+                        Michelle has become one of the leading lights in the Balearic luxury property market over the
+                        past decade, managing her own successful property search agency in Mallorca - now the most
+                        successful within the Balearics. She has an extraordinary ability to combine her extensive
+                        knowledge of luxury properties in the Balearics with an appreciation of personalities, family
+                        dynamics and what people are looking for in a Balearic lifestyle. Quick to get to the core of an
+                        instruction, she is able to lay her finger on the ideal property with accuracy and alacrity. And
+                        with a referral rate of over 75%, her services are highly rated by those looking to find the
+                        perfect home in Mallorca and Ibiza.
+                    </p>
+                </div>
+            </div>
+           {# <div class="item flex image-right">
+                <div class="wow fadeInLeft">
+                    <h2 class="titulo_flex">
+                        Paul Charlton
+                    </h2>
+                    <p class="text">
+                        Having lived with his family in Ibiza for over 20 years. During this time, he has gained a
+                        comprehensive knowledge of the island and a unique understanding of its character. Equipped with
+                        an enviable list of contacts and his ears and eyes permanently alert to the comings and goings
+                        in the Ibiza property market, Paul is an invaluable asset to those looking to buy or sell a
+                        second home, an investment property or a permanent home on the island.
+                    </p>
+                </div>
+                <div class="wow fadeInRight">
+                    <div class="image terciary-member" style="background-image: url({{ 'assets/img/images/abut-03.jpg'|theme|webp|resize(1000, null, { quality:'100', mode: 'crop', sharpen: '35' }) }});"></div>
+                </div>
+            </div> #}
+        </div>
+    </section>
+
+    {% partial 'static/featured-properties' %}
+
+
+    <!-- Star Journey -->
+
+    <section id="star-journey" class="section wow fadeIn internal-star-journey" style="background-image: url({{ 'assets/img/images/bg-07.png'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});">
+        <div class="container">
+            <div class="flex principal-col">
+                <div class="wow fadeIn">
+                    <h2 class="sup_titulo">
+                        Get in touch
+                    </h2>
+                    <p class="text">
+                        Find your perfect property <br>
+                        with us
+                    </p>
+                    <div class="action">
+                        <a href="{{ 'contact'|page }}" class="btn btn-primary">
+                            contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

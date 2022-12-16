@@ -1,0 +1,582 @@
+section#bg-principal .container-fluid .bg-image img {}
+
+section#bg-principal .container-fluid .bg-image {
+  background-image: url(../../img/images/golden-00.png);
+  /* min-height: 581px; */
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+section#bg-principal {
+    position: absolute;
+    height: calc(100vh - 190px);
+    top: 129px;
+    left: 0;
+    width: 100%;
+}
+
+section#bg-principal img {
+  height: 581px;
+  object-fit: cover;
+}
+
+section#bg-principal .container-fluid {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* SEARCH HOME */
+section#search-home {
+    padding-bottom: 124px;
+}
+
+section#search-home .container {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+section#search-home .wow.fadeIn.container-form {
+    background-color: #f4f4f4;
+    margin-left: -11px;
+    margin-right: -11px;
+    padding-left: 11px;
+    padding-right: 11px;
+    /* padding-top: 20px; */
+    padding-bottom: 60px;
+}
+
+section#search-home .container .flex {
+  border-top: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 900px) {
+  section#search-home .container .flex {
+    padding-bottom: 0 !important;
+  }
+}
+
+section#search-home > .container > .flex {
+    padding-bottom: 32px;
+}
+
+section#search-home .container .flex p {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(60, 81, 113);
+  margin-bottom: 1rem;
+  max-width: 355px;
+  margin-top: 0;
+}
+
+section#search-home .form {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 67px 63px;
+}
+
+section#search-home .form .flex {
+  border: 0;
+}
+
+section#search-home .form .flex>div {
+  display: flex;
+  padding: 0;
+}
+
+section#search-home .form .flex .email input{
+  margin-bottom: 40px;
+}
+
+section#search-home .form .flex label {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: grid;
+  grid-template-columns: 22px 100%;
+  color: var(--c-primary);
+  padding-left: 8px;
+  padding-bottom: 26px;
+}
+
+section#search-home .form .flex label.title-contact{
+  font-family: inherit;
+  padding-bottom: 0;
+}
+
+section#search-home .container h2.subtitle {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 26px;
+  max-width: 890px;
+  margin: 0 auto;
+  border-top: 1px solid #00000040;
+  padding-top: 60px;
+  line-height: 32px;
+  color: rgb(60, 81, 113);
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+}
+
+section#search-home .form .flex input {
+  border: 0 transparent;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(60, 81, 113, 0.267);
+  background-color: transparent;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 100%;
+  /* font-family: "Proxima Nova Thin", sans-serif; */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  /* line-height: 17px; */
+  /* margin-bottom: 42px; */
+  background-color: transparent;
+  margin-bottom: 42px;
+}
+
+
+section#search-home .form .flex input::placeholder{
+  color: var(--c-primary);
+  font-family: inherit;
+}
+
+section#search-home .form .flex .btn {
+  background-color: var(--c-primary);
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  border: 1px solid var(--c-primary);
+  padding: 15px 60px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border-radius: 0;
+  width: auto;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out 0s;
+  -webkit-transition: all 0.25s ease-in-out 0s;
+  -moz-transition: all 0.25s ease-in-out 0s;
+  -ms-transition: all 0.25s ease-in-out 0s;
+  -o-transition: all 0.25s ease-in-out 0s;
+  font-weight: 600 !important;
+  margin: 0;
+}
+
+section#search-home .form .flex textarea {
+  background-color: transparent;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(60, 81, 113, 0.267);
+  background-color: transparent;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 100%;
+  /* font-family: "Proxima Nova Thin", sans-serif; */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  resize: none;
+  min-height: 77px;
+  margin-bottom: 42px;
+}
+
+section#search-home .form .flex textarea::placeholder{
+  color: var(--c-primary)!important;
+  font-family: inherit;
+}
+
+section#search-home .form .flex .condiciones {
+    margin-bottom: 42px;
+}
+
+section#search-home .form .flex:first-child {
+  border: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+section#search-home .form .flex:last-child {
+  border-top: 0;
+}
+
+section#search-home .form .flex label span {
+  transform: translateY(2px);
+}
+
+section#search-home .form .flex:nth-child(5) {
+  padding: 0;
+}
+
+@media screen and (max-width: 900px) {
+  section#search-home {
+    padding-bottom: 0;
+  }
+
+  section#search-home .container {margin-top: 580px;/* margin-left: 0; *//* margin-right: 0; */border-bottom: 0;padding-bottom: 0;margin-bottom: 50px;}
+
+  section#search-home .form {
+    padding: 35px 25px;
+    /* margin-left: -11px; */
+    /* margin-right: -11px; */
+    /* width: initial; */
+    margin-top: 25px;
+  }
+
+  section#search-home .form .flex {}
+
+  section#search-home .form .flex>div {
+    width: 100%;
+  }
+
+section#search-home .form .options {
+    margin-bottom: 15px;
+}
+
+section#search-home .form .contactNumber {
+    margin-bottom: 0px;
+}
+
+  section#search-home .form .flex label {}
+
+  section#search-home .form .flex input {}
+
+  section#search-home .form .flex .btn {}
+
+  section#search-home .form .flex textarea {}
+
+  section#search-home .form .flex .condiciones {}
+
+  section#search-home .form .flex {
+    /* padding-top: 30px; */
+  }
+
+  section#search-home .container h2.subtitle {
+    border-top: 0;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    padding: 1rem 1rem 2rem;
+  }
+
+  section#search-home .container .flex p {
+    font-size: 14px;
+    padding-right: 0;
+    margin: auto;
+    line-height: 1.5;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  section#bg-principal .bg-image {
+    background-size: 200vh !important;
+    height: 443px !important;
+  }
+
+  section#bg-principal .bg-image img {}
+
+  section#bg-principal {
+    height: 483px;
+    top: 158px;
+}
+
+  section#bg-principal .container {}
+}
+
+section#search-home .container .flex p a{
+    text-decoration: none;
+    color: var(--c-primary);
+}
+
+section#search-home .container .flex p a:hover{
+  opacity: 0.5;
+}
+
+.internal-hero-text .title-container {
+    border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .internal-hero-text .container > .flex > *:first-child {
+      /* border-bottom: 1px solid rgba(0, 0, 0, 0.25); */
+      padding-bottom: 40px;
+  }
+}
+
+
+
+/* dropdown */
+
+#dropdownContact.dropdownsearch{
+  align-items: flex-start;
+  justify-content:left;
+  position: relative;
+  margin-top: 35px;
+}
+
+#dropdownContact.dropdownsearch > label {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: -25px;
+    left: -8px;
+    display: block !important;
+}
+
+#dropdownContact.dropdownsearch .options {
+    height: 34px;
+    width: 120px;
+}
+#dropdownContact .options{
+  margin-bottom: 50px;
+  display: flex;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(60, 81, 113, 0.267);
+}
+
+#dropdownContact select {
+    display: none !important;
+}
+
+#dropdownContact .dropdown-select {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40FFFFFF', endColorstr='#00FFFFFF', GradientType=0);
+    background-color: #fff;
+    border-radius: 6px;
+    border: solid 1px #eee;
+    box-shadow: 0px 2px 5px 0px rgba(155, 155, 155, 0.5);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: normal;
+    height: 33px;
+    line-height: 30px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 30px;
+    position: relative;
+    text-align: left !important;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: auto;
+}
+
+#dropdownContact .dropdown-select:focus {
+    background-color: #fff;
+}
+
+#dropdownContact .dropdown-select:hover {
+    background-color: #fff;
+}
+
+#dropdownContact .dropdown-select:active,
+.dropdown-select.open {
+    background-color: #fff !important;
+    border-color: #bbb;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) inset;
+}
+
+#dropdownContact .dropdown-select:after {
+    height: 0;
+    width: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #777;
+    -webkit-transform: origin(50% 20%);
+    transform: origin(50% 20%);
+    transition: all 0.125s ease-in-out;
+    content: '';
+    display: block;
+    margin-top: -2px;
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
+
+#dropdownContact .dropdown-select.open:after {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+#dropdownContact .dropdown-select.open .list {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#dropdownContact .dropdown-select.open .option {
+    cursor: pointer;
+}
+
+#dropdownContact .dropdown-select.wide {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    padding-left: 0;
+    border-radius: 0;
+}
+
+#dropdownContact .dropdown-select.wide span{
+  font-family: "Proxima Nova Thin", sans-serif;
+}
+
+#dropdownContact .dropdown-select.wide span.current img {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateY(-2px);
+    margin-right: 3px;
+}
+
+#dropdownContact .dropdown-select.wide .list {
+    left: 0 !important;
+    /* right: 0 !important; */
+}
+
+#dropdownContact .dropdown-select .list {
+    box-sizing: border-box;
+    transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.09);
+    background-color: #fff;
+    border-radius: 6px;
+    margin-top: 4px;
+    padding: 3px 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    max-height: 250px;
+    overflow: auto;
+    overflow-x: hidden;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+@media screen and (min-width: 900px) {
+  #dropdownContact .dropdown-select .list {
+    min-width: 315px;
+  }
+}
+
+#dropdownContact .dropdown-select .list:hover .option:not(:hover) {
+    background-color: transparent !important;
+}
+#dropdownContact .dropdown-select .dd-search{
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0.5rem;
+}
+
+#dropdownContact .dropdown-select .dd-searchbox{
+  width:100%!important;
+  padding:0.5rem!important;
+  border: 1px solid rgba(60, 81, 113, 0.267)!important;
+  outline:none!important;
+  margin-bottom: 0!important;
+}
+#dropdownContact .dropdown-select .dd-searchbox:focus{
+  border-color:#12CBC4;
+}
+
+#dropdownContact .dropdown-select .list ul {
+    padding: 0;
+}
+
+#dropdownContact .dropdown-select .option {
+    cursor: default;
+    font-weight: 400;
+    line-height: 40px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 29px;
+    text-align: left;
+    transition: all 0.2s;
+    list-style: none;
+}
+
+#dropdownContact .dropdown-select .option span {
+    opacity: 0.5;
+    font-family: inherit;
+    padding-left: 1px;
+    font-size: 0.9em;
+}
+
+#dropdownContact .dropdown-select .option img {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateY(-3px);
+    margin-right: 3px;
+}
+
+#dropdownContact .dropdown-select .option:hover,
+.dropdown-select .option:focus {
+    background-color: #f6f6f6 !important;
+}
+
+#dropdownContact .dropdown-select .option.selected {
+    font-weight: 600;
+    color: var(--c-primary)
+}
+
+#dropdownContact .dropdown-select .option.selected:focus {
+    background: #f6f6f6;
+}
+
+#dropdownContact .dropdown-select a {
+    color: #aaa;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+#dropdownContact .dropdown-select a:hover {
+    color: #666;
+}
+
+#dropdownContact .contactNumber{}
+
+#dropdownContact .contactNumber > input {
+    background-color: #fff !important;
+}
+
+#dropdownContact .contactNumber > input:-webkit-autofill { 
+    -webkit-background-clip: text;
+}
+
+#dropdownContact .contactNumber > input:focus {
+    background-color: transparent !important;
+}
+

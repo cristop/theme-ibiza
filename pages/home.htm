@@ -1,0 +1,122 @@
+title = "Home"
+url = "/home"
+layout = "default"
+meta_title = "Ibiza Property Collection - Ibiza Property Collection"
+meta_description = "Find your perfect Ibiza home with Ibiza Property Collection. A fully independent and bespoke service for luxury residential properties in Ibiza."
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[property propertyObject]
+==
+{% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/partials/home.css'|theme }}" async>
+{% endput %}
+
+<main>
+
+  <!-- Slider principal -->
+
+  <section id="slider-principal" class="section wow fadeIn  ">
+    <div class="container-fluid">
+      {# <div class="bg-image">
+      </div> #}
+
+      <div class="owl-carousel owl-theme principal-slider">
+        <div class="item">
+          <img src="{{ 'assets/img/images/bg-01.jpg'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+        </div>
+        <div class="item">
+          <img src="{{ 'assets/img/images/bg-02.jpg'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+        </div>
+        <div class="item">
+          <img src="{{ 'assets/img/images/bg-03.jpg'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+        </div>
+        <div class="item">
+          <img src="{{ 'assets/img/images/bg-04.jpg'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+        </div>
+        <div class="item">
+          <img src="{{ 'assets/img/images/bg-05.jpg'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+        </div>
+      </div>
+    </div>
+  </section>
+  {% put scripts %}
+  <script>
+      $('.principal-slider').owlCarousel({
+        animateOut: 'fadeOut',
+        loop: true,
+        margin: 0,
+        nav: false,
+        pagination: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 1
+          },
+          1000: {
+            items: 1
+          }
+        }
+      });
+  </script>
+  {% endput %}
+
+
+  {% partial 'static/search' %}
+
+  <!-- Property Partner -->
+
+  <section id="property-partner" style="background-image: url('{{ 'assets/img/images/bg-07.png'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')"; class=" section wowfadeIn " >
+    <div class=" container">
+    <div class="banner-partner">
+      <h2 class="sup_titulo">Your Property Partner</h2>
+      <p class="title">
+        <span>
+          A fully independent and bespoke service for luxury residential properties in Ibiza.
+          <br>
+        </span>
+      </p>
+      <a href="{{ 'about'|page }}" class="banner-link">Read More</a>
+    </div>
+    </div>
+  </section>
+
+  <!-- Star Journey -->
+
+  <section id="star-journey" class="section wow fadeIn  ">
+    <div class="container">
+      <div class="image-text-container">
+        <div class="image-left" style="background-image: url('{{ 'assets/img/images/ibiza_premier1.jpg'|theme|webp|resize(null, 800, { quality:'100', mode: 'crop', sharpen: '35' }) }}')";></div>
+        <div class="text-right first">
+          <h3 class="sup_titulo">Start your journey</h3>
+          <h2 class="title">Ibiza's most trusted estate agent. Buying and selling luxury real estate in Ibiza’s most
+            desirable locations.</h2>
+          <a href="{{ 'contact'|page }}" class="btn btn-primary">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+
+  <section id="about-us" class="section wow fadeIn  ">
+    <div class="container">
+      <div class="image-text-container">
+        <div class="text-right">
+          <h3 class="sup_titulo">A MATTER OF TRUST</h3>
+          <h2 class="title">IBIZA PROPERTY COLLECTION ENSURES THEIR CLIENTS GET THE BEST PROPERTIES AND THE BEST SERVICE
+            WITHIN ONE OF THE MOST COMPETITIVE MARKETS WITHIN EUROPE.</h2>
+          <a href="{{ 'about'|page }}" class="btn btn-primary">ABOUT US</a>
+        </div>
+        <div class="image-left"  style="background-image: url('{{ 'assets/img/images/premier2.jpg'|theme|webp|resize(null, 800, { quality:'100', mode: 'crop', sharpen: '35' }) }}')";></div>
+      </div>
+    </div>
+  </section>
+
+</main>

@@ -1,0 +1,42 @@
+/* Ibiza Bg */
+.ibiza-bg {
+  /* background-image: url(../../img/images/bg-01.jpg); */
+  background-size: cover;
+  min-height: 670px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  max-width: 100vw;
+  background-position: center 30%;
+}
+
+.internal-star-journey .text {
+  font-size: 22px;
+  line-height: 27px;
+}
+
+.internal-hero-text .flex > *:first-child .first-p {
+  font-size: 22px;
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--c-primary);
+  padding-right: 0;
+  margin-bottom: 1rem;
+}
+
+
+@media screen and (max-width: 900px) {
+  .internal-hero-text .flex > *:first-child .first-p {
+    font-size: 17px !important;
+    line-height: 22px !important;
+  }
+  
+  section#valuation-property .bg-image {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}

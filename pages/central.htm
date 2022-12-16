@@ -1,0 +1,33 @@
+title = "central"
+url = "/central"
+layout = "default"
+meta_title = "Central Properties | Ibiza Property Collection · Ibiza Property Collection"
+meta_description = "Luxury Ibiza properties for sale from Ibiza Property Collection. Browse our hand picked selection of stunning luxury residential Ibiza properties."
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[property propertyObject]
+area_filter = "Central"
+==
+{% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/internal.css'|theme }}" async>
+<link rel="stylesheet" href="{{ 'assets/css/partials/properties.css'|theme }}" async>
+{% endput %}
+
+<main>
+
+    <!-- Bg Principal -->
+
+    <section id="bg-principal" class="section wow fadeIn internal-hero-image">
+        <div class="container-fluid">
+            <img src="{{ 'assets/img/images/bg-03.jpg'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+        </div>
+    
+        <div class="bg-image"></div>
+    
+    </section>
+
+    {% partial 'static/search' open=1 only_order=1 title="PROPERTIES IN THE CENTRAL" %}
+
+</main>

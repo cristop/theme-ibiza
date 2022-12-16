@@ -1,0 +1,8 @@
+url = "/sitemap.xml"
+==
+function onStart(){
+  $xmlString ='';
+
+  return Response::make($xmlString)->header('Content-Type', 'text/xml');
+}
+==

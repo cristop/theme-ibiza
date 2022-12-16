@@ -1,0 +1,144 @@
+title = "Sell Your Property"
+url = "/sell-your-property"
+layout = "default"
+meta_title = "Sell Your Property | Ibiza Property Collection · Ibiza Property Collection"
+meta_description = "Buying and selling real estate is a matter of trust and Ibiza Property Collection have built their reputation as the most referred estate agents in the Balearics."
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+{% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/internal.css'|theme }}" async>
+<link rel="stylesheet" href="{{ 'assets/css/partials/sell-your-property.css'|theme }}" async>
+{% endput %}
+
+<main>
+
+    <!-- Bg Principal -->
+
+    <section id="bg-principal" class="section wow fadeIn internal-hero-image">
+        <div class="container-fluid">
+            <div class="bg-image" style="background-image: url({{ 'assets/img/images/bg-02.jpg'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
+        </div>
+    </section>
+
+    <!-- Sell With Us -->
+
+    <section id="search-home" class="section wow fadeIn internal-hero-text">
+        <div class="container">
+            <div class="title-container wow fadeIn ">
+                <h2 class="title">
+                    <span>Sell Your property with us</span>
+                </h2>
+            </div>
+            <div class="flex">
+                <div>
+                    <p class="first-p">We know the true value of your property. Buying and selling real estate is a matter of
+                        trust and Ibiza Property Collection have built their reputation as the most referred
+                        estate agents in the Balearics over many years.</p>
+                    <p>Our knowledge has been gained over decades of experience of buying and selling luxury
+                        real estate within the Balearics for international clients.</p>
+                </div>
+                <div>
+                    <p>We own and run the most recommended real estate companies within the Balearics and that
+                        comes with an unrivaled exclusive network, respectful discretion and skillful
+                        negotiation skills that enable us to sell your home in the most efficient way, tailored
+                        to you whilst achieving the best price possible.
+                    </p>
+                    <p>Successfully selling exclusive properties in Ibiza requires experience, extensive
+                        contacts, market knowledge, immaculate marketing, exhaustive research and tenacity. The
+                        team at Ibiza Property Collection provides its sellers with an exceptional fully
+                        integrated, end-to-end service.</p>
+                    <p>The team at Ibiza Property Collection are true real estate professionals and our clients
+                        choose to list their properties with us as they know they are in the best hands.</p>
+                    
+                </div>
+            </div>            
+        </div>
+    </section>
+
+    <!-- Ibiza bg -->
+
+    <div class="ibiza-bg" style="background-image: url({{ 'assets/img/images/bg-01.jpg'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
+
+    <!-- Valuation Property -->
+    <section id="valuation-property" class="section wow fadeIn internal-block-image-right">
+        <div class="bg-image" style="background-image: url('{{ 'assets/img/images/sell-01.png'|theme|webp|resize(1000, null, { quality:'100', mode: 'crop', sharpen: '35' }) }}')";></div>
+        <div class="container">
+            <div class="flex principal-col">
+                <div class="wow fadeIn">
+                    <h2 class="title">
+                        LOOKING FOR A PROFESSIONAL AND INFORMED VALUATION OF YOUR PROPERTY?
+                    </h2>
+                    <p class="text">
+                        Understanding current market conditions and all the relevant points relating to your specific
+                        property is vitally important when valuing. Choosing the right agent with experience and local
+                        knowledge is key if you are to achieve the best price for your property. To get you started on
+                        your property journey, contact Ibiza Property Collection team to arrange a free, no-obligation
+                        market appraisal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Choice -->
+    <section id="smart-choice" class="section wow fadeIn internal-block-image-left">
+        <div class="container">
+            <div class="bg-image" style="background-image: url('{{ 'assets/img/images/sell.png'|theme|webp|resize(1400, null, { quality:'100', mode: 'crop', sharpen: '35' }) }}')";></div>
+            <div class="flex principal-col">
+                <div class="wow fadeIn">
+                    <h2 class="title">
+                        THE SMART CHOICE FOR SELLING YOUR LUXURY PROPERTY
+                    </h2>
+                    <p class="text"> Whether you are looking for complete discretion when selling your property or a full marketing
+                        campaign we will work
+                        with you to achieve the absolute best result for you. Our network, built over many years allows
+                        us to sell your
+                        property in your preferred way. We are a fully independent and bespoke estate agency service, we
+                        work with clients
+                        from across the globe. At Ibiza Property Collection you work with an expert every time, it will
+                        be one of us
+                        managing every aspect of the sale, from valuation, marketing, viewings, reports, negotiations
+                        and after sales.
+                        Whether it's a classic sale or a discrete transfer we will ensure the sale of your property is a
+                        complete success.
+                    </p>
+                    <div class="action">
+                        <a href="{{ 'contact'|page }}" class="btn btn-primary">
+                            Get in touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% partial 'static/featured-properties' %}
+
+    
+    <!-- Star Journey -->
+    <section id="star-journey" class="section wow fadeIn internal-star-journey" style="background-image: url({{ 'assets/img/images/bg-04.jpg'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});">
+        <div class="container">
+            <div class="flex principal-col">
+                <div class="wow fadeIn">
+                    <h2 class="sup_titulo">
+                        Start your journey
+                    </h2>
+                    <p class="text">
+                        Buying or selling, we can take care of everything <br>
+                        from start to finish - discrete, considered and <br>
+                        experienced every step of the way.
+                    </p>
+                    <div class="action">
+                        <a href="{{ 'contact'|page }}" class="btn btn-primary">
+                            contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>

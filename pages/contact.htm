@@ -1,0 +1,281 @@
+title = "Contact"
+url = "/contact"
+layout = "default"
+meta_title = "Contact | Ibiza Property Collection · Ibiza Property Collection"
+meta_description = "If you are ready to start your Ibiza journey and you want to get a head start, the team at Ibiza
+Property Collection is waiting to hear from you."
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[emptyForm contactForm]
+group = "Contact Ibiza"
+
+rules[name] = "required"
+rules[code] = "required"
+rules[phone] = "required"
+rules[email] = "required|email"
+rules[message] = "required"
+
+# rules_messages[nombre.required] = "El Nombre es requerido."
+# rules_messages[apellido.required] = "El Apellido es requerido."
+# rules_messages[email.required] = "El Email es requerido."
+# rules_messages[email.email] = "La dirección de mail no contiene un formato válido."
+# rules_messages[telefono.required] = "El telefono es requerido."
+# rules_messages[comentario.required] = "El comentario es requerido."
+
+messages_success = "Message sent!"
+messages_errors = "There has been an error, please check your details and try again."
+
+mail_enabled = 0
+mail_subject = "form contact"
+# mail_recipients[] = "ccontreras@mojito-soft.com"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+
+[countries]
+==
+{% put scripts %}
+<script type="text/javascript">
+    function newsSending() {
+        $('form').find('input[type="submit"]').hide();
+        $('form')[0].reset();
+    }
+</script>
+{% endput %}
+
+{% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/internal.css'|theme }}" async>
+<link rel="stylesheet" href="{{ 'assets/css/partials/contact.css'|theme }}" async>
+{% endput %}
+
+
+<main>
+
+    <!-- Bg Principal -->
+    <section id="bg-principal" class="section wow fadeIn  ">
+        <div class="container-fluid">
+            <div class="bg-image"
+                style="background-image: url('{{ 'assets/img/images/umbrellas3.png'|theme|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')";></div>
+        </div>
+    </section>
+
+    <!-- Sell With Us -->
+
+    <section id="search-home" class="section wow fadeIn internal-hero-text">
+        <div class="container">
+            <div class="title-container wow fadeIn ">
+                <h2 class="title">
+                    <span>Contact</span>
+                </h2>
+            </div>
+            <h2 class="subtitle">If you are ready to start your Ibiza journey and you want to get a head start, the team
+                at Ibiza
+                Property Collection is waiting to hear from you.</h2>
+            <div class="flex">
+                <div>
+                    <p>You can call Julian direct on +34 637 365 500 or drop him a line at
+                        <a href="#">hello@ibizapropertycollection.com.</a>
+                    </p>
+                    <p>Alternatively, you can complete the contact form and we’ll get straight back to you.</p>
+                </div>
+                <div>
+                    <div class="wow fadeIn container-form">
+                        <form data-request="contactForm::onFormSubmit" data-request-success="newsSending();">
+                            {{ form_token() }}
+                            <div class="form">
+                                <div class="flex">
+                                    <div>
+                                        <input type="text" name="name" id="name" placeholder="Name*" required />
+                                    </div>
+                                </div>
+
+                                <div id="dropdownContact" class="dropdownsearch flex">
+                                    <label class="title-contact">Contact Number*</label>
+                                    <div class="options">
+                                        <select name="code" id="dynamic_select" class="country_code" required>
+                                            <option value="" selected>Country*</option>
+
+                                            {% for country in countries.list() %}
+                                                <option value="+{{ country.phone_code }}" data-code="{{ country.country_code|lower }}">
+                                                    {{ country.country_name }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+
+                                    <div class="contactNumber">
+                                        <input type="text" name="phone" id="phone" placeholder="" required />
+                                    </div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="email">
+                                        <input type="email" name="email" id="email" placeholder="Email Address*"
+                                            required />
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div>
+                                        <textarea name="message" id="message" cols="30" rows="10"
+                                            placeholder="Tell us about what you are looking for?*" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="condiciones">
+                                        <label class="custom-checkbox"><input type="checkbox" id="newsletter"
+                                                name="newsletter" value="yes"><span></span>I would like to receive
+                                            marketing communication from Ibiza Property Collection</label>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="text-center">
+                                        <input type="submit" class="btn" value="Submit"
+                                            onclick="$(this).val('Wait..');$(this).css('pointer-events','none')">
+                                        <input type="hidden" name="property_id" id="property_id"
+                                            value="{{ get('property_id') }}">
+                                        <input type="hidden" name="Source" id="Source" value="Website Collection">
+
+                                        <div id="contactForm_forms_flash"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- dropdown -->
+    {% put scripts %}
+    <script>
+        function create_custom_dropdowns() {
+            $('select.country_code').each(function (i, select) {
+                if (!$(this).next().hasClass('dropdown-select')) {
+                    $(this).after('<div class="dropdown-select wide ' + ($(this).attr('class') || '') + '" tabindex="0"><span class="current"></span><div class="list"><ul></ul></div></div>');
+
+                    var dropdown = $(this).next();
+                    var options = $(select).find('option');
+                    var selected = $(this).find('option:selected');
+
+                    dropdown.find('.current').html(selected.data('display-text') || selected.text());
+                    options.each(function (j, o) {
+                        var display = $(o).data('display-text') || '';
+                        dropdown.find('ul').append('<li class="option ' + ($(o).is(':selected') ? 'selected' : '') + '" data-value="' + $(o).val() + '" data-display-text="' + display + '" data-code="' + $(o).data('code') + '">' + ($(o).data('code') ? '<img src="/plugins/awebsome/property/assets/img/flags/' + $(o).data('code') + '.png" loading="lazy" />' : '') + $(o).text() + '<span>' + $(o).val() + '</span>' + '</li>');
+                    });
+                }
+            });
+
+            $('.dropdown-select ul').before('<div class="dd-search"><input id="txtSearchValue" autocomplete="off" onkeyup="filter()" class="dd-searchbox" type="text"></div>');
+        }
+
+        // Event listeners
+
+        // Open/close
+        $(document).on('click', '.dropdown-select', function (event) {
+            if ($(event.target).hasClass('dd-searchbox')) {
+                return;
+            }
+            $('.dropdown-select').not($(this)).removeClass('open');
+            $(this).toggleClass('open');
+            if ($(this).hasClass('open')) {
+                $(this).find('.option').attr('tabindex', 0);
+                $(this).find('.selected').focus();
+            } else {
+                $(this).find('.option').removeAttr('tabindex');
+                $(this).focus();
+            }
+        });
+
+        // Close when clicking outside
+        $(document).on('click', function (event) {
+            if ($(event.target).closest('.dropdown-select').length === 0) {
+                $('.dropdown-select').removeClass('open');
+                $('.dropdown-select .option').removeAttr('tabindex');
+            }
+            event.stopPropagation();
+        });
+
+        function filter() {
+            var valThis = $('#txtSearchValue').val();
+            $('.dropdown-select ul > li').each(function () {
+                var text = $(this).text();
+                (text.toLowerCase().indexOf(valThis.toLowerCase()) > -1) ? $(this).show() : $(this).hide();
+            });
+        };
+        // Search
+
+        // Option click
+        $(document).on('click', '.dropdown-select .option', function (event) {
+            $(this).closest('.list').find('.selected').removeClass('selected');
+            $(this).addClass('selected');
+            var text = ($(this).data('code') ? '<img src="/plugins/awebsome/property/assets/img/flags/' + $(this).data('code') + '.png" /> ' : '') + $(this).data('value') || $(this).text();
+            $(this).closest('.dropdown-select').find('.current').html(text);
+            $(this).closest('.dropdown-select').prev('select').val($(this).data('value')).trigger('change');
+        });
+
+        // Keyboard events
+        $(document).on('keydown', '.dropdown-select', function (event) {
+            var focused_option = $($(this).find('.list .option:focus')[0] || $(this).find('.list .option.selected')[0]);
+            // Space or Enter
+            //if (event.keyCode == 32 || event.keyCode == 13) {
+            if (event.keyCode == 13) {
+                if ($(this).hasClass('open')) {
+                    focused_option.trigger('click');
+                } else {
+                    $(this).trigger('click');
+                }
+                return false;
+                // Down
+            } else if (event.keyCode == 40) {
+                if (!$(this).hasClass('open')) {
+                    $(this).trigger('click');
+                } else {
+                    focused_option.next().focus();
+                }
+                return false;
+                // Up
+            } else if (event.keyCode == 38) {
+                if (!$(this).hasClass('open')) {
+                    $(this).trigger('click');
+                } else {
+                    var focused_option = $($(this).find('.list .option:focus')[0] || $(this).find('.list .option.selected')[0]);
+                    focused_option.prev().focus();
+                }
+                return false;
+                // Esc
+            } else if (event.keyCode == 27) {
+                if ($(this).hasClass('open')) {
+                    $(this).trigger('click');
+                }
+                return false;
+            }
+        });
+
+        $(document).ready(function () {
+            create_custom_dropdowns();
+        });
+
+
+
+        $(function () {
+            // bind change event to select
+            /*$('#dynamic_select').on('change', function () {
+                var url = $(this).val(); // get selected value
+                if (url) { // require a URL
+                    window.location = url; // redirect
+                }
+                return false;
+            });*/
+        });
+
+    </script>
+    {% endput %}
+
+</main>
