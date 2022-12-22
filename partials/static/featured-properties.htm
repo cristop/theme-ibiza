@@ -36,7 +36,7 @@ description = "Featured Properties"
             {% if title %}
                 {{ title }}
             {% else %}
-                Featured Properties
+                {% component 'editable' file="featured_title/" ~ this.page.id ~ ".htm" %}
             {% endif %}
             </h2>
             <div class="items-results owl-carousel owl-theme">
