@@ -29,27 +29,31 @@ No olvidar llamar al css en el padre de este
                 {# si no es secret marketing, mostramos las fotos que corresponden #}
                 {% if show_gallery %} {# si pedimos que muestre galeria ponemos toda la estructura del owl carrousel #}
                     <div class="owl-carousel owl-theme product-slider">
-                    {% for record in property.gallery %}
+                    {% for record in property.gallery_local %}
                         <div class="item">
-                            <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')"></div>
+                            {# ESTO FUNCIONABA CUANDO LA IMAGEN VENIA DE DROPBOX #}
+                            {# <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')"></div> #}
+                            <div class="imagen_flex domDbe" style="background-image: url('{{ record.path|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')"></div> 
                         </div>
                     {% endfor %}
 
-                    {% if not property.gallery %}
+                    {% if not property.gallery_local %}
                         <div class="item">
                             <div class="imagen_flex domDbe" style="background-image: url('{{ defaultImage }}')"></div>
                         </div>
                     {% endif %}
                     
                     </div>
-                {% else %} {# sino ponemos las imagenes sin estructura de owlcarrousel #}
-                    {% for record in property.gallery %}
+                {% else %} {# sino ponemos las imagenes SIN estructura de owlcarrousel #}
+                    {% for record in property.gallery_local %}
                         {% if loop.index == 1 %}
-                        <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')"></div>
+                        {# ESTO FUNCIONABA CUANDO LA IMAGEN VENIA DE DROPBOX #}
+                        {# <div class="imagen_flex domDbe" style="background-image: url('{{ record.imagery|media|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')"></div> #} 
+                        <div class="imagen_flex domDbe" style="background-image: url('{{ record.path|webp|resize(600, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}')"></div> 
                         {% endif %}
                     {% endfor %}
 
-                    {% if not property.gallery %}
+                    {% if not property.gallery_local %}
                         <div class="imagen_flex domDbe" style="background-image: url('{{ defaultImage }}')"></div>
                     {% endif %}
                 {% endif %}

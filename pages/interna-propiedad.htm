@@ -134,10 +134,16 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                 {% if property.secret_marketing %}
                 <img src="{{ SMImage }}" />
                 {% else %}
-                    {% if not property.hero_image_url %}
+                    {# utilizado cuando llamaba las imagenes de dropbox #}
+                    {# {% if not property.hero_image_url %}
                         <img src="{{ defaultImage }}" />
                     {% else %}
                         <img src="{{ property.hero_image_url|media|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+                    {% endif %} #}
+                    {% if not property.gallery_local %}
+                        <img src="{{ defaultImage }}" />
+                    {% else %}
+                        <img src="{{ property.gallery_local|first.path|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
                     {% endif %}
                 {% endif %}
             </div>
@@ -241,7 +247,9 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                     <img src="{{ SMImage }}" /> <br /><br /><br /><br />
                 {% else %}
                 <div class="owl-carousel owl-theme gallery-img">
-                    {% for record in property.gallery %}
+                    
+                    {# utilizdo para la llamada a imagenes cargadas via dropbox #}
+                    {# {% for record in property.gallery %}
                     <div class="item">
                         {% if 'http' in record.imagery %}
                         <img src="{{ record.imagery|webp|resize(1300, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
@@ -249,9 +257,18 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
                         <img src="{{ record.imagery|media|webp|resize(1300, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
                         {% endif %}
                     </div>
+                    {% endfor %} #}
+
+                    {% for record in property.gallery_local %}
+                        {% if not loop.first %}
+                    <div class="item">
+                        <img src="{{ record.path|webp|resize(1300, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+                    </div>
+                        {% endif %}
                     {% endfor %}
 
-                    {% if not property.gallery %}
+
+                    {% if not property.gallery_local %}
                     <div class="item">
                         <img src="{{ defaultImage }}" />
                     </div>
@@ -426,15 +443,17 @@ $this->page->meta_title = ucfirst(strtolower($this["property"]["name"]))." | ".$
     <section id="inquire-about" class="section wow fadeIn  ">
         <div class="container">
             <div class="wow fadeInLeft">
-
-                {% if property.hero_image_url %}
-                    {% if 'http' in property.hero_image_url %}
+                {# utilizado cuando llamaba las imagenes de dropbox #}
+                {# {% if property.hero_image_url %}
+                     {% if 'http' in property.hero_image_url %}
                         <div class="image" style="background-image: url({{ property.hero_image_url|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
                     {% else %}
                         <div class="image" style="background-image: url({{ property.hero_image_url|media|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
-                    {% endif %}
+                    {% endif %} #}
+                {% if property.gallery_local %}
+                    <div class="image" style="background-image: url({{ property.gallery_local|first.path|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
                 {% else %}
-                <div class="image" style="background-image: url({{ defaultImage }});"></div>
+                    <div class="image" style="background-image: url({{ defaultImage }});"></div>
                 {% endif %}
             </div>
             <div class="wow fadeInRight">
