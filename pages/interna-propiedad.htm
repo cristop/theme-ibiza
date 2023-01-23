@@ -1,5 +1,5 @@
 title = "Property"
-url = "/:slug?"
+url = "/:slug?/:preview?"
 layout = "default"
 # meta_title = "{{ property.name }} | villa | San José | Ibiza Property Collection · Ibiza Property Collection"
 is_hidden = 0
@@ -23,17 +23,14 @@ function onEnd()
     $this["defaultImage"] = $property->getDefaultImage();
 
     //acá, en base al slug vemos si mostrar el formato preview que viene del admin, o mostramos la pagina normal
-    if($this->param('slug') == 'preview'){
+    if($this->param('preview') !== null){
         //vemos si el usuario esta logueado al admin primero
         $user = BackendAuth::getUser();
 
-        if ($user) {
+        if ($user && $this->param('preview') == "preview") {
             //buscamos las variables de session y metemos por property
 
             /* echo '<br><br><br><br><br><br><br><br><br><br>';
-            echo '<br><br><br><br><br><br><br><br><br><br>';
-            echo '<br><br><br><br><br><br><br><br><br><br>';
-            echo '<br><br><br><br><br><br><br><br><br><br>';
             echo Session::get('Property')[0]; */
             $data = json_decode(Session::get('Property')[0],true);
             //$data = json_encode(Session::get('Property')[0]);
@@ -42,6 +39,7 @@ function onEnd()
             //echo $data['Property']['name'];
 
             $this["property"] = $data['Property'];
+            $this["property_database"] = $property->detail()[0];
             return false;
         }else{
             // si no está logueaod mandamos a la home
@@ -68,7 +66,7 @@ function onEnd()
 <link rel="stylesheet" href="{{ 'assets/css/partials/interna-propiedad.css'|theme }}" async>
 {% endput %}
 
-{% if this.param.slug == "preview" %}
+{% if this.param.preview == "preview" %}
 <div class="preview-page">
     This is a preview Page. These changes are not saved. <a href="javascript:window.close();" class="close">Close this
         window.</a>
@@ -143,10 +141,21 @@ function onEnd()
                     {% else %}
                         <img src="{{ property.hero_image_url|media|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
                     {% endif %} #}
-                    {% if not property.gallery_local %}
-                        <img src="{{ defaultImage }}" />
+
+                    {% if this.param.preview == "preview" %}
+                        {# utiliza estas sentencias cuando esta en modo preview #}
+                        {% if not property_database.gallery_local %}
+                            <img src="{{ defaultImage }}" />
+                        {% else %}
+                            <img src="{{ property_database.gallery_local|first.path|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+                        {% endif %}
                     {% else %}
-                        <img src="{{ property.gallery_local|first.path|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+                        {# utiliza estas sentencias cuando ingresa el visitante #}
+                        {% if not property.gallery_local %}
+                            <img src="{{ defaultImage }}" />
+                        {% else %}
+                            <img src="{{ property.gallery_local|first.path|webp|resize(2200, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+                        {% endif %}
                     {% endif %}
                 {% endif %}
             </div>
@@ -262,16 +271,27 @@ function onEnd()
                     </div>
                     {% endfor %} #}
 
-                    {% for record in property.gallery_local %}
-                        {% if not loop.first %}
-                    <div class="item">
-                        <img src="{{ record.path|webp|resize(1300, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
-                    </div>
-                        {% endif %}
-                    {% endfor %}
+                    {% if this.param.preview == "preview" %}
+                        {# utiliza estas sentencias cuando esta en modo preview #}
+                        {% for record in property_database.gallery_local %}
+                            {% if not loop.first %}
+                        <div class="item">
+                            <img src="{{ record.path|webp|resize(1300, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        {# utiliza estas sentencias cuando ingresa el visitante #}
+                        {% for record in property.gallery_local %}
+                            {% if not loop.first %}
+                        <div class="item">
+                            <img src="{{ record.path|webp|resize(1300, null, { quality:'100', mode: 'crop', sharpen: '30' }) }}" />
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
 
-
-                    {% if not property.gallery_local %}
+                    {% if not property.gallery_local and not property_database.gallery_local %}
                     <div class="item">
                         <img src="{{ defaultImage }}" />
                     </div>
@@ -314,7 +334,7 @@ function onEnd()
                 <h3 class="title">Highlights</h3>
                 <div class="info-property">
                     <div class="list-info wow fadeInLeft">
-                        {% if this.param.slug == "preview" %}
+                        {% if this.param.preview == "preview" %}
                         {% set highlights=property.property_highlights|split(';')  %}
                         {% else %}
                         {% set highlights=property.property_highlights|split(';') %}
@@ -453,10 +473,20 @@ function onEnd()
                     {% else %}
                         <div class="image" style="background-image: url({{ property.hero_image_url|media|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
                     {% endif %} #}
-                {% if property.gallery_local %}
-                    <div class="image" style="background-image: url({{ property.gallery_local|first.path|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
+
+                {% if this.param.preview == "preview" %}
+                    {# utiliza estas sentencias cuando esta en modo preview #}
+                    {% if property_database.gallery_local %}
+                        <div class="image" style="background-image: url({{ property_database.gallery_local|first.path|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
+                    {% else %}
+                        <div class="image" style="background-image: url({{ defaultImage }});"></div>
+                    {% endif %}
                 {% else %}
-                    <div class="image" style="background-image: url({{ defaultImage }});"></div>
+                    {% if property.gallery_local %}
+                        <div class="image" style="background-image: url({{ property.gallery_local|first.path|webp|resize(900, null, { quality:'100', mode: 'crop', sharpen: '30' }) }});"></div>
+                    {% else %}
+                        <div class="image" style="background-image: url({{ defaultImage }});"></div>
+                    {% endif %}
                 {% endif %}
             </div>
             <div class="wow fadeInRight">
