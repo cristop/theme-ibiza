@@ -628,6 +628,8 @@ section#star-journey {
 
 section#star-journey .container {
   /* padding: 0; */
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .image-text-container {
@@ -718,6 +720,11 @@ section#about-us {
   width: 100%;
   margin-bottom: 80px;
   /* background-color: rgb(244, 244, 244); */
+}
+
+section#about-us .container{
+  padding-left: 0;
+  padding-right: 0;
 }
 
 section#about-us .image-text-container .text-right {
