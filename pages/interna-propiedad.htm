@@ -455,7 +455,10 @@ function onEnd()
                     </div>
                 </div>
                 <div class="property-map wow fadeInRight">
-                    {% component 'gmap' address_map=property.map %}
+                    {% set ll =  property.map|split(',') %}
+                    {% set newpoint =  (ll[0] + 0.003) ~ ',' ~ ll[1] %} {# Mueve la direccion un par de cuadras #}
+
+                    {% component 'gmap' address_map=newpoint %}
                 </div>
             </div>
         </div>
