@@ -342,9 +342,7 @@ function onEnd()
 
                         <ul>
                             {% for i in 0..highlights|length %}
-                                {% if i is even %}
                             <li>{{ highlights[i] }}</li>
-                                {% endif %}
                             {% endfor %}
                         </ul>
 
