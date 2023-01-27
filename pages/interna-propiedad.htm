@@ -442,6 +442,7 @@ function onEnd()
         </div>
     </section>
 
+    {% if property.map and property.map != 'null,null' %}
     <section id="location">
         <div class="container">
             <div class="flex">
@@ -463,6 +464,7 @@ function onEnd()
             </div>
         </div>
     </section>
+    {% endif %}
 
     <section id="inquire-about" class="section wow fadeIn  ">
         <div class="container">
