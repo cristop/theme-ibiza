@@ -39,19 +39,42 @@ section#featured-properties h2.title {
     font-weight: 300;
     font-size: 22px;
     line-height: 27px;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0.035em;
     text-transform: uppercase;
     color: var(--c-primary);
     margin-bottom: 8px;
     padding-bottom: 38px;
+    padding-left: 0;
     display: block;
     width: 100%;
     max-width: 1190px;
-    border-bottom: 1px solid var(--c-primary);
+    /* border-bottom: 1px solid var(--c-primary); */
     margin-left: auto;
     margin-right: auto;
 }
+
+section#featured-properties .container  .title-btn{
+    max-width: 1190px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--c-primary);
+}
+
+section#featured-properties .action{
+    text-align: right;
+    padding-right: 0;
+}
+
+section#featured-properties .btn.first{
+    text-transform: uppercase;
+    border: 1px solid var(--c-primary);
+    background-color: transparent;
+    color: var(--c-primary);
+    padding: 16px 50px;
+    letter-spacing: 1px;
+}
+
+section#featured-properties a {}
 
 @media screen and (max-width: 900px) {
     section#featured-properties {}
@@ -176,5 +199,23 @@ section#featured-properties h2.title {
         margin: 0 auto;
         margin-top: 25px !important;
         margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section#featured-properties .container .title-btn{
+    display: grid;
+    justify-content: center;
+    padding-bottom: 15px;
+    }
+
+    section#featured-properties .action{
+        text-align: center;
+        padding: 10px;
+    }
+
+    section#featured-properties h2.title{
+        padding: 10px;
+        text-align: center;
     }
 }
