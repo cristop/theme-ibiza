@@ -63,6 +63,7 @@ section#featured-properties .container  .title-btn{
 section#featured-properties .action{
     text-align: right;
     padding-right: 0;
+    max-width: fit-content;
 }
 
 section#featured-properties .btn.first{
@@ -214,10 +215,12 @@ section#featured-properties h2.title p{
     section#featured-properties .action{
         text-align: center;
         padding: 10px;
+        max-width: inherit;
     }
 
     section#featured-properties h2.title{
         padding: 10px;
         text-align: center;
+        width: 100%;
     }
 }
