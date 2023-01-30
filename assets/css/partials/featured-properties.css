@@ -74,7 +74,9 @@ section#featured-properties .btn.first{
     letter-spacing: 1px;
 }
 
-section#featured-properties a {}
+section#featured-properties h2.title p{
+    margin: 0;
+}
 
 @media screen and (max-width: 900px) {
     section#featured-properties {}
