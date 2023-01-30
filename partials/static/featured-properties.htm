@@ -52,7 +52,12 @@ description = "Featured Properties"
                     {% endif %}
                 </h2>
                 <div class="action">
-                    <a href="#" class="btn first">View All</a>
+                    {% if property_id %}
+                    <a href="{{ 'featured-properties'|page({ 'property_id': property_id }) }}" class="btn first">
+                    {% else %}
+                    <a href="{{ 'featured-properties'|page({ 'page_id': this.page.id }) }}" class="btn first">
+                    {% endif %}
+                    View All</a>
                 </div>
             </div>
             <div class="items-results owl-carousel owl-theme">
