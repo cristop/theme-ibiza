@@ -2,6 +2,10 @@ description = "Featured Properties"
 
 [property propertyRelated]
 ==
+{% set count = 0 %}
+{% for property_count in propertyRelated.related(property_id) %}
+    {% set count = (count + 1) %}
+{% endfor %}
 {% put styles %}
     <link rel="stylesheet" href="{{ 'assets/css/partials/featured-properties.css'|theme }}" async>
     <link rel="stylesheet" href="{{ 'assets/css/partials/property.css'|theme }}" async>
@@ -21,11 +25,15 @@ description = "Featured Properties"
                 },
                 500: {
                     items: 2,
+                    {% if (count > 2) %}
                     loop: true
+                    {% endif %}
                 },
                 1200: {
                     items: 3,
+                    {% if (count > 3) %}
                     loop: true
+                    {% endif %}
                 }
             }
         })
