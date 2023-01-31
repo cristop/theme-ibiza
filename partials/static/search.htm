@@ -9,11 +9,17 @@ description = "Featured Properties"
     <form data-request="propertyObject::onSearch" data-request-success="onSearch(data.result)" id="form-seach">
       <div class="title-container">
         <h2 class="title" {% if only_order %} style="margin-bottom: -60px"{% endif %}>
-          {% if title %}
-          <span>{{ title }}</span>
+          {% if file_component %}
+              <span>
+              {% component 'editable' file=file_component %}
+              </span>
           {% else %}
-          START THE SEARCH FOR<br>
-          <span>YOUR PERFECT IBIZA HOME</span>
+              {% if title %}
+              <span>{{ title }}</span>
+              {% else %}
+              START THE SEARCH FOR<br>
+              <span>YOUR PERFECT IBIZA HOME</span>
+              {% endif %}
           {% endif %}
         </h2>
       </div>

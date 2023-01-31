@@ -30,15 +30,19 @@ featured_page_id = {{ :page_id }}
     
         <div class="bg-image"></div>
     
-    </section>
+    </section>    
 
-    
-
-    {% if this.param.property_id != "default" %}
+    {# {% if this.param.property_id != "default" %}
         {% set title = "PROPERTIES IN "~ this.param.property_id %}
     {% else %}
         {% set title = "PROPERTIES IN "~ this.param.page_id %}
+    {% endif %} #}
+
+    {% if this.param.property_id != "default" %}
+        {% set file_title = "featured_title/interna-propiedad.htm" %}
+    {% else %}
+        {% set file_title = "featured_title/" ~ this.param.page_id ~ ".htm" %}
     {% endif %}
 
-    {% partial 'static/search' open=1 only_order=1 title=title related_list="1" %}
+    {% partial 'static/search' open=1 only_order=1 file_component=file_title related_list="1" %}
 </main> 
